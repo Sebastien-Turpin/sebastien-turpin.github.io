@@ -1,361 +1,294 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sébastien Turpin — Photographie</title>
+<html lang="fr"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>Sébastien Turpin — Photographie</title>
 
-    body {
-      margin: 0;
-      background: #ffffff;
-      color: #111111;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style> /* ========================= RESET ========================= */ * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; background: #f7f7f5; color: #111; font-family: Arial, Helvetica, sans-serif; font-weight: 400; } img { max-width: 100%; } a { color: inherit; text-decoration: none; } /* ========================= HEADER ========================= */ header { position: fixed; top: 0; left: 0; width: 100%; height: 76px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; z-index: 100; mix-blend-mode: difference; color: white; pointer-events: none; } header a, header .name { pointer-events: auto; } .name { font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; white-space: nowrap; } nav { display: flex; gap: 25px; } nav a { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; transition: opacity .3s ease; } nav a:hover { opacity: .45; } /* ========================= HERO ========================= */ .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 28px 45px; position: relative; } .hero-title { font-size: clamp(55px, 11vw, 170px); line-height: .82; font-weight: 400; letter-spacing: -6px; margin: 0; text-transform: uppercase; } .hero-bottom { margin-top: 45px; display: flex; justify-content: space-between; align-items: flex-end; } .hero-description { max-width: 340px; font-size: 11px; line-height: 1.6; color: #777; } .hero-index { font-size: 10px; letter-spacing: 1px; color: #777; } /* ========================= INTRO IMAGE ========================= */ .hero-image { width: calc(100% - 56px); height: 78vh; margin: 0 28px 180px; object-fit: cover; display: block; filter: saturate(.85); transition: transform 1.2s cubic-bezier(.2,.6,.2,1); } .hero-image:hover { transform: scale(.985); } /* ========================= PROJECTS ========================= */ .work { width: 100%; padding: 0 28px 180px; } .section-heading { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 70px; border-top: 1px solid #d8d8d5; padding-top: 12px; } .section-heading span { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; } .section-heading span:last-child { color: #888; } /* ========================= PROJECT ========================= */ .project { margin-bottom: 190px; } .project-image-wrapper { overflow: hidden; background: #e9e9e6; } .project-image { width: 100%; height: 82vh; object-fit: cover; display: block; transition: transform 1.2s cubic-bezier(.2,.6,.2,1), filter 1s ease; filter: saturate(.9); } .project:hover .project-image { transform: scale(1.025); filter: saturate(1); } /* ========================= PROJECT INFO ========================= */ .project-info { display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline; padding-top: 15px; } .project-number { font-size: 9px; color: #999; letter-spacing: 1px; } .project-title { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; } .project-category { text-align: right; font-size: 9px; color: #999; letter-spacing: 1px; text-transform: uppercase; } /* ========================= ABOUT ========================= */ .about { padding: 180px 28px 220px; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; border-top: 1px solid #d8d8d5; } .about-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #888; } .about-content { max-width: 800px; } .about-content h2 { margin: 0 0 55px; font-size: clamp(35px, 5vw, 72px); line-height: .95; font-weight: 400; letter-spacing: -2px; } .about-content p { max-width: 550px; margin: 0; font-size: 14px; line-height: 1.8; color: #555; } /* ========================= CONTACT ========================= */ .contact { min-height: 75vh; padding: 80px 28px 45px; display: flex; flex-direction: column; justify-content: space-between; background: #111; color: #f5f5f3; } .contact-top { display: flex; justify-content: space-between; align-items: flex-start; } .contact-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #888; } .contact-title { font-size: clamp(60px, 12vw, 180px); line-height: .8; letter-spacing: -7px; font-weight: 400; margin: 0; } .contact-link { font-size: 12px; letter-spacing: 1px; border-bottom: 1px solid #666; padding-bottom: 5px; transition: opacity .3s ease; } .contact-link:hover { opacity: .5; } .footer-bottom { display: flex; justify-content: space-between; padding-top: 20px; border-top: 1px solid #333; font-size: 9px; letter-spacing: 1px; color: #777; } /* ========================= ANIMATIONS ========================= */ .fade { animation: fadeIn 1.4s ease both; } @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } /* ========================= MOBILE ========================= */ @media (max-width: 700px) { header { height: 64px; padding: 0 18px; } nav { gap: 13px; } nav a { font-size: 8px; } .name { font-size: 9px; letter-spacing: 1px; } .hero { min-height: 88vh; padding: 0 18px 30px; } .hero-title { font-size: 18vw; letter-spacing: -3px; } .hero-bottom { margin-top: 30px; } .hero-description { max-width: 250px; font-size: 10px; } .hero-index { display: none; } .hero-image { width: calc(100% - 36px); height: 60vh; margin: 0 18px 110px; } .work { padding: 0 18px 100px; } .section-heading { margin-bottom: 40px; } .project { margin-bottom: 100px; } .project-image { height: 65vh; } .project-info { grid-template-columns: 30px 1fr auto; } .project-title { font-size: 11px; } .project-category { font-size: 8px; } .about { padding: 100px 18px 130px; display: block; } .about-label { margin-bottom: 45px; } .about-content h2 { font-size: 12vw; letter-spacing: -2px; margin-bottom: 35px; } .about-content p { font-size: 13px; } .contact { min-height: 65vh; padding: 55px 18px 25px; } .contact-top { display: block; } .contact-title { margin-top: 80px; font-size: 20vw; letter-spacing: -4px; } .contact-link { display: inline-block; margin-top: 35px; } .footer-bottom { font-size: 8px; } } </style>
 
-    /* NAVIGATION */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 28px 35px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,255,255,0.95);
-      z-index: 10;
-    }
-
-    .name {
-      font-size: 13px;
-      letter-spacing: 1.5px;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-    }
-
-    nav a {
-      color: #111;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 0.5px;
-    }
-
-    nav a:hover {
-      opacity: 0.45;
-    }
-
-    /* ACCUEIL */
-
-    .intro {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 30px;
-    }
-
-    .intro h1 {
-      font-size: 42px;
-      font-weight: 300;
-      letter-spacing: 4px;
-      margin: 0 0 18px;
-    }
-
-    .intro p {
-      margin: 0;
-      color: #777;
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
-
-    /* PROJETS */
-
-    .work {
-      width: 90%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding-bottom: 120px;
-    }
-
-    .project {
-      margin-bottom: 150px;
-    }
-
-    .project-image {
-      width: 100%;
-      height: 70vh;
-      object-fit: cover;
-      display: block;
-    }
-
-    .project-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding-top: 18px;
-    }
-
-    .project-title {
-      font-size: 15px;
-      letter-spacing: 1px;
-      font-weight: 400;
-    }
-
-    .project-category {
-      color: #888;
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
-
-    /* À PROPOS */
-
-    .about {
-      width: 90%;
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 150px 0;
-      text-align: center;
-    }
-
-    .about h2 {
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 2px;
-      margin-bottom: 30px;
-    }
-
-    .about p {
-      font-size: 14px;
-      line-height: 1.8;
-      color: #666;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 70px 30px;
-      text-align: center;
-      color: #999;
-      font-size: 11px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-
-      header {
-        padding: 22px 20px;
-      }
-
-      nav {
-        gap: 12px;
-      }
-
-      nav a {
-        font-size: 10px;
-      }
-
-      .intro h1 {
-        font-size: 28px;
-        letter-spacing: 3px;
-      }
-
-      .work {
-        width: 92%;
-      }
-
-      .project {
-        margin-bottom: 90px;
-      }
-
-      .project-image {
-        height: 55vh;
-      }
-
-      .project-info {
-        display: block;
-      }
-
-      .project-category {
-        display: block;
-        margin-top: 7px;
-      }
-    }
-  </style>
 </head>
-
 
 <body>
 
-  <!-- MENU -->
+<!-- ========================= HEADER ========================== -->
 
-  <header>
+<header>
 
-    <div class="name">
-      SÉBASTIEN TOUPIN
+<div class="name">
+  Sébastien Turpin
+</div>
+
+<nav>
+  <a href="#work">Work</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+
+
+
+<!-- ========================= HERO ========================== -->
+
+<section class="hero">
+
+<h1 class="hero-title fade">
+  Photographe
+</h1>
+
+<div class="hero-bottom">
+
+  <div class="hero-description">
+    Images de voyage, de vie et de moments qui méritent
+    d'être gardés.
+  </div>
+
+  <div class="hero-index">
+    01 — 04
+  </div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ========================= IMAGE PRINCIPALE ========================== -->
+
+<img
+class="hero-image"
+src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90"
+alt="Photographie de voyage"
+
+
+
+
+
+
+
+<!-- ========================= WORK ========================== -->
+
+<section class="work" id="work">
+
+<div class="section-heading">
+
+  <span>Selected work</span>
+
+  <span>2026</span>
+
+</div>
+
+
+
+<!-- PROJET 01 -->
+
+<article class="project">
+
+  <div class="project-image-wrapper">
+
+    <img
+      class="project-image"
+      src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90"
+      alt="Slovénie"
+      loading="lazy"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <div class="project-number">
+      01
     </div>
 
-    <nav>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-  </header>
-
-
-  <!-- INTRODUCTION -->
-
-  <section class="intro">
-
-    <div>
-
-      <h1>PHOTOGRAPHY</h1>
-
-      <p>
-        TRAVEL · LIFESTYLE · WEDDINGS
-      </p>
-
+    <div class="project-title">
+      Slovénie
     </div>
 
-  </section>
-
-
-  <!-- PROJETS -->
-
-  <section class="work" id="work">
-
-
-    <div class="project">
-
-      <img
-        class="project-image"
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=85"
-        alt="Slovénie"
-      >
-
-      <div class="project-info">
-
-        <div class="project-title">
-          SLOVÉNIE
-        </div>
-
-        <div class="project-category">
-          TRAVEL
-        </div>
-
-      </div>
-
+    <div class="project-category">
+      Travel
     </div>
 
+  </div>
 
-    <div class="project">
+</article>
 
-      <img
-        class="project-image"
-        src="https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=2000&q=85"
-        alt="Italie"
-      >
 
-      <div class="project-info">
 
-        <div class="project-title">
-          ITALIE
-        </div>
+<!-- PROJET 02 -->
 
-        <div class="project-category">
-          TRAVEL
-        </div>
+<article class="project">
 
-      </div>
+  <div class="project-image-wrapper">
 
+    <img
+      class="project-image"
+      src="https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=2200&q=90"
+      alt="Italie"
+      loading="lazy"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <div class="project-number">
+      02
     </div>
 
-
-    <div class="project">
-
-      <img
-        class="project-image"
-        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85"
-        alt="Saint-Jean-de-Monts"
-      >
-
-      <div class="project-info">
-
-        <div class="project-title">
-          SAINT-JEAN-DE-MONTS
-        </div>
-
-        <div class="project-category">
-          LIFESTYLE
-        </div>
-
-      </div>
-
+    <div class="project-title">
+      Italie
     </div>
 
-
-    <div class="project">
-
-      <img
-        class="project-image"
-        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85"
-        alt="Mariage"
-      >
-
-      <div class="project-info">
-
-        <div class="project-title">
-          MARIAGES
-        </div>
-
-        <div class="project-category">
-          WEDDINGS
-        </div>
-
-      </div>
-
+    <div class="project-category">
+      Travel
     </div>
 
+  </div>
 
-  </section>
-
-
-  <!-- À PROPOS -->
-
-  <section class="about" id="about">
-
-    <h2>À PROPOS</h2>
-
-    <p>
-      Je suis Sébastien Turpin, passionné par la photographie,
-      les voyages et les moments spontanés.
-      Ce site rassemble quelques-unes de mes images
-      et histoires photographiques.
-    </p>
-
-  </section>
+</article>
 
 
-  <!-- CONTACT -->
 
-  <footer id="contact">
+<!-- PROJET 03 -->
 
-    CONTACT · SÉBASTIEN TURPIN
+<article class="project">
 
-  </footer>
+  <div class="project-image-wrapper">
+
+    <img
+      class="project-image"
+      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=90"
+      alt="Saint-Jean-de-Monts"
+      loading="lazy"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <div class="project-number">
+      03
+    </div>
+
+    <div class="project-title">
+      Saint-Jean-de-Monts
+    </div>
+
+    <div class="project-category">
+      Lifestyle
+    </div>
+
+  </div>
+
+</article>
 
 
-</body>
-</html>
+
+<!-- PROJET 04 -->
+
+<article class="project">
+
+  <div class="project-image-wrapper">
+
+    <img
+      class="project-image"
+      src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=90"
+      alt="Mariage"
+      loading="lazy"
+    >
+
+  </div>
+
+  <div class="project-info">
+
+    <div class="project-number">
+      04
+    </div>
+
+    <div class="project-title">
+      Mariages
+    </div>
+
+    <div class="project-category">
+      Weddings
+    </div>
+
+  </div>
+
+</article>
+
+</section>
+
+
+
+
+<!-- ========================= ABOUT ========================== -->
+
+<section class="about" id="about">
+
+<div class="about-label">
+  About
+</div>
+
+<div class="about-content">
+
+  <h2>
+    Photographier<br>
+    ce qui reste.
+  </h2>
+
+  <p>
+    Je suis Sébastien Turpin, photographe basé en France.
+    Je m'intéresse aux voyages, aux lieux, aux personnes
+    et surtout aux instants qui ne sont pas parfaitement
+    préparés.
+    <br><br>
+    Mon approche est simple : observer, attendre et
+    raconter une histoire à travers les images.
+  </p>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ========================= CONTACT ========================== -->
+
+<section class="contact" id="contact">
+
+<div class="contact-top">
+
+  <div class="contact-label">
+    Contact
+  </div>
+
+  <a class="contact-link" href="mailto:contact@sebastienturpin.fr">
+    contact@sebastienturpin.fr
+  </a>
+
+</div>
+
+<h2 class="contact-title">
+  Parlons.
+</h2>
+
+<div class="footer-bottom">
+
+  <span>
+    © 2026 Sébastien Turpin
+  </span>
+
+  <span>
+    Photography
+  </span>
+
+</div>
+
+</section>
+
+</body> </html>
