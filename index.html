@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Sébastien Turpin — Photographie</title>
 
   <style>
@@ -10,12 +11,19 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background: #fafafa;
-      color: #222;
-      font-family: Arial, sans-serif;
+      background: #f7f6f2;
+      color: #1d1d1b;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
     }
+
+    /* MENU */
 
     header {
       display: flex;
@@ -25,51 +33,129 @@
     }
 
     .logo {
-      font-size: 20px;
-      font-weight: 500;
+      font-size: 17px;
+      letter-spacing: 1px;
     }
 
     nav a {
-      margin-left: 25px;
-      color: #222;
+      margin-left: 28px;
+      color: #1d1d1b;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
     }
+
+    nav a:hover {
+      opacity: 0.5;
+    }
+
+    /* PHOTO PRINCIPALE */
 
     .hero {
       width: 90%;
-      max-width: 1400px;
-      margin: 40px auto;
+      height: 78vh;
+      margin: 35px auto 0;
+      overflow: hidden;
     }
 
     .hero img {
       width: 100%;
-      height: 70vh;
+      height: 100%;
       object-fit: cover;
       display: block;
     }
 
+    /* INTRODUCTION */
+
     .intro {
       text-align: center;
-      padding: 70px 20px;
+      padding: 110px 20px;
     }
 
     .intro h1 {
+      margin: 0 0 18px;
       font-size: 42px;
-      font-weight: 400;
-      margin-bottom: 15px;
+      font-weight: 300;
+      letter-spacing: 2px;
     }
 
     .intro p {
+      margin: 0;
       color: #777;
-      font-size: 16px;
+      font-size: 14px;
+      letter-spacing: 1px;
     }
 
-    footer {
-      text-align: center;
-      padding: 50px;
-      color: #999;
+    /* PROJETS */
+
+    .projects {
+      width: 90%;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .project {
+      margin-bottom: 120px;
+    }
+
+    .project img {
+      width: 100%;
+      display: block;
+    }
+
+    .project h2 {
+      font-size: 20px;
+      font-weight: 300;
+      margin: 22px 0 6px;
+      letter-spacing: 1px;
+    }
+
+    .project p {
+      margin: 0;
+      color: #888;
       font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 100px 20px 50px;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+    }
+
+    /* TELEPHONE */
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 25px 6%;
+      }
+
+      nav a {
+        margin-left: 12px;
+        font-size: 11px;
+      }
+
+      .hero {
+        width: 88%;
+        height: 65vh;
+        margin-top: 20px;
+      }
+
+      .intro {
+        padding: 80px 20px;
+      }
+
+      .intro h1 {
+        font-size: 30px;
+      }
+
+      .project {
+        margin-bottom: 80px;
+      }
+
     }
   </style>
 </head>
@@ -77,30 +163,120 @@
 <body>
 
   <header>
-    <div class="logo">Sébastien Turpin</div>
+
+    <div class="logo">
+      SÉBASTIEN TURPIN
+    </div>
 
     <nav>
-      <a href="#">Portfolio</a>
-      <a href="#">À propos</a>
-      <a href="#">Contact</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">À propos</a>
+      <a href="#contact">Contact</a>
     </nav>
+
   </header>
+
 
   <main>
 
     <section class="hero">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80" alt="Photographie">
+
+      <img
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=85"
+        alt="Photographie de voyage"
+      >
+
     </section>
 
+
     <section class="intro">
+
       <h1>Photographie</h1>
-      <p>Portrait · Paysage · Moments</p>
+
+      <p>
+        Voyages · Lifestyle · Mariages
+      </p>
+
+    </section>
+
+
+    <section class="projects" id="portfolio">
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85"
+          alt="Voyage"
+        >
+
+        <h2>SLOVÉNIE</h2>
+
+        <p>Voyage · Exploration</p>
+
+      </div>
+
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1800&q=85"
+          alt="Italie"
+        >
+
+        <h2>ITALIE</h2>
+
+        <p>Voyage · Moments</p>
+
+      </div>
+
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85"
+          alt="Saint-Jean-de-Monts"
+        >
+
+        <h2>SAINT-JEAN-DE-MONTS</h2>
+
+        <p>France · Lifestyle</p>
+
+      </div>
+
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85"
+          alt="Mariage"
+        >
+
+        <h2>MARIAGES</h2>
+
+        <p>Instants · Émotions</p>
+
+      </div>
+
+    </section>
+
+
+    <section class="intro" id="about">
+
+      <h1>À propos</h1>
+
+      <p>
+        Photographies de voyages, de moments et de rencontres.
+      </p>
+
     </section>
 
   </main>
 
-  <footer>
+
+  <footer id="contact">
+
     © 2026 Sébastien Turpin
+
   </footer>
 
 </body>
