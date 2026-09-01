@@ -8,7 +8,7 @@
 
 <title>Sébastien Turpin — Photography</title>
 
-<style> /* ===================================================== BASE ===================================================== */ * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; background: #f7f7f5; color: #111; font-family: Arial, Helvetica, sans-serif; } img { display: block; width: 100%; } button { font-family: inherit; } a { color: inherit; text-decoration: none; } /* ===================================================== HEADER ===================================================== */ header { position: fixed; top: 0; left: 0; width: 100%; height: 70px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; z-index: 100; background: rgba(247,247,245,.92); backdrop-filter: blur(8px); } .name { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; } nav { display: flex; gap: 25px; } nav button { border: 0; background: transparent; padding: 0; color: #111; cursor: pointer; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } nav button:hover { opacity: .45; } /* ===================================================== INTRO ===================================================== */ .intro { min-height: 55vh; padding: 120px 28px 50px; display: flex; flex-direction: column; justify-content: flex-end; } .intro h1 { margin: 0; max-width: 900px; font-size: clamp(42px, 7vw, 95px); line-height: .9; font-weight: 400; letter-spacing: -4px; } .intro-bottom { margin-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; } .intro-text { max-width: 330px; font-size: 11px; line-height: 1.6; color: #777; } /* ===================================================== RUBRIQUES ===================================================== */ .categories { padding: 0 28px 180px; } .categories-header { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; margin-bottom: 55px; border-top: 1px solid #d8d8d5; } .categories-header span { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; } .categories-header span:last-child { color: #888; } /* ===================================================== GRILLE DES RUBRIQUES ===================================================== */ .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 22px; row-gap: 80px; align-items: start; } /* ===================================================== RUBRIQUE ===================================================== */ .category-card { position: relative; border: 0; background: transparent; padding: 0; cursor: pointer; text-align: left; color: #111; } .category-image { width: 100%; object-fit: cover; display: block; transition: transform 1s cubic-bezier(.2,.6,.2,1), opacity .5s ease; } /* ===================================================== FORMATS DES RUBRIQUES ===================================================== */ .category-1 .category-image { aspect-ratio: 3 / 4; } .category-2 { margin-top: 120px; } .category-2 .category-image { aspect-ratio: 2 / 3; } .category-3 .category-image { aspect-ratio: 4 / 5; } .category-4 { margin-top: -30px; } .category-4 .category-image { aspect-ratio: 2 / 3; } .category-5 { margin-top: 100px; } .category-5 .category-image { aspect-ratio: 3 / 4; } .category-6 .category-image { aspect-ratio: 4 / 5; } /* ===================================================== HOVER RUBRIQUES ===================================================== */ .category-card:hover .category-image { transform: scale(1.025); } .category-card:hover .category-name { opacity: .55; } /* ===================================================== INFOS RUBRIQUES ===================================================== */ .category-info { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; } .category-name { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; transition: opacity .3s ease; } .category-number { font-size: 9px; letter-spacing: 1px; color: #999; } /* ===================================================== GALERIE ===================================================== */ .gallery-section { display: none; padding: 120px 28px 180px; } .gallery-section.active { display: block; } /* ===================================================== ENTETE GALERIE ===================================================== */ .gallery-top { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 25px; border-bottom: 1px solid #d8d8d5; margin-bottom: 30px; } .back-button { border: 0; background: transparent; padding: 0; cursor: pointer; color: #888; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .back-button:hover { color: #111; } .gallery-title { margin: 0; font-size: clamp(45px, 6vw, 85px); line-height: .9; font-weight: 400; letter-spacing: -4px; } /* ===================================================== SOUS-CATEGORIES VOYAGES ===================================================== */ .travel-menu { display: none; gap: 25px; flex-wrap: wrap; margin-bottom: 55px; } .travel-menu.active { display: flex; } .travel-button { border: 0; background: transparent; padding: 0; cursor: pointer; color: #999; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .travel-button:hover, .travel-button.active { color: #111; } /* ===================================================== GALERIE PHOTOS ===================================================== */ .gallery { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 22px; row-gap: 110px; align-items: start; } .photo { position: relative; } .photo.hidden { display: none; } .photo img { width: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.6,.2,1); } .photo:hover img { transform: scale(1.025); } /* ===================================================== FORMATS PHOTOS ===================================================== */ .photo-1 img { aspect-ratio: 3 / 4; } .photo-2 { margin-top: 140px; } .photo-2 img { aspect-ratio: 2 / 3; } .photo-3 img { aspect-ratio: 4 / 5; } .photo-4 { margin-top: -15px; } .photo-4 img { aspect-ratio: 2 / 3; } .photo-5 { margin-top: 120px; } .photo-5 img { aspect-ratio: 3 / 4; } .photo-6 img { aspect-ratio: 4 / 5; } /* ===================================================== INFOS PHOTOS ===================================================== */ .photo-info { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; } .photo-title { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .photo-category { font-size: 9px; letter-spacing: 1px; color: #999; text-transform: uppercase; } /* ===================================================== ABOUT ===================================================== */ .about { padding: 180px 28px 220px; border-top: 1px solid #d8d8d5; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; } .about-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #888; } .about-content { max-width: 800px; } .about-content h2 { margin: 0 0 50px; font-size: clamp(45px, 6vw, 85px); line-height: .9; font-weight: 400; letter-spacing: -4px; } .about-content p { max-width: 550px; margin: 0; font-size: 14px; line-height: 1.8; color: #555; } /* ===================================================== CONTACT ===================================================== */ .contact { min-height: 75vh; padding: 70px 28px 30px; background: #111; color: #f5f5f3; display: flex; flex-direction: column; justify-content: space-between; } .contact-top { display: flex; justify-content: space-between; } .contact-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #777; } .contact-email { font-size: 11px; letter-spacing: 1px; border-bottom: 1px solid #555; padding-bottom: 5px; } .contact-title { margin: 0; font-size: clamp(70px, 12vw, 180px); line-height: .75; font-weight: 400; letter-spacing: -8px; } .footer { display: flex; justify-content: space-between; padding-top: 20px; border-top: 1px solid #333; font-size: 9px; letter-spacing: 1px; color: #777; } /* ===================================================== TABLETTE ===================================================== */ @media (max-width: 900px) { nav { gap: 12px; } nav button { font-size: 8px; } .category-grid, .gallery { grid-template-columns: repeat(2, 1fr); column-gap: 18px; } .category-2, .category-4, .category-5 { margin-top: 0; } .category-2, .category-5 { margin-top: 70px; } .about { grid-template-columns: 1fr; } } /* ===================================================== MOBILE ===================================================== */ @media (max-width: 600px) { header { height: 60px; padding: 0 18px; } .name { font-size: 9px; } nav { gap: 10px; } nav button { font-size: 7px; } .intro { min-height: 50vh; padding: 105px 18px 40px; } .intro h1 { font-size: 13vw; letter-spacing: -2px; } .categories { padding: 0 18px 120px; } .categories-header { margin-bottom: 40px; } /* Les rubriques restent en colonnes sur mobile, mais passent à 2 colonnes */ .category-grid { grid-template-columns: repeat(2, 1fr); column-gap: 12px; row-gap: 60px; } .category-2, .category-5 { margin-top: 60px; } .category-4 { margin-top: -20px; } .category-name { font-size: 9px; } .category-number { font-size: 8px; } .gallery-section { padding: 100px 18px 120px; } .gallery-top { display: block; } .back-button { display: block; margin-bottom: 30px; } .gallery-title { font-size: 15vw; } .travel-menu { gap: 14px; margin-bottom: 45px; } .travel-button { font-size: 8px; } .gallery { grid-template-columns: 1fr; row-gap: 75px; } .photo-2, .photo-5 { margin-top: 60px; } .about { padding: 110px 18px 130px; display: block; } .about-label { margin-bottom: 45px; } .about-content h2 { font-size: 15vw; letter-spacing: -3px; } .contact { min-height: 65vh; padding: 55px 18px 25px; } .contact-top { display: block; } .contact-email { display: inline-block; margin-top: 30px; } .contact-title { font-size: 21vw; letter-spacing: -5px; } } </style>
+<style> /* ===================================================== BASE ===================================================== */ * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; background: #f7f7f5; color: #111; font-family: Arial, Helvetica, sans-serif; } img { display: block; width: 100%; } button { font-family: inherit; } a { color: inherit; text-decoration: none; } /* ===================================================== HEADER ===================================================== */ header { position: fixed; top: 0; left: 0; width: 100%; height: 70px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; z-index: 100; background: rgba(247,247,245,.92); backdrop-filter: blur(8px); } .name { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; } nav { display: flex; gap: 25px; } nav button { border: 0; background: transparent; padding: 0; color: #111; cursor: pointer; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } nav button:hover { opacity: .45; } /* ===================================================== INTRO ===================================================== */ .intro { min-height: 55vh; padding: 120px 28px 50px; display: flex; flex-direction: column; justify-content: flex-end; } .intro h1 { margin: 0; max-width: 900px; font-size: clamp(42px, 7vw, 95px); line-height: .9; font-weight: 400; letter-spacing: -4px; } .intro-bottom { margin-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; } .intro-text { max-width: 330px; font-size: 11px; line-height: 1.6; color: #777; } /* ===================================================== SECTION THEMES ===================================================== */ .work { padding: 0 28px 180px; } .work-header { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; margin-bottom: 70px; border-top: 1px solid #d8d8d5; } .work-header span { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; } .work-header span:last-child { color: #888; } /* ===================================================== GRILLE PRINCIPALE — 3 COLONNES ===================================================== */ .gallery { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 22px; row-gap: 110px; align-items: start; } /* ===================================================== CARTES DES 6 THEMES ===================================================== */ .theme { position: relative; border: 0; background: transparent; padding: 0; cursor: pointer; text-align: left; color: #111; } .theme img { width: 100%; object-fit: cover; display: block; transition: transform 1s cubic-bezier(.2,.6,.2,1), opacity .4s ease; } /* ===================================================== FORMATS DIFFERENTS ===================================================== */ /* VOYAGES */ .theme-1 img { aspect-ratio: 3 / 4; } /* MOMENTS */ .theme-2 { margin-top: 140px; } .theme-2 img { aspect-ratio: 2 / 3; } /* LIFESTYLE */ .theme-3 img { aspect-ratio: 4 / 5; } /* CITY */ .theme-4 { margin-top: -20px; } .theme-4 img { aspect-ratio: 2 / 3; } /* NATURE */ .theme-5 { margin-top: 120px; } .theme-5 img { aspect-ratio: 3 / 4; } /* EXPLORATION */ .theme-6 img { aspect-ratio: 4 / 5; } /* ===================================================== HOVER ===================================================== */ .theme:hover img { transform: scale(1.025); } .theme:hover .theme-title { opacity: .5; } /* ===================================================== INFOS THEMES ===================================================== */ .theme-info { display: flex; justify-content: space-between; align-items: baseline; padding-top: 13px; } .theme-title { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; transition: opacity .3s ease; } .theme-number { font-size: 9px; letter-spacing: 1px; color: #999; } /* ===================================================== PAGE GALERIE ===================================================== */ .gallery-page { display: none; padding: 120px 28px 180px; } .gallery-page.active { display: block; } /* ===================================================== TITRE GALERIE ===================================================== */ .gallery-heading { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 25px; margin-bottom: 35px; border-bottom: 1px solid #d8d8d5; } .back { border: 0; background: transparent; padding: 0; cursor: pointer; color: #888; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .back:hover { color: #111; } .gallery-heading h2 { margin: 0; font-size: clamp(50px, 7vw, 95px); line-height: .85; font-weight: 400; letter-spacing: -5px; } /* ===================================================== SOUS-CATEGORIES VOYAGES ===================================================== */ .travel-navigation { display: none; flex-wrap: wrap; gap: 25px; margin-bottom: 55px; } .travel-navigation.active { display: flex; } .travel-navigation button { border: 0; background: transparent; padding: 0; cursor: pointer; color: #999; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .travel-navigation button:hover, .travel-navigation button.active { color: #111; } /* ===================================================== PHOTOS DES GALERIES ===================================================== */ .gallery-photos { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 22px; row-gap: 110px; align-items: start; } .gallery-photo { position: relative; } .gallery-photo.hidden { display: none; } .gallery-photo img { width: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.6,.2,1); } .gallery-photo:hover img { transform: scale(1.025); } /* FORMATS GALERIE */ .gallery-photo:nth-child(1) img { aspect-ratio: 3 / 4; } .gallery-photo:nth-child(2) { margin-top: 140px; } .gallery-photo:nth-child(2) img { aspect-ratio: 2 / 3; } .gallery-photo:nth-child(3) img { aspect-ratio: 4 / 5; } .gallery-photo:nth-child(4) { margin-top: -20px; } .gallery-photo:nth-child(4) img { aspect-ratio: 2 / 3; } .gallery-photo:nth-child(5) { margin-top: 120px; } .gallery-photo:nth-child(5) img { aspect-ratio: 3 / 4; } .gallery-photo:nth-child(6) img { aspect-ratio: 4 / 5; } /* ===================================================== INFOS PHOTOS ===================================================== */ .photo-info { display: flex; justify-content: space-between; padding-top: 12px; align-items: baseline; } .photo-title { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .photo-category { font-size: 9px; letter-spacing: 1px; color: #999; text-transform: uppercase; } /* ===================================================== ABOUT ===================================================== */ .about { padding: 180px 28px 220px; border-top: 1px solid #d8d8d5; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; } .about-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #888; } .about-content { max-width: 800px; } .about-content h2 { margin: 0 0 50px; font-size: clamp(45px, 6vw, 85px); line-height: .9; font-weight: 400; letter-spacing: -4px; } .about-content p { max-width: 550px; margin: 0; font-size: 14px; line-height: 1.8; color: #555; } /* ===================================================== CONTACT ===================================================== */ .contact { min-height: 75vh; padding: 70px 28px 30px; background: #111; color: #f5f5f3; display: flex; flex-direction: column; justify-content: space-between; } .contact-top { display: flex; justify-content: space-between; } .contact-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #777; } .contact-email { font-size: 11px; letter-spacing: 1px; border-bottom: 1px solid #555; padding-bottom: 5px; } .contact-title { margin: 0; font-size: clamp(70px, 12vw, 180px); line-height: .75; font-weight: 400; letter-spacing: -8px; } .footer { display: flex; justify-content: space-between; padding-top: 20px; border-top: 1px solid #333; font-size: 9px; letter-spacing: 1px; color: #777; } /* ===================================================== TABLETTE ===================================================== */ @media (max-width: 900px) { .gallery, .gallery-photos { grid-template-columns: repeat(2, 1fr); column-gap: 18px; } .theme-2, .theme-4, .theme-5 { margin-top: 0; } .theme-2, .theme-5 { margin-top: 80px; } .about { grid-template-columns: 1fr; } } /* ===================================================== MOBILE ===================================================== */ @media (max-width: 600px) { header { height: 60px; padding: 0 18px; } .name { font-size: 9px; } nav { gap: 12px; } nav button { font-size: 7px; } .intro { min-height: 50vh; padding: 105px 18px 40px; } .intro h1 { font-size: 13vw; letter-spacing: -2px; } .work { padding: 0 18px 120px; } .work-header { margin-bottom: 45px; } /* Sur mobile on garde la logique en colonnes */ .gallery { grid-template-columns: repeat(2, 1fr); column-gap: 12px; row-gap: 70px; } .theme-2, .theme-5 { margin-top: 60px; } .theme-4 { margin-top: -15px; } .theme-title { font-size: 9px; } .theme-number { font-size: 8px; } .gallery-page { padding: 100px 18px 120px; } .gallery-heading { display: block; } .back { display: block; margin-bottom: 30px; } .gallery-heading h2 { font-size: 15vw; } .travel-navigation { gap: 14px; margin-bottom: 45px; } .travel-navigation button { font-size: 8px; } .gallery-photos { grid-template-columns: 1fr; row-gap: 75px; } .about { padding: 110px 18px 130px; display: block; } .about-label { margin-bottom: 45px; } .about-content h2 { font-size: 15vw; letter-spacing: -3px; } .contact { min-height: 65vh; padding: 55px 18px 25px; } .contact-top { display: block; } .contact-email { display: inline-block; margin-top: 30px; } .contact-title { font-size: 21vw; letter-spacing: -5px; } } </style>
 
 </head>
 
@@ -22,7 +22,7 @@
 
 <nav>
 
-<button onclick="backToCategories()">
+<button onclick="showHome()">
   Work
 </button>
 
@@ -63,11 +63,11 @@
 
 
 
-<!-- ===================================================== RUBRIQUES ===================================================== -->
+<!-- ===================================================== PAGE PRINCIPALE — 6 THEMES ===================================================== -->
 
-<section class="categories" id="categories" >
+<section class="work" id="work" >
 
-<div class="categories-header">
+<div class="work-header">
 
 <span>
   Selected stories
@@ -82,28 +82,27 @@
 
 
 
-<div class="category-grid">
+<div class="gallery">
 
 <!-- ================= VOYAGES ================= -->
 
 <button
-  class="category-card category-1"
-  onclick="showCategory('voyages')"
+  class="theme theme-1"
+  onclick="openGallery('voyages')"
 >
 
   <img
-    class="category-image"
     src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
     alt="Voyages"
   >
 
-  <div class="category-info">
+  <div class="theme-info">
 
-    <span class="category-name">
+    <span class="theme-title">
       Voyages
     </span>
 
-    <span class="category-number">
+    <span class="theme-number">
       01
     </span>
 
@@ -116,23 +115,22 @@
 <!-- ================= MOMENTS ================= -->
 
 <button
-  class="category-card category-2"
-  onclick="showCategory('moments')"
+  class="theme theme-2"
+  onclick="openGallery('moments')"
 >
 
   <img
-    class="category-image"
     src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=90"
     alt="Moments"
   >
 
-  <div class="category-info">
+  <div class="theme-info">
 
-    <span class="category-name">
+    <span class="theme-title">
       Moments
     </span>
 
-    <span class="category-number">
+    <span class="theme-number">
       02
     </span>
 
@@ -145,23 +143,22 @@
 <!-- ================= LIFESTYLE ================= -->
 
 <button
-  class="category-card category-3"
-  onclick="showCategory('lifestyle')"
+  class="theme theme-3"
+  onclick="openGallery('lifestyle')"
 >
 
   <img
-    class="category-image"
     src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
     alt="Lifestyle"
   >
 
-  <div class="category-info">
+  <div class="theme-info">
 
-    <span class="category-name">
+    <span class="theme-title">
       Lifestyle
     </span>
 
-    <span class="category-number">
+    <span class="theme-number">
       03
     </span>
 
@@ -174,23 +171,22 @@
 <!-- ================= CITY ================= -->
 
 <button
-  class="category-card category-4"
-  onclick="showCategory('city')"
+  class="theme theme-4"
+  onclick="openGallery('city')"
 >
 
   <img
-    class="category-image"
     src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
     alt="City"
   >
 
-  <div class="category-info">
+  <div class="theme-info">
 
-    <span class="category-name">
+    <span class="theme-title">
       City
     </span>
 
-    <span class="category-number">
+    <span class="theme-number">
       04
     </span>
 
@@ -203,23 +199,22 @@
 <!-- ================= NATURE ================= -->
 
 <button
-  class="category-card category-5"
-  onclick="showCategory('nature')"
+  class="theme theme-5"
+  onclick="openGallery('nature')"
 >
 
   <img
-    class="category-image"
     src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
     alt="Nature"
   >
 
-  <div class="category-info">
+  <div class="theme-info">
 
-    <span class="category-name">
+    <span class="theme-title">
       Nature
     </span>
 
-    <span class="category-number">
+    <span class="theme-number">
       05
     </span>
 
@@ -232,23 +227,22 @@
 <!-- ================= EXPLORATION ================= -->
 
 <button
-  class="category-card category-6"
-  onclick="showCategory('exploration')"
+  class="theme theme-6"
+  onclick="openGallery('exploration')"
 >
 
   <img
-    class="category-image"
     src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=90"
     alt="Exploration"
   >
 
-  <div class="category-info">
+  <div class="theme-info">
 
-    <span class="category-name">
+    <span class="theme-title">
       Exploration
     </span>
 
-    <span class="category-number">
+    <span class="theme-number">
       06
     </span>
 
@@ -265,23 +259,20 @@
 
 <!-- ===================================================== GALERIE ===================================================== -->
 
-<section class="gallery-section" id="gallerySection" >
+<section class="gallery-page" id="galleryPage" >
 
-<div class="gallery-top">
+<div class="gallery-heading">
 
 <button
-  class="back-button"
-  onclick="backToCategories()"
+  class="back"
+  onclick="showHome()"
 >
 
   ← Toutes les rubriques
 
 </button>
 
-<h2
-  class="gallery-title"
-  id="galleryTitle"
->
+<h2 id="galleryTitle">
   Voyages
 </h2>
 
@@ -292,7 +283,7 @@
 
 <!-- =================================================== SOUS-CATEGORIES VOYAGES =================================================== -->
 
-<div class="travel-menu" id="travelMenu" >
+<div class="travel-navigation" id="travelNavigation" >
 
 <button
   class="travel-button active"
@@ -343,13 +334,13 @@
 
 <!-- =================================================== PHOTOS =================================================== -->
 
-<div class="gallery">
+<div class="gallery-photos">
 
-<!-- PHOTO 01 -->
+<!-- SLOVENIE -->
 
 <article
-  class="photo photo-1"
-  data-category="voyages"
+  class="gallery-photo"
+  data-theme="voyages"
   data-travel="slovenie"
 >
 
@@ -365,7 +356,7 @@
     </span>
 
     <span class="photo-category">
-      Voyages
+      Voyage
     </span>
 
   </div>
@@ -374,11 +365,11 @@
 
 
 
-<!-- PHOTO 02 -->
+<!-- ITALIE -->
 
 <article
-  class="photo photo-2"
-  data-category="voyages"
+  class="gallery-photo"
+  data-theme="voyages"
   data-travel="italie"
 >
 
@@ -394,7 +385,7 @@
     </span>
 
     <span class="photo-category">
-      Voyages
+      Voyage
     </span>
 
   </div>
@@ -403,11 +394,11 @@
 
 
 
-<!-- PHOTO 03 -->
+<!-- ST JEAN DE MONT -->
 
 <article
-  class="photo photo-3"
-  data-category="voyages"
+  class="gallery-photo"
+  data-theme="voyages"
   data-travel="saint-jean"
 >
 
@@ -423,7 +414,7 @@
     </span>
 
     <span class="photo-category">
-      Voyages
+      Voyage
     </span>
 
   </div>
@@ -432,11 +423,11 @@
 
 
 
-<!-- PHOTO 04 -->
+<!-- FARO -->
 
 <article
-  class="photo photo-4"
-  data-category="voyages"
+  class="gallery-photo"
+  data-theme="voyages"
   data-travel="faro"
 >
 
@@ -452,7 +443,7 @@
     </span>
 
     <span class="photo-category">
-      Voyages
+      Voyage
     </span>
 
   </div>
@@ -461,11 +452,11 @@
 
 
 
-<!-- PHOTO 05 -->
+<!-- MAJORQUE -->
 
 <article
-  class="photo photo-5"
-  data-category="voyages"
+  class="gallery-photo"
+  data-theme="voyages"
   data-travel="majorque"
 >
 
@@ -481,7 +472,7 @@
     </span>
 
     <span class="photo-category">
-      Voyages
+      Voyage
     </span>
 
   </div>
@@ -493,8 +484,8 @@
 <!-- MOMENTS -->
 
 <article
-  class="photo photo-6"
-  data-category="moments"
+  class="gallery-photo"
+  data-theme="moments"
 >
 
   <img
@@ -521,8 +512,8 @@
 <!-- LIFESTYLE -->
 
 <article
-  class="photo photo-1"
-  data-category="lifestyle"
+  class="gallery-photo"
+  data-theme="lifestyle"
 >
 
   <img
@@ -549,8 +540,8 @@
 <!-- CITY -->
 
 <article
-  class="photo photo-2"
-  data-category="city"
+  class="gallery-photo"
+  data-theme="city"
 >
 
   <img
@@ -577,8 +568,8 @@
 <!-- NATURE -->
 
 <article
-  class="photo photo-3"
-  data-category="nature"
+  class="gallery-photo"
+  data-theme="nature"
 >
 
   <img
@@ -605,8 +596,8 @@
 <!-- EXPLORATION -->
 
 <article
-  class="photo photo-4"
-  data-category="exploration"
+  class="gallery-photo"
+  data-theme="exploration"
 >
 
   <img
@@ -709,7 +700,7 @@
 
 <!-- ===================================================== JAVASCRIPT ===================================================== -->
 
-<script> /* ===================================================== ELEMENTS ===================================================== */ const categoriesSection = document.getElementById("categories"); const gallerySection = document.getElementById("gallerySection"); const galleryTitle = document.getElementById("galleryTitle"); const travelMenu = document.getElementById("travelMenu"); const photos = document.querySelectorAll(".photo"); /* ===================================================== TITRES ===================================================== */ const titles = { voyages: "Voyages", moments: "Moments", lifestyle: "Lifestyle", city: "City", nature: "Nature", exploration: "Exploration" }; /* ===================================================== OUVRIR UNE RUBRIQUE ===================================================== */ function showCategory(category) { categoriesSection.style.display = "none"; gallerySection.classList.add("active"); galleryTitle.textContent = titles[category]; if (category === "voyages") { travelMenu.classList.add("active"); resetTravelButtons(); showPhotos("voyages"); } else { travelMenu.classList.remove("active"); showPhotos(category); } window.scrollTo({ top: 0, behavior: "smooth" }); } /* ===================================================== AFFICHER LES PHOTOS ===================================================== */ function showPhotos(category) { photos.forEach(photo => { if ( photo.dataset.category === category ) { photo.classList.remove("hidden"); } else { photo.classList.add("hidden"); } }); } /* ===================================================== FILTRE VOYAGES ===================================================== */ function filterTravel(travel, button) { document .querySelectorAll(".travel-button") .forEach(btn => { btn.classList.remove("active"); }); button.classList.add("active"); photos.forEach(photo => { if ( photo.dataset.category !== "voyages" ) { photo.classList.add("hidden"); return; } if ( travel === "all" || photo.dataset.travel === travel ) { photo.classList.remove("hidden"); } else { photo.classList.add("hidden"); } }); window.scrollTo({ top: 0, behavior: "smooth" }); } /* ===================================================== RESET VOYAGES ===================================================== */ function resetTravelButtons() { document .querySelectorAll(".travel-button") .forEach(button => { button.classList.remove("active"); }); document .querySelector(".travel-button") .classList.add("active"); } /* ===================================================== RETOUR RUBRIQUES ===================================================== */ function backToCategories() { gallerySection.classList.remove("active"); categoriesSection.style.display = "block"; window.scrollTo({ top: 0, behavior: "smooth" }); } /* ===================================================== ABOUT ===================================================== */ function goToAbout() { gallerySection.classList.remove("active"); categoriesSection.style.display = "block"; setTimeout(() => { document .getElementById("about") .scrollIntoView({ behavior: "smooth" }); }, 50); } /* ===================================================== CONTACT ===================================================== */ function goToContact() { gallerySection.classList.remove("active"); categoriesSection.style.display = "block"; setTimeout(() => { document .getElementById("contact") .scrollIntoView({ behavior: "smooth" }); }, 50); } </script>
+<script> /* ===================================================== ELEMENTS ===================================================== */ const work = document.getElementById("work"); const galleryPage = document.getElementById("galleryPage"); const galleryTitle = document.getElementById("galleryTitle"); const travelNavigation = document.getElementById("travelNavigation"); const galleryPhotos = document.querySelectorAll(".gallery-photo"); /* ===================================================== TITRES ===================================================== */ const themeTitles = { voyages: "Voyages", moments: "Moments", lifestyle: "Lifestyle", city: "City", nature: "Nature", exploration: "Exploration" }; /* ===================================================== OUVRIR UNE RUBRIQUE ===================================================== */ function openGallery(theme) { work.style.display = "none"; galleryPage.classList.add("active"); galleryTitle.textContent = themeTitles[theme]; if (theme === "voyages") { travelNavigation.classList.add("active"); resetTravel(); showThemePhotos("voyages"); } else { travelNavigation.classList.remove("active"); showThemePhotos(theme); } window.scrollTo({ top: 0, behavior: "smooth" }); } /* ===================================================== AFFICHER PHOTOS D'UN THEME ===================================================== */ function showThemePhotos(theme) { galleryPhotos.forEach(photo => { if ( photo.dataset.theme === theme ) { photo.classList.remove("hidden"); } else { photo.classList.add("hidden"); } }); } /* ===================================================== FILTRE VOYAGES ===================================================== */ function filterTravel(travel, button) { document .querySelectorAll(".travel-button") .forEach(btn => { btn.classList.remove("active"); }); button.classList.add("active"); galleryPhotos.forEach(photo => { if ( photo.dataset.theme !== "voyages" ) { photo.classList.add("hidden"); return; } if ( travel === "all" || photo.dataset.travel === travel ) { photo.classList.remove("hidden"); } else { photo.classList.add("hidden"); } }); window.scrollTo({ top: 0, behavior: "smooth" }); } /* ===================================================== RESET FILTRE VOYAGES ===================================================== */ function resetTravel() { document .querySelectorAll(".travel-button") .forEach(button => { button.classList.remove("active"); }); document .querySelector(".travel-button") .classList.add("active"); } /* ===================================================== RETOUR PAGE PRINCIPALE ===================================================== */ function showHome() { galleryPage.classList.remove("active"); work.style.display = "block"; window.scrollTo({ top: 0, behavior: "smooth" }); } /* ===================================================== ABOUT ===================================================== */ function goToAbout() { galleryPage.classList.remove("active"); work.style.display = "block"; setTimeout(() => { document .getElementById("about") .scrollIntoView({ behavior: "smooth" }); }, 50); } /* ===================================================== CONTACT ===================================================== */ function goToContact() { galleryPage.classList.remove("active"); work.style.display = "block"; setTimeout(() => { document .getElementById("contact") .scrollIntoView({ behavior: "smooth" }); }, 50); } </script>
 
 </body>
 
