@@ -6,9 +6,9 @@
 
 <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sébastien Turpin — Photographie</title>
+<title>Sébastien Turpin — Photography</title>
 
-<style> /* ===================================================== BASE ===================================================== */ * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; background: #f7f7f5; color: #111; font-family: Arial, Helvetica, sans-serif; } img { display: block; width: 100%; } a { color: inherit; text-decoration: none; } /* ===================================================== HEADER ===================================================== */ header { position: fixed; top: 0; left: 0; width: 100%; height: 70px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; z-index: 100; color: #111; background: rgba(247,247,245,.92); backdrop-filter: blur(8px); } .name { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; } nav { display: flex; gap: 25px; } nav a { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } nav a:hover { opacity: .45; } /* ===================================================== INTRO ===================================================== */ .intro { min-height: 70vh; padding: 150px 28px 60px; display: flex; flex-direction: column; justify-content: flex-end; } .intro h1 { margin: 0; font-size: clamp(70px, 13vw, 185px); line-height: .78; font-weight: 400; letter-spacing: -8px; text-transform: uppercase; } .intro-bottom { margin-top: 45px; display: flex; justify-content: space-between; align-items: flex-end; } .intro-text { max-width: 330px; font-size: 11px; line-height: 1.6; color: #777; } .intro-number { font-size: 10px; letter-spacing: 1px; color: #888; } /* ===================================================== WORK ===================================================== */ .work { padding: 0 28px 180px; } .work-header { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; margin-bottom: 70px; border-top: 1px solid #d8d8d5; } .work-header span { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; } .work-header span:last-child { color: #888; } /* ===================================================== GALERIE 3 COLONNES ===================================================== */ .gallery { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 22px; row-gap: 110px; align-items: start; } /* ===================================================== PHOTOS ===================================================== */ .photo { position: relative; } .photo img { width: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.6,.2,1); } /* ===================================================== FORMATS ===================================================== */ /* PHOTO 1 */ .photo-1 img { aspect-ratio: 3 / 4; } /* PHOTO 2 */ .photo-2 { margin-top: 140px; } .photo-2 img { aspect-ratio: 2 / 3; } /* PHOTO 3 */ .photo-3 img { aspect-ratio: 4 / 5; } /* PHOTO 4 */ .photo-4 { margin-top: -15px; } .photo-4 img { aspect-ratio: 2 / 3; } /* PHOTO 5 */ .photo-5 { margin-top: 120px; } .photo-5 img { aspect-ratio: 3 / 4; } /* PHOTO 6 */ .photo-6 img { aspect-ratio: 4 / 5; } /* PHOTO 7 */ .photo-7 { margin-top: 40px; } .photo-7 img { aspect-ratio: 3 / 4; } /* PHOTO 8 */ .photo-8 { margin-top: -40px; } .photo-8 img { aspect-ratio: 2 / 3; } /* PHOTO 9 */ .photo-9 { margin-top: 130px; } .photo-9 img { aspect-ratio: 4 / 5; } /* ===================================================== HOVER ===================================================== */ .photo:hover img { transform: scale(1.025); } /* ===================================================== INFOS ===================================================== */ .photo-info { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; } .photo-title { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .photo-category { font-size: 9px; letter-spacing: 1px; color: #999; text-transform: uppercase; } /* ===================================================== ABOUT ===================================================== */ .about { padding: 180px 28px 220px; border-top: 1px solid #d8d8d5; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; } .about-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #888; } .about-content { max-width: 800px; } .about-content h2 { margin: 0 0 50px; font-size: clamp(45px, 6vw, 85px); line-height: .9; font-weight: 400; letter-spacing: -4px; } .about-content p { max-width: 550px; margin: 0; font-size: 14px; line-height: 1.8; color: #555; } /* ===================================================== CONTACT ===================================================== */ .contact { min-height: 75vh; padding: 70px 28px 30px; background: #111; color: #f5f5f3; display: flex; flex-direction: column; justify-content: space-between; } .contact-top { display: flex; justify-content: space-between; } .contact-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #777; } .contact-email { font-size: 11px; letter-spacing: 1px; border-bottom: 1px solid #555; padding-bottom: 5px; } .contact-title { margin: 0; font-size: clamp(80px, 14vw, 210px); line-height: .75; font-weight: 400; letter-spacing: -10px; } .footer { display: flex; justify-content: space-between; padding-top: 20px; border-top: 1px solid #333; font-size: 9px; letter-spacing: 1px; color: #777; } /* ===================================================== TABLETTE ===================================================== */ @media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, 1fr); column-gap: 18px; row-gap: 80px; } .photo-2, .photo-4, .photo-5, .photo-7, .photo-8, .photo-9 { margin-top: 0; } .photo-2, .photo-5 { margin-top: 80px; } .about { grid-template-columns: 1fr; gap: 40px; } } /* ===================================================== MOBILE ===================================================== */ @media (max-width: 600px) { header { height: 60px; padding: 0 18px; } .name { font-size: 9px; } nav { gap: 13px; } nav a { font-size: 8px; } .intro { min-height: 65vh; padding: 120px 18px 40px; } .intro h1 { font-size: 19vw; letter-spacing: -3px; } .intro-text { font-size: 10px; } .intro-number { display: none; } .work { padding: 0 18px 110px; } .work-header { margin-bottom: 45px; } .gallery { grid-template-columns: 1fr; row-gap: 80px; } .photo-2, .photo-5, .photo-9 { margin-top: 60px; } .photo-4, .photo-7, .photo-8 { margin-top: 0; } .about { padding: 110px 18px 130px; display: block; } .about-label { margin-bottom: 45px; } .about-content h2 { font-size: 15vw; letter-spacing: -3px; } .contact { min-height: 65vh; padding: 55px 18px 25px; } .contact-top { display: block; } .contact-email { display: inline-block; margin-top: 30px; } .contact-title { font-size: 21vw; letter-spacing: -5px; } } </style>
+<style> /* ===================================================== BASE ===================================================== */ * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; background: #f7f7f5; color: #111111; font-family: Arial, Helvetica, sans-serif; } img { display: block; width: 100%; } a { color: inherit; text-decoration: none; } /* ===================================================== HEADER ===================================================== */ header { position: fixed; top: 0; left: 0; width: 100%; height: 70px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; z-index: 100; background: rgba(247, 247, 245, 0.92); backdrop-filter: blur(8px); } .name { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; } nav { display: flex; gap: 25px; } nav a { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; transition: opacity 0.3s ease; } nav a:hover { opacity: 0.45; } /* ===================================================== INTRO ===================================================== */ .intro { min-height: 65vh; padding: 150px 28px 60px; display: flex; flex-direction: column; justify-content: flex-end; } .intro h1 { margin: 0; font-size: clamp(38px, 5vw, 65px); line-height: 1; font-weight: 400; letter-spacing: -2px; } .intro-bottom { margin-top: 35px; display: flex; justify-content: space-between; align-items: flex-end; } .intro-text { max-width: 330px; font-size: 11px; line-height: 1.6; color: #777777; } .intro-number { font-size: 10px; letter-spacing: 1px; color: #888888; } /* ===================================================== WORK ===================================================== */ .work { padding: 0 28px 180px; } .work-header { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; margin-bottom: 70px; border-top: 1px solid #d8d8d5; } .work-header span { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; } .work-header span:last-child { color: #888888; } /* ===================================================== GALERIE — 3 COLONNES ===================================================== */ .gallery { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 22px; row-gap: 110px; align-items: start; } /* ===================================================== PHOTOS ===================================================== */ .photo { position: relative; overflow: hidden; } .photo img { width: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2, .6, .2, 1); } /* ===================================================== FORMATS PORTRAIT ===================================================== */ .photo-1 img { aspect-ratio: 3 / 4; } .photo-2 { margin-top: 140px; } .photo-2 img { aspect-ratio: 2 / 3; } .photo-3 img { aspect-ratio: 4 / 5; } .photo-4 { margin-top: -15px; } .photo-4 img { aspect-ratio: 2 / 3; } .photo-5 { margin-top: 120px; } .photo-5 img { aspect-ratio: 3 / 4; } .photo-6 img { aspect-ratio: 4 / 5; } .photo-7 { margin-top: 40px; } .photo-7 img { aspect-ratio: 3 / 4; } .photo-8 { margin-top: -40px; } .photo-8 img { aspect-ratio: 2 / 3; } .photo-9 { margin-top: 130px; } .photo-9 img { aspect-ratio: 4 / 5; } /* ===================================================== HOVER ===================================================== */ .photo:hover img { transform: scale(1.025); } /* ===================================================== INFORMATIONS ===================================================== */ .photo-info { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; } .photo-title { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .photo-category { font-size: 9px; letter-spacing: 1px; color: #999999; text-transform: uppercase; } /* ===================================================== ABOUT ===================================================== */ .about { padding: 180px 28px 220px; border-top: 1px solid #d8d8d5; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; } .about-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #888888; } .about-content { max-width: 800px; } .about-content h2 { margin: 0 0 50px; font-size: clamp(45px, 6vw, 85px); line-height: 0.9; font-weight: 400; letter-spacing: -4px; } .about-content p { max-width: 550px; margin: 0; font-size: 14px; line-height: 1.8; color: #555555; } /* ===================================================== CONTACT ===================================================== */ .contact { min-height: 75vh; padding: 70px 28px 30px; background: #111111; color: #f5f5f3; display: flex; flex-direction: column; justify-content: space-between; } .contact-top { display: flex; justify-content: space-between; align-items: flex-start; } .contact-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #777777; } .contact-email { font-size: 11px; letter-spacing: 1px; border-bottom: 1px solid #555555; padding-bottom: 5px; transition: opacity 0.3s ease; } .contact-email:hover { opacity: 0.5; } .contact-title { margin: 0; font-size: clamp(70px, 12vw, 180px); line-height: 0.75; font-weight: 400; letter-spacing: -8px; } .footer { display: flex; justify-content: space-between; padding-top: 20px; border-top: 1px solid #333333; font-size: 9px; letter-spacing: 1px; color: #777777; } /* ===================================================== TABLETTE ===================================================== */ @media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, 1fr); column-gap: 18px; row-gap: 80px; } .photo-2, .photo-4, .photo-5, .photo-7, .photo-8, .photo-9 { margin-top: 0; } .photo-2, .photo-5 { margin-top: 80px; } .about { grid-template-columns: 1fr; gap: 40px; } } /* ===================================================== MOBILE ===================================================== */ @media (max-width: 600px) { header { height: 60px; padding: 0 18px; } .name { font-size: 9px; } nav { gap: 13px; } nav a { font-size: 8px; } /* INTRO */ .intro { min-height: 60vh; padding: 120px 18px 40px; } .intro h1 { font-size: 12vw; letter-spacing: -2px; } .intro-text { font-size: 10px; } .intro-number { display: none; } /* GALERIE */ .work { padding: 0 18px 110px; } .work-header { margin-bottom: 45px; } .gallery { grid-template-columns: 1fr; row-gap: 80px; } .photo-2, .photo-5, .photo-9 { margin-top: 60px; } .photo-4, .photo-7, .photo-8 { margin-top: 0; } /* ABOUT */ .about { padding: 110px 18px 130px; display: block; } .about-label { margin-bottom: 45px; } .about-content h2 { font-size: 15vw; letter-spacing: -3px; } .about-content p { font-size: 13px; } /* CONTACT */ .contact { min-height: 65vh; padding: 55px 18px 25px; } .contact-top { display: block; } .contact-email { display: inline-block; margin-top: 30px; } .contact-title { font-size: 21vw; letter-spacing: -5px; } .footer { font-size: 8px; } } </style>
 
 </head>
 
@@ -18,15 +18,23 @@
 
 <header>
 
-<div class="name"> Sébastien Turpin </div>
+<div class="name">
+  Sébastien Turpin
+</div>
 
 <nav>
 
-<a href="#work">Work</a>
+  <a href="#work">
+    Work
+  </a>
 
-<a href="#about">About</a>
+  <a href="#about">
+    About
+  </a>
 
-<a href="#contact">Contact</a>
+  <a href="#contact">
+    Contact
+  </a>
 
 </nav>
 
@@ -39,20 +47,22 @@
 
 <section class="intro">
 
-<h1> Photographe </h1>
+<h1>
+  Stories in photographs.
+</h1>
 
 <div class="intro-bottom">
 
-<div class="intro-text">
+  <div class="intro-text">
 
-  Travel, lifestyle &amp; weddings.<br>
-  Des images spontanées et intemporelles.
+    Travel, lifestyle &amp; weddings.<br>
+    Des images spontanées et intemporelles.
 
-</div>
+  </div>
 
-<div class="intro-number">
-  01 — 09
-</div>
+  <div class="intro-number">
+    01 — 09
+  </div>
 
 </div>
 
@@ -67,243 +77,243 @@
 
 <div class="work-header">
 
-<span>
-  Selected work
-</span>
+  <span>
+    Selected work
+  </span>
 
-<span>
-  2026
-</span>
+  <span>
+    2026
+  </span>
 
 </div>
 
 
-
-
 <div class="gallery">
 
-<!-- PHOTO 01 -->
 
-<article class="photo photo-1">
+  <!-- PHOTO 01 -->
 
-  <img
-    src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=900&q=90"
-    alt="Voyage"
-  >
+  <article class="photo photo-1">
 
-  <div class="photo-info">
+    <img
+      src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=900&q=90"
+      alt="Voyage"
+    >
 
-    <span class="photo-title">
-      Voyage
-    </span>
+    <div class="photo-info">
 
-    <span class="photo-category">
-      Travel
-    </span>
+      <span class="photo-title">
+        Voyage
+      </span>
 
-  </div>
+      <span class="photo-category">
+        Travel
+      </span>
 
-</article>
+    </div>
 
+  </article>
 
 
-<!-- PHOTO 02 -->
 
-<article class="photo photo-2">
+  <!-- PHOTO 02 -->
 
-  <img
-    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=90"
-    alt="Slovénie"
-  >
+  <article class="photo photo-2">
 
-  <div class="photo-info">
+    <img
+      src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=90"
+      alt="Slovénie"
+    >
 
-    <span class="photo-title">
-      Slovénie
-    </span>
+    <div class="photo-info">
 
-    <span class="photo-category">
-      Travel
-    </span>
+      <span class="photo-title">
+        Slovénie
+      </span>
 
-  </div>
+      <span class="photo-category">
+        Travel
+      </span>
 
-</article>
+    </div>
 
+  </article>
 
 
-<!-- PHOTO 03 -->
 
-<article class="photo photo-3">
+  <!-- PHOTO 03 -->
 
-  <img
-    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=90"
-    alt="Nature"
-  >
+  <article class="photo photo-3">
 
-  <div class="photo-info">
+    <img
+      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=90"
+      alt="Nature"
+    >
 
-    <span class="photo-title">
-      Nature
-    </span>
+    <div class="photo-info">
 
-    <span class="photo-category">
-      Lifestyle
-    </span>
+      <span class="photo-title">
+        Nature
+      </span>
 
-  </div>
+      <span class="photo-category">
+        Lifestyle
+      </span>
 
-</article>
+    </div>
 
+  </article>
 
 
-<!-- PHOTO 04 -->
 
-<article class="photo photo-4">
+  <!-- PHOTO 04 -->
 
-  <img
-    src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=90"
-    alt="Mariage"
-  >
+  <article class="photo photo-4">
 
-  <div class="photo-info">
+    <img
+      src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=90"
+      alt="Mariage"
+    >
 
-    <span class="photo-title">
-      Mariages
-    </span>
+    <div class="photo-info">
 
-    <span class="photo-category">
-      Weddings
-    </span>
+      <span class="photo-title">
+        Mariages
+      </span>
 
-  </div>
+      <span class="photo-category">
+        Weddings
+      </span>
 
-</article>
+    </div>
 
+  </article>
 
 
-<!-- PHOTO 05 -->
 
-<article class="photo photo-5">
+  <!-- PHOTO 05 -->
 
-  <img
-    src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=90"
-    alt="Japon"
-  >
+  <article class="photo photo-5">
 
-  <div class="photo-info">
+    <img
+      src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=90"
+      alt="Japon"
+    >
 
-    <span class="photo-title">
-      Japon
-    </span>
+    <div class="photo-info">
 
-    <span class="photo-category">
-      Travel
-    </span>
+      <span class="photo-title">
+        Japon
+      </span>
 
-  </div>
+      <span class="photo-category">
+        Travel
+      </span>
 
-</article>
+    </div>
 
+  </article>
 
 
-<!-- PHOTO 06 -->
 
-<article class="photo photo-6">
+  <!-- PHOTO 06 -->
 
-  <img
-    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=900&q=90"
-    alt="Forêt"
-  >
+  <article class="photo photo-6">
 
-  <div class="photo-info">
+    <img
+      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=900&q=90"
+      alt="Forêt"
+    >
 
-    <span class="photo-title">
-      Évasion
-    </span>
+    <div class="photo-info">
 
-    <span class="photo-category">
-      Lifestyle
-    </span>
+      <span class="photo-title">
+        Évasion
+      </span>
 
-  </div>
+      <span class="photo-category">
+        Lifestyle
+      </span>
 
-</article>
+    </div>
 
+  </article>
 
 
-<!-- PHOTO 07 -->
 
-<article class="photo photo-7">
+  <!-- PHOTO 07 -->
 
-  <img
-    src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=90"
-    alt="Paysage"
-  >
+  <article class="photo photo-7">
 
-  <div class="photo-info">
+    <img
+      src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=90"
+      alt="Paysage"
+    >
 
-    <span class="photo-title">
-      Paysages
-    </span>
+    <div class="photo-info">
 
-    <span class="photo-category">
-      Travel
-    </span>
+      <span class="photo-title">
+        Paysages
+      </span>
 
-  </div>
+      <span class="photo-category">
+        Travel
+      </span>
 
-</article>
+    </div>
 
+  </article>
 
 
-<!-- PHOTO 08 -->
 
-<article class="photo photo-8">
+  <!-- PHOTO 08 -->
 
-  <img
-    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=90"
-    alt="Exploration"
-  >
+  <article class="photo photo-8">
 
-  <div class="photo-info">
+    <img
+      src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=90"
+      alt="Exploration"
+    >
 
-    <span class="photo-title">
-      Exploration
-    </span>
+    <div class="photo-info">
 
-    <span class="photo-category">
-      Travel
-    </span>
+      <span class="photo-title">
+        Exploration
+      </span>
 
-  </div>
+      <span class="photo-category">
+        Travel
+      </span>
 
-</article>
+    </div>
 
+  </article>
 
 
-<!-- PHOTO 09 -->
 
-<article class="photo photo-9">
+  <!-- PHOTO 09 -->
 
-  <img
-    src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=900&q=90"
-    alt="Cérémonie"
-  >
+  <article class="photo photo-9">
 
-  <div class="photo-info">
+    <img
+      src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=900&q=90"
+      alt="Cérémonie"
+    >
 
-    <span class="photo-title">
-      Moments
-    </span>
+    <div class="photo-info">
 
-    <span class="photo-category">
-      Weddings
-    </span>
+      <span class="photo-title">
+        Moments
+      </span>
 
-  </div>
+      <span class="photo-category">
+        Weddings
+      </span>
 
-</article>
+    </div>
+
+  </article>
+
 
 </div>
 
@@ -316,28 +326,30 @@
 
 <section class="about" id="about">
 
-<div class="about-label"> About </div>
+<div class="about-label">
+  About
+</div>
 
 <div class="about-content">
 
-<h2>
-  Photographier<br>
-  ce qui reste.
-</h2>
+  <h2>
+    Photographier<br>
+    ce qui reste.
+  </h2>
 
-<p>
+  <p>
 
-  Je suis Sébastien Turpin, photographe basé en France.
+    Je suis Sébastien Turpin, photographe basé en France.
 
-  Je photographie les voyages, les lieux, les personnes
-  et les moments spontanés.
+    Je photographie les voyages, les lieux, les personnes
+    et les moments spontanés.
 
-  <br><br>
+    <br><br>
 
-  Je cherche avant tout des images naturelles,
-  vivantes et intemporelles.
+    Je cherche avant tout des images naturelles,
+    vivantes et intemporelles.
 
-</p>
+  </p>
 
 </div>
 
@@ -352,30 +364,34 @@
 
 <div class="contact-top">
 
-<div class="contact-label">
-  Contact
+  <div class="contact-label">
+    Contact
+  </div>
+
+  <a
+    class="contact-email"
+    href="mailto:contact@sebastienturpin.fr"
+  >
+    contact@sebastienturpin.fr
+  </a>
+
 </div>
 
-<a
-  class="contact-email"
-  href="mailto:contact@sebastienturpin.fr"
->
-  contact@sebastienturpin.fr
-</a>
 
-</div>
+<h2 class="contact-title">
+  Parlons.
+</h2>
 
-<h2 class="contact-title"> Parlons. </h2>
 
 <div class="footer">
 
-<span>
-  © 2026 Sébastien Turpin
-</span>
+  <span>
+    © 2026 Sébastien Turpin
+  </span>
 
-<span>
-  Photography
-</span>
+  <span>
+    Photography
+  </span>
 
 </div>
 
