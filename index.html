@@ -1,4 +1,4 @@
-```html
+html
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -86,6 +86,7 @@ nav button {
   padding: 0;
 
   color: #111;
+
   cursor: pointer;
 
   font-size: 10px;
@@ -104,6 +105,7 @@ nav button:hover {
 
 .intro {
   min-height: 48vh;
+
   padding: 120px 28px 55px;
 
   display: flex;
@@ -118,6 +120,7 @@ nav button:hover {
   line-height: .9;
 
   font-weight: 400;
+
   letter-spacing: -4px;
 }
 
@@ -219,8 +222,7 @@ nav button:hover {
 
 
 /* =====================================================
-   FORMATS PRESENTATION
-   → ON GARDE LES FORMATS PORTRAIT
+   FORMATS DIFFERENTS
 ===================================================== */
 
 .theme-1 .theme-image {
@@ -439,7 +441,7 @@ nav button:hover {
 .gallery-photo img {
   width: 100%;
 
-  display: block;
+  object-fit: cover;
 
   transition:
     transform 1s cubic-bezier(.2,.6,.2,1);
@@ -452,12 +454,10 @@ nav button:hover {
 
 /* =====================================================
    FORMATS GALERIE
-   → POUR LES GALERIES CLASSIQUES
 ===================================================== */
 
 .gallery-photo:nth-child(1) img {
   aspect-ratio: 3 / 4;
-  object-fit: cover;
 }
 
 .gallery-photo:nth-child(2) {
@@ -466,12 +466,10 @@ nav button:hover {
 
 .gallery-photo:nth-child(2) img {
   aspect-ratio: 2 / 3;
-  object-fit: cover;
 }
 
 .gallery-photo:nth-child(3) img {
   aspect-ratio: 4 / 5;
-  object-fit: cover;
 }
 
 .gallery-photo:nth-child(4) {
@@ -480,7 +478,6 @@ nav button:hover {
 
 .gallery-photo:nth-child(4) img {
   aspect-ratio: 2 / 3;
-  object-fit: cover;
 }
 
 .gallery-photo:nth-child(5) {
@@ -489,29 +486,10 @@ nav button:hover {
 
 .gallery-photo:nth-child(5) img {
   aspect-ratio: 3 / 4;
-  object-fit: cover;
 }
 
 .gallery-photo:nth-child(6) img {
   aspect-ratio: 4 / 5;
-  object-fit: cover;
-}
-
-
-/* =====================================================
-   VIE SAUVAGE
-   → FORMAT ORIGINAL CONSERVE
-   → PORTRAIT OU PAYSAGE
-===================================================== */
-
-.gallery-photo[data-theme="vie-sauvage"] {
-  margin-top: 0;
-}
-
-.gallery-photo[data-theme="vie-sauvage"] img {
-  aspect-ratio: auto;
-  height: auto;
-  object-fit: contain;
 }
 
 
@@ -943,7 +921,7 @@ nav button:hover {
 
       <img
         class="theme-image"
-        src="images/accueil/voyages.jpg"
+        src="accueil/voyages.jpg"
         alt="Voyages"
       >
 
@@ -973,7 +951,7 @@ nav button:hover {
 
       <img
         class="theme-image"
-        src="images/accueil/moments.jpg"
+        src="accueil/moments.jpg"
         alt="Moments"
       >
 
@@ -1093,7 +1071,7 @@ nav button:hover {
 
       <img
         class="theme-image"
-        src="images/accueil/vie sauvage.jpg"
+        src="accueil/vie sauvage.jpg"
         alt="Vie sauvage"
       >
 
@@ -1204,7 +1182,9 @@ nav button:hover {
   <div class="gallery-photos">
 
 
-    <!-- SLOVENIE -->
+    <!-- =================================================
+         SLOVENIE
+    ================================================== -->
 
     <article
       class="gallery-photo"
@@ -1232,7 +1212,9 @@ nav button:hover {
     </article>
 
 
-    <!-- ITALIE -->
+    <!-- =================================================
+         ITALIE
+    ================================================== -->
 
     <article
       class="gallery-photo"
@@ -1260,7 +1242,9 @@ nav button:hover {
     </article>
 
 
-    <!-- ST JEAN DE MONT -->
+    <!-- =================================================
+         ST JEAN DE MONT
+    ================================================== -->
 
     <article
       class="gallery-photo"
@@ -1288,7 +1272,9 @@ nav button:hover {
     </article>
 
 
-    <!-- FARO -->
+    <!-- =================================================
+         FARO
+    ================================================== -->
 
     <article
       class="gallery-photo"
@@ -1316,7 +1302,9 @@ nav button:hover {
     </article>
 
 
-    <!-- MAJORQUE -->
+    <!-- =================================================
+         MAJORQUE
+    ================================================== -->
 
     <article
       class="gallery-photo"
@@ -1344,7 +1332,9 @@ nav button:hover {
     </article>
 
 
-    <!-- MOMENTS -->
+    <!-- =================================================
+         MOMENTS
+    ================================================== -->
 
     <article
       class="gallery-photo"
@@ -1371,7 +1361,9 @@ nav button:hover {
     </article>
 
 
-    <!-- LIFESTYLE -->
+    <!-- =================================================
+         LIFESTYLE
+    ================================================== -->
 
     <article
       class="gallery-photo"
@@ -1398,7 +1390,9 @@ nav button:hover {
     </article>
 
 
-    <!-- CITY -->
+    <!-- =================================================
+         CITY
+    ================================================== -->
 
     <article
       class="gallery-photo"
@@ -1425,7 +1419,9 @@ nav button:hover {
     </article>
 
 
-    <!-- NATURE -->
+    <!-- =================================================
+         NATURE
+    ================================================== -->
 
     <article
       class="gallery-photo"
@@ -1454,7 +1450,6 @@ nav button:hover {
 
     <!-- =================================================
          VIE SAUVAGE
-         → PHOTO DE PRESENTATION
     ================================================== -->
 
     <article
@@ -1463,7 +1458,7 @@ nav button:hover {
     >
 
       <img
-        src="images/accueil/vie sauvage.jpg"
+        src="accueil/vie sauvage.jpg"
         alt="Vie sauvage"
       >
 
@@ -1480,39 +1475,6 @@ nav button:hover {
       </div>
 
     </article>
-
-
-    <!-- =================================================
-         AJOUTER TES FUTURES PHOTOS VIE SAUVAGE ICI
-    ==================================================
-
-    Exemple :
-
-    <article
-      class="gallery-photo"
-      data-theme="vie-sauvage"
-    >
-
-      <img
-        src="images/vie-sauvage/animal-01.jpg"
-        alt="Animal"
-      >
-
-      <div class="photo-info">
-
-        <span class="photo-title">
-          Animal
-        </span>
-
-        <span class="photo-category">
-          Vie sauvage
-        </span>
-
-      </div>
-
-    </article>
-
-    ================================================== -->
 
 
   </div>
@@ -1874,4 +1836,3 @@ function goToContact() {
 </body>
 
 </html>
-```
