@@ -8,7 +8,7 @@
 
 <title>Sébastien Turpin — Photography</title>
 
-<style> /* ===================================================== BASE ===================================================== */ * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; background: #f7f7f5; color: #111; font-family: Arial, Helvetica, sans-serif; } img { display: block; width: 100%; } a { color: inherit; text-decoration: none; } button { font-family: inherit; } /* ===================================================== HEADER ===================================================== */ header { position: fixed; top: 0; left: 0; width: 100%; height: 70px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; z-index: 100; background: rgba(247,247,245,.92); backdrop-filter: blur(8px); } .name { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; } nav { display: flex; gap: 25px; } nav button { border: 0; background: transparent; padding: 0; color: #111; cursor: pointer; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } nav button:hover { opacity: .45; } /* ===================================================== INTRO ===================================================== */ .intro { min-height: 58vh; padding: 120px 28px 60px; display: flex; flex-direction: column; justify-content: flex-end; } .intro h1 { margin: 0; max-width: 900px; font-size: clamp(42px, 7vw, 95px); line-height: .9; font-weight: 400; letter-spacing: -4px; } .intro-bottom { margin-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; } .intro-text { max-width: 330px; font-size: 11px; line-height: 1.6; color: #777; } /* ===================================================== RUBRIQUES ===================================================== */ .categories { padding: 0 28px 180px; } .categories-header { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; margin-bottom: 70px; border-top: 1px solid #d8d8d5; } .categories-header span { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; } .categories-header span:last-child { color: #888; } /* ===================================================== LISTE DES RUBRIQUES ===================================================== */ .category-list { border-top: 1px solid #d8d8d5; } .category { width: 100%; padding: 30px 0; border-bottom: 1px solid #d8d8d5; display: flex; justify-content: space-between; align-items: baseline; background: transparent; color: #111; cursor: pointer; text-align: left; transition: padding .4s ease; } .category:hover { padding-left: 15px; padding-right: 15px; } .category-name { font-size: clamp(35px, 5vw, 70px); font-weight: 400; letter-spacing: -2px; line-height: 1; } .category-number { font-size: 10px; letter-spacing: 1px; color: #888; } /* ===================================================== GALERIE ===================================================== */ .gallery-section { display: none; padding: 120px 28px 180px; } .gallery-section.active { display: block; } /* ===================================================== ENTETE GALERIE ===================================================== */ .gallery-top { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 25px; border-bottom: 1px solid #d8d8d5; margin-bottom: 35px; } .back-button { border: 0; background: transparent; padding: 0; cursor: pointer; color: #888; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .back-button:hover { color: #111; } .gallery-title { margin: 0; font-size: clamp(40px, 6vw, 80px); line-height: .9; font-weight: 400; letter-spacing: -4px; } /* ===================================================== SOUS-CATEGORIES VOYAGES ===================================================== */ .travel-menu { display: none; gap: 20px; flex-wrap: wrap; margin-bottom: 60px; } .travel-menu.active { display: flex; } .travel-button { border: 0; background: transparent; padding: 0; cursor: pointer; color: #999; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .travel-button:hover, .travel-button.active { color: #111; } /* ===================================================== GRILLE 3 COLONNES ===================================================== */ .gallery { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 22px; row-gap: 110px; align-items: start; } /* ===================================================== PHOTO ===================================================== */ .photo { position: relative; } .photo.hidden { display: none; } .photo img { width: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.6,.2,1); } .photo:hover img { transform: scale(1.025); } /* ===================================================== FORMATS ===================================================== */ .photo-1 img { aspect-ratio: 3 / 4; } .photo-2 { margin-top: 140px; } .photo-2 img { aspect-ratio: 2 / 3; } .photo-3 img { aspect-ratio: 4 / 5; } .photo-4 { margin-top: -15px; } .photo-4 img { aspect-ratio: 2 / 3; } .photo-5 { margin-top: 120px; } .photo-5 img { aspect-ratio: 3 / 4; } .photo-6 img { aspect-ratio: 4 / 5; } /* ===================================================== INFOS ===================================================== */ .photo-info { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; } .photo-title { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .photo-category { font-size: 9px; letter-spacing: 1px; color: #999; text-transform: uppercase; } /* ===================================================== ABOUT ===================================================== */ .about { padding: 180px 28px 220px; border-top: 1px solid #d8d8d5; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; } .about-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #888; } .about-content { max-width: 800px; } .about-content h2 { margin: 0 0 50px; font-size: clamp(45px, 6vw, 85px); line-height: .9; font-weight: 400; letter-spacing: -4px; } .about-content p { max-width: 550px; margin: 0; font-size: 14px; line-height: 1.8; color: #555; } /* ===================================================== CONTACT ===================================================== */ .contact { min-height: 75vh; padding: 70px 28px 30px; background: #111; color: #f5f5f3; display: flex; flex-direction: column; justify-content: space-between; } .contact-top { display: flex; justify-content: space-between; } .contact-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #777; } .contact-email { font-size: 11px; letter-spacing: 1px; border-bottom: 1px solid #555; padding-bottom: 5px; } .contact-title { margin: 0; font-size: clamp(70px, 12vw, 180px); line-height: .75; font-weight: 400; letter-spacing: -8px; } .footer { display: flex; justify-content: space-between; padding-top: 20px; border-top: 1px solid #333; font-size: 9px; letter-spacing: 1px; color: #777; } /* ===================================================== TABLETTE ===================================================== */ @media (max-width: 900px) { header { padding: 0 20px; } nav { gap: 14px; } .gallery { grid-template-columns: repeat(2, 1fr); column-gap: 18px; } .about { grid-template-columns: 1fr; } } /* ===================================================== MOBILE ===================================================== */ @media (max-width: 600px) { header { height: auto; min-height: 60px; padding: 18px; } .name { font-size: 9px; } nav { gap: 10px; } nav button { font-size: 7px; } .intro { min-height: 55vh; padding: 110px 18px 40px; } .intro h1 { font-size: 13vw; letter-spacing: -2px; } .intro-bottom { margin-top: 30px; } .categories { padding: 0 18px 120px; } .categories-header { margin-bottom: 45px; } .category { padding: 22px 0; } .category-name { font-size: 11vw; } .gallery-section { padding: 100px 18px 120px; } .gallery-top { display: block; } .back-button { display: block; margin-bottom: 30px; } .gallery-title { font-size: 15vw; } .travel-menu { gap: 12px; margin-bottom: 45px; } .travel-button { font-size: 8px; } .gallery { grid-template-columns: 1fr; row-gap: 75px; } .photo-2, .photo-5 { margin-top: 60px; } .about { padding: 110px 18px 130px; display: block; } .about-label { margin-bottom: 45px; } .about-content h2 { font-size: 15vw; letter-spacing: -3px; } .contact { min-height: 65vh; padding: 55px 18px 25px; } .contact-top { display: block; } .contact-email { display: inline-block; margin-top: 30px; } .contact-title { font-size: 21vw; letter-spacing: -5px; } } </style>
+<style> /* ===================================================== BASE ===================================================== */ * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; background: #f7f7f5; color: #111; font-family: Arial, Helvetica, sans-serif; } img { display: block; width: 100%; } button { font-family: inherit; } a { color: inherit; text-decoration: none; } /* ===================================================== HEADER ===================================================== */ header { position: fixed; top: 0; left: 0; width: 100%; height: 70px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; z-index: 100; background: rgba(247,247,245,.92); backdrop-filter: blur(8px); } .name { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; } nav { display: flex; gap: 25px; } nav button { border: 0; background: transparent; padding: 0; color: #111; cursor: pointer; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } nav button:hover { opacity: .45; } /* ===================================================== INTRO ===================================================== */ .intro { min-height: 55vh; padding: 120px 28px 50px; display: flex; flex-direction: column; justify-content: flex-end; } .intro h1 { margin: 0; max-width: 900px; font-size: clamp(42px, 7vw, 95px); line-height: .9; font-weight: 400; letter-spacing: -4px; } .intro-bottom { margin-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; } .intro-text { max-width: 330px; font-size: 11px; line-height: 1.6; color: #777; } /* ===================================================== RUBRIQUES ===================================================== */ .categories { padding: 0 28px 180px; } .categories-header { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; margin-bottom: 55px; border-top: 1px solid #d8d8d5; } .categories-header span { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; } .categories-header span:last-child { color: #888; } /* ===================================================== GRILLE DES RUBRIQUES ===================================================== */ .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 22px; row-gap: 80px; align-items: start; } /* ===================================================== RUBRIQUE ===================================================== */ .category-card { position: relative; border: 0; background: transparent; padding: 0; cursor: pointer; text-align: left; color: #111; } .category-image { width: 100%; object-fit: cover; display: block; transition: transform 1s cubic-bezier(.2,.6,.2,1), opacity .5s ease; } /* ===================================================== FORMATS DES RUBRIQUES ===================================================== */ .category-1 .category-image { aspect-ratio: 3 / 4; } .category-2 { margin-top: 120px; } .category-2 .category-image { aspect-ratio: 2 / 3; } .category-3 .category-image { aspect-ratio: 4 / 5; } .category-4 { margin-top: -30px; } .category-4 .category-image { aspect-ratio: 2 / 3; } .category-5 { margin-top: 100px; } .category-5 .category-image { aspect-ratio: 3 / 4; } .category-6 .category-image { aspect-ratio: 4 / 5; } /* ===================================================== HOVER RUBRIQUES ===================================================== */ .category-card:hover .category-image { transform: scale(1.025); } .category-card:hover .category-name { opacity: .55; } /* ===================================================== INFOS RUBRIQUES ===================================================== */ .category-info { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; } .category-name { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; transition: opacity .3s ease; } .category-number { font-size: 9px; letter-spacing: 1px; color: #999; } /* ===================================================== GALERIE ===================================================== */ .gallery-section { display: none; padding: 120px 28px 180px; } .gallery-section.active { display: block; } /* ===================================================== ENTETE GALERIE ===================================================== */ .gallery-top { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 25px; border-bottom: 1px solid #d8d8d5; margin-bottom: 30px; } .back-button { border: 0; background: transparent; padding: 0; cursor: pointer; color: #888; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .back-button:hover { color: #111; } .gallery-title { margin: 0; font-size: clamp(45px, 6vw, 85px); line-height: .9; font-weight: 400; letter-spacing: -4px; } /* ===================================================== SOUS-CATEGORIES VOYAGES ===================================================== */ .travel-menu { display: none; gap: 25px; flex-wrap: wrap; margin-bottom: 55px; } .travel-menu.active { display: flex; } .travel-button { border: 0; background: transparent; padding: 0; cursor: pointer; color: #999; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .travel-button:hover, .travel-button.active { color: #111; } /* ===================================================== GALERIE PHOTOS ===================================================== */ .gallery { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 22px; row-gap: 110px; align-items: start; } .photo { position: relative; } .photo.hidden { display: none; } .photo img { width: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.6,.2,1); } .photo:hover img { transform: scale(1.025); } /* ===================================================== FORMATS PHOTOS ===================================================== */ .photo-1 img { aspect-ratio: 3 / 4; } .photo-2 { margin-top: 140px; } .photo-2 img { aspect-ratio: 2 / 3; } .photo-3 img { aspect-ratio: 4 / 5; } .photo-4 { margin-top: -15px; } .photo-4 img { aspect-ratio: 2 / 3; } .photo-5 { margin-top: 120px; } .photo-5 img { aspect-ratio: 3 / 4; } .photo-6 img { aspect-ratio: 4 / 5; } /* ===================================================== INFOS PHOTOS ===================================================== */ .photo-info { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; } .photo-title { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; } .photo-category { font-size: 9px; letter-spacing: 1px; color: #999; text-transform: uppercase; } /* ===================================================== ABOUT ===================================================== */ .about { padding: 180px 28px 220px; border-top: 1px solid #d8d8d5; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; } .about-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #888; } .about-content { max-width: 800px; } .about-content h2 { margin: 0 0 50px; font-size: clamp(45px, 6vw, 85px); line-height: .9; font-weight: 400; letter-spacing: -4px; } .about-content p { max-width: 550px; margin: 0; font-size: 14px; line-height: 1.8; color: #555; } /* ===================================================== CONTACT ===================================================== */ .contact { min-height: 75vh; padding: 70px 28px 30px; background: #111; color: #f5f5f3; display: flex; flex-direction: column; justify-content: space-between; } .contact-top { display: flex; justify-content: space-between; } .contact-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #777; } .contact-email { font-size: 11px; letter-spacing: 1px; border-bottom: 1px solid #555; padding-bottom: 5px; } .contact-title { margin: 0; font-size: clamp(70px, 12vw, 180px); line-height: .75; font-weight: 400; letter-spacing: -8px; } .footer { display: flex; justify-content: space-between; padding-top: 20px; border-top: 1px solid #333; font-size: 9px; letter-spacing: 1px; color: #777; } /* ===================================================== TABLETTE ===================================================== */ @media (max-width: 900px) { nav { gap: 12px; } nav button { font-size: 8px; } .category-grid, .gallery { grid-template-columns: repeat(2, 1fr); column-gap: 18px; } .category-2, .category-4, .category-5 { margin-top: 0; } .category-2, .category-5 { margin-top: 70px; } .about { grid-template-columns: 1fr; } } /* ===================================================== MOBILE ===================================================== */ @media (max-width: 600px) { header { height: 60px; padding: 0 18px; } .name { font-size: 9px; } nav { gap: 10px; } nav button { font-size: 7px; } .intro { min-height: 50vh; padding: 105px 18px 40px; } .intro h1 { font-size: 13vw; letter-spacing: -2px; } .categories { padding: 0 18px 120px; } .categories-header { margin-bottom: 40px; } /* Les rubriques restent en colonnes sur mobile, mais passent à 2 colonnes */ .category-grid { grid-template-columns: repeat(2, 1fr); column-gap: 12px; row-gap: 60px; } .category-2, .category-5 { margin-top: 60px; } .category-4 { margin-top: -20px; } .category-name { font-size: 9px; } .category-number { font-size: 8px; } .gallery-section { padding: 100px 18px 120px; } .gallery-top { display: block; } .back-button { display: block; margin-bottom: 30px; } .gallery-title { font-size: 15vw; } .travel-menu { gap: 14px; margin-bottom: 45px; } .travel-button { font-size: 8px; } .gallery { grid-template-columns: 1fr; row-gap: 75px; } .photo-2, .photo-5 { margin-top: 60px; } .about { padding: 110px 18px 130px; display: block; } .about-label { margin-bottom: 45px; } .about-content h2 { font-size: 15vw; letter-spacing: -3px; } .contact { min-height: 65vh; padding: 55px 18px 25px; } .contact-top { display: block; } .contact-email { display: inline-block; margin-top: 30px; } .contact-title { font-size: 21vw; letter-spacing: -5px; } } </style>
 
 </head>
 
@@ -18,35 +18,21 @@
 
 <header>
 
-<div class="name">
-  Sébastien Turpin
-</div>
+<div class="name"> Sébastien Turpin </div>
 
 <nav>
 
-  <button onclick="showCategory('voyages')">
-    Voyages
-  </button>
+<button onclick="backToCategories()">
+  Work
+</button>
 
-  <button onclick="showCategory('moments')">
-    Moments
-  </button>
+<button onclick="goToAbout()">
+  About
+</button>
 
-  <button onclick="showCategory('lifestyle')">
-    Lifestyle
-  </button>
-
-  <button onclick="showCategory('city')">
-    City
-  </button>
-
-  <button onclick="showCategory('nature')">
-    Nature
-  </button>
-
-  <button onclick="showCategory('exploration')">
-    Exploration
-  </button>
+<button onclick="goToContact()">
+  Contact
+</button>
 
 </nav>
 
@@ -59,18 +45,16 @@
 
 <section class="intro">
 
-<h1>
-  Stories in photographs.
-</h1>
+<h1> Stories in photographs. </h1>
 
 <div class="intro-bottom">
 
-  <div class="intro-text">
+<div class="intro-text">
 
-    Travel, lifestyle &amp; weddings.<br>
-    Des images spontanées et intemporelles.
+  Travel, lifestyle &amp; weddings.<br>
+  Des images spontanées et intemporelles.
 
-  </div>
+</div>
 
 </div>
 
@@ -79,30 +63,41 @@
 
 
 
-<!-- ===================================================== RUBRIQUES PRINCIPALES ===================================================== -->
+<!-- ===================================================== RUBRIQUES ===================================================== -->
 
-<section class="categories" id="categories">
+<section class="categories" id="categories" >
 
 <div class="categories-header">
 
-  <span>
-    Selected stories
-  </span>
+<span>
+  Selected stories
+</span>
 
-  <span>
-    2026
-  </span>
+<span>
+  2026
+</span>
 
 </div>
 
 
-<div class="category-list">
 
 
-  <button
-    class="category"
-    onclick="showCategory('voyages')"
+<div class="category-grid">
+
+<!-- ================= VOYAGES ================= -->
+
+<button
+  class="category-card category-1"
+  onclick="showCategory('voyages')"
+>
+
+  <img
+    class="category-image"
+    src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
+    alt="Voyages"
   >
+
+  <div class="category-info">
 
     <span class="category-name">
       Voyages
@@ -112,13 +107,26 @@
       01
     </span>
 
-  </button>
+  </div>
+
+</button>
 
 
-  <button
-    class="category"
-    onclick="showCategory('moments')"
+
+<!-- ================= MOMENTS ================= -->
+
+<button
+  class="category-card category-2"
+  onclick="showCategory('moments')"
+>
+
+  <img
+    class="category-image"
+    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=90"
+    alt="Moments"
   >
+
+  <div class="category-info">
 
     <span class="category-name">
       Moments
@@ -128,13 +136,26 @@
       02
     </span>
 
-  </button>
+  </div>
+
+</button>
 
 
-  <button
-    class="category"
-    onclick="showCategory('lifestyle')"
+
+<!-- ================= LIFESTYLE ================= -->
+
+<button
+  class="category-card category-3"
+  onclick="showCategory('lifestyle')"
+>
+
+  <img
+    class="category-image"
+    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
+    alt="Lifestyle"
   >
+
+  <div class="category-info">
 
     <span class="category-name">
       Lifestyle
@@ -144,13 +165,26 @@
       03
     </span>
 
-  </button>
+  </div>
+
+</button>
 
 
-  <button
-    class="category"
-    onclick="showCategory('city')"
+
+<!-- ================= CITY ================= -->
+
+<button
+  class="category-card category-4"
+  onclick="showCategory('city')"
+>
+
+  <img
+    class="category-image"
+    src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
+    alt="City"
   >
+
+  <div class="category-info">
 
     <span class="category-name">
       City
@@ -160,13 +194,26 @@
       04
     </span>
 
-  </button>
+  </div>
+
+</button>
 
 
-  <button
-    class="category"
-    onclick="showCategory('nature')"
+
+<!-- ================= NATURE ================= -->
+
+<button
+  class="category-card category-5"
+  onclick="showCategory('nature')"
+>
+
+  <img
+    class="category-image"
+    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
+    alt="Nature"
   >
+
+  <div class="category-info">
 
     <span class="category-name">
       Nature
@@ -176,13 +223,26 @@
       05
     </span>
 
-  </button>
+  </div>
+
+</button>
 
 
-  <button
-    class="category"
-    onclick="showCategory('exploration')"
+
+<!-- ================= EXPLORATION ================= -->
+
+<button
+  class="category-card category-6"
+  onclick="showCategory('exploration')"
+>
+
+  <img
+    class="category-image"
+    src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=90"
+    alt="Exploration"
   >
+
+  <div class="category-info">
 
     <span class="category-name">
       Exploration
@@ -192,8 +252,9 @@
       06
     </span>
 
-  </button>
+  </div>
 
+</button>
 
 </div>
 
@@ -208,367 +269,364 @@
 
 <div class="gallery-top">
 
-  <button
-    class="back-button"
-    onclick="backToCategories()"
-  >
-    ← Toutes les rubriques
-  </button>
-
-  <h2
-    class="gallery-title"
-    id="galleryTitle"
-  >
-    Voyages
-  </h2>
-
-</div>
-
-
-
-<!-- SOUS-MENU VOYAGES -->
-
-<div
-  class="travel-menu active"
-  id="travelMenu"
+<button
+  class="back-button"
+  onclick="backToCategories()"
 >
 
-  <button
-    class="travel-button active"
-    onclick="filterTravel('all', this)"
-  >
-    Tous
-  </button>
+  ← Toutes les rubriques
 
-  <button
-    class="travel-button"
-    onclick="filterTravel('slovenie', this)"
-  >
-    Slovénie
-  </button>
+</button>
 
-  <button
-    class="travel-button"
-    onclick="filterTravel('italie', this)"
-  >
-    Italie
-  </button>
-
-  <button
-    class="travel-button"
-    onclick="filterTravel('saint-jean', this)"
-  >
-    St Jean de Mont
-  </button>
-
-  <button
-    class="travel-button"
-    onclick="filterTravel('faro', this)"
-  >
-    Faro
-  </button>
-
-  <button
-    class="travel-button"
-    onclick="filterTravel('majorque', this)"
-  >
-    Majorque
-  </button>
+<h2
+  class="gallery-title"
+  id="galleryTitle"
+>
+  Voyages
+</h2>
 
 </div>
 
 
 
-<!-- =================================================
-     GALERIE PHOTOS
-================================================= -->
+
+<!-- =================================================== SOUS-CATEGORIES VOYAGES =================================================== -->
+
+<div class="travel-menu" id="travelMenu" >
+
+<button
+  class="travel-button active"
+  onclick="filterTravel('all', this)"
+>
+  Tous
+</button>
+
+<button
+  class="travel-button"
+  onclick="filterTravel('slovenie', this)"
+>
+  Slovénie
+</button>
+
+<button
+  class="travel-button"
+  onclick="filterTravel('italie', this)"
+>
+  Italie
+</button>
+
+<button
+  class="travel-button"
+  onclick="filterTravel('saint-jean', this)"
+>
+  St Jean de Mont
+</button>
+
+<button
+  class="travel-button"
+  onclick="filterTravel('faro', this)"
+>
+  Faro
+</button>
+
+<button
+  class="travel-button"
+  onclick="filterTravel('majorque', this)"
+>
+  Majorque
+</button>
+
+</div>
+
+
+
+
+<!-- =================================================== PHOTOS =================================================== -->
 
 <div class="gallery">
 
+<!-- PHOTO 01 -->
 
-  <!-- ================= PHOTO 01 ================= -->
+<article
+  class="photo photo-1"
+  data-category="voyages"
+  data-travel="slovenie"
+>
 
-  <article
-    class="photo photo-1"
-    data-category="voyages"
-    data-travel="slovenie"
+  <img
+    src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
+    alt="Slovénie"
   >
 
-    <img
-      src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
-      alt="Slovénie"
-    >
+  <div class="photo-info">
 
-    <div class="photo-info">
+    <span class="photo-title">
+      Slovénie
+    </span>
 
-      <span class="photo-title">
-        Slovénie
-      </span>
+    <span class="photo-category">
+      Voyages
+    </span>
 
-      <span class="photo-category">
-        Voyages
-      </span>
+  </div>
 
-    </div>
-
-  </article>
+</article>
 
 
 
-  <!-- ================= PHOTO 02 ================= -->
+<!-- PHOTO 02 -->
 
-  <article
-    class="photo photo-2"
-    data-category="voyages"
-    data-travel="italie"
+<article
+  class="photo photo-2"
+  data-category="voyages"
+  data-travel="italie"
+>
+
+  <img
+    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=90"
+    alt="Italie"
   >
 
-    <img
-      src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=90"
-      alt="Italie"
-    >
+  <div class="photo-info">
 
-    <div class="photo-info">
+    <span class="photo-title">
+      Italie
+    </span>
 
-      <span class="photo-title">
-        Italie
-      </span>
+    <span class="photo-category">
+      Voyages
+    </span>
 
-      <span class="photo-category">
-        Voyages
-      </span>
+  </div>
 
-    </div>
-
-  </article>
+</article>
 
 
 
-  <!-- ================= PHOTO 03 ================= -->
+<!-- PHOTO 03 -->
 
-  <article
-    class="photo photo-3"
-    data-category="voyages"
-    data-travel="saint-jean"
+<article
+  class="photo photo-3"
+  data-category="voyages"
+  data-travel="saint-jean"
+>
+
+  <img
+    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=90"
+    alt="St Jean de Mont"
   >
 
-    <img
-      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=90"
-      alt="St Jean de Mont"
-    >
+  <div class="photo-info">
 
-    <div class="photo-info">
+    <span class="photo-title">
+      St Jean de Mont
+    </span>
 
-      <span class="photo-title">
-        St Jean de Mont
-      </span>
+    <span class="photo-category">
+      Voyages
+    </span>
 
-      <span class="photo-category">
-        Voyages
-      </span>
+  </div>
 
-    </div>
-
-  </article>
+</article>
 
 
 
-  <!-- ================= PHOTO 04 ================= -->
+<!-- PHOTO 04 -->
 
-  <article
-    class="photo photo-4"
-    data-category="voyages"
-    data-travel="faro"
+<article
+  class="photo photo-4"
+  data-category="voyages"
+  data-travel="faro"
+>
+
+  <img
+    src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=90"
+    alt="Faro"
   >
 
-    <img
-      src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=90"
-      alt="Faro"
-    >
+  <div class="photo-info">
 
-    <div class="photo-info">
+    <span class="photo-title">
+      Faro
+    </span>
 
-      <span class="photo-title">
-        Faro
-      </span>
+    <span class="photo-category">
+      Voyages
+    </span>
 
-      <span class="photo-category">
-        Voyages
-      </span>
+  </div>
 
-    </div>
-
-  </article>
+</article>
 
 
 
-  <!-- ================= PHOTO 05 ================= -->
+<!-- PHOTO 05 -->
 
-  <article
-    class="photo photo-5"
-    data-category="voyages"
-    data-travel="majorque"
+<article
+  class="photo photo-5"
+  data-category="voyages"
+  data-travel="majorque"
+>
+
+  <img
+    src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=90"
+    alt="Majorque"
   >
 
-    <img
-      src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=90"
-      alt="Majorque"
-    >
+  <div class="photo-info">
 
-    <div class="photo-info">
+    <span class="photo-title">
+      Majorque
+    </span>
 
-      <span class="photo-title">
-        Majorque
-      </span>
+    <span class="photo-category">
+      Voyages
+    </span>
 
-      <span class="photo-category">
-        Voyages
-      </span>
+  </div>
 
-    </div>
-
-  </article>
+</article>
 
 
 
-  <!-- ================= PHOTO 06 ================= -->
+<!-- MOMENTS -->
 
-  <article
-    class="photo photo-6"
-    data-category="moments"
+<article
+  class="photo photo-6"
+  data-category="moments"
+>
+
+  <img
+    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=90"
+    alt="Moments"
   >
 
-    <img
-      src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=90"
-      alt="Moments"
-    >
+  <div class="photo-info">
 
-    <div class="photo-info">
+    <span class="photo-title">
+      Moments
+    </span>
 
-      <span class="photo-title">
-        Moments
-      </span>
+    <span class="photo-category">
+      Moments
+    </span>
 
-      <span class="photo-category">
-        Moments
-      </span>
+  </div>
 
-    </div>
-
-  </article>
+</article>
 
 
 
-  <!-- ================= PHOTO 07 ================= -->
+<!-- LIFESTYLE -->
 
-  <article
-    class="photo photo-1"
-    data-category="lifestyle"
+<article
+  class="photo photo-1"
+  data-category="lifestyle"
+>
+
+  <img
+    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
+    alt="Lifestyle"
   >
 
-    <img
-      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
-      alt="Lifestyle"
-    >
+  <div class="photo-info">
 
-    <div class="photo-info">
+    <span class="photo-title">
+      Lifestyle
+    </span>
 
-      <span class="photo-title">
-        Lifestyle
-      </span>
+    <span class="photo-category">
+      Lifestyle
+    </span>
 
-      <span class="photo-category">
-        Lifestyle
-      </span>
+  </div>
 
-    </div>
-
-  </article>
+</article>
 
 
 
-  <!-- ================= PHOTO 08 ================= -->
+<!-- CITY -->
 
-  <article
-    class="photo photo-2"
-    data-category="city"
+<article
+  class="photo photo-2"
+  data-category="city"
+>
+
+  <img
+    src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
+    alt="City"
   >
 
-    <img
-      src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=90"
-      alt="City"
-    >
+  <div class="photo-info">
 
-    <div class="photo-info">
+    <span class="photo-title">
+      City
+    </span>
 
-      <span class="photo-title">
-        City
-      </span>
+    <span class="photo-category">
+      City
+    </span>
 
-      <span class="photo-category">
-        City
-      </span>
+  </div>
 
-    </div>
-
-  </article>
+</article>
 
 
 
-  <!-- ================= PHOTO 09 ================= -->
+<!-- NATURE -->
 
-  <article
-    class="photo photo-3"
-    data-category="nature"
+<article
+  class="photo photo-3"
+  data-category="nature"
+>
+
+  <img
+    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
+    alt="Nature"
   >
 
-    <img
-      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
-      alt="Nature"
-    >
+  <div class="photo-info">
 
-    <div class="photo-info">
+    <span class="photo-title">
+      Nature
+    </span>
 
-      <span class="photo-title">
-        Nature
-      </span>
+    <span class="photo-category">
+      Nature
+    </span>
 
-      <span class="photo-category">
-        Nature
-      </span>
+  </div>
 
-    </div>
-
-  </article>
+</article>
 
 
 
-  <!-- ================= PHOTO 10 ================= -->
+<!-- EXPLORATION -->
 
-  <article
-    class="photo photo-4"
-    data-category="exploration"
+<article
+  class="photo photo-4"
+  data-category="exploration"
+>
+
+  <img
+    src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=90"
+    alt="Exploration"
   >
 
-    <img
-      src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=90"
-      alt="Exploration"
-    >
+  <div class="photo-info">
 
-    <div class="photo-info">
+    <span class="photo-title">
+      Exploration
+    </span>
 
-      <span class="photo-title">
-        Exploration
-      </span>
+    <span class="photo-category">
+      Exploration
+    </span>
 
-      <span class="photo-category">
-        Exploration
-      </span>
+  </div>
 
-    </div>
-
-  </article>
-
+</article>
 
 </div>
 
@@ -579,32 +637,30 @@
 
 <!-- ===================================================== ABOUT ===================================================== -->
 
-<section class="about" id="about">
+<section class="about" id="about" >
 
-<div class="about-label">
-  About
-</div>
+<div class="about-label"> About </div>
 
 <div class="about-content">
 
-  <h2>
-    Photographier<br>
-    ce qui reste.
-  </h2>
+<h2>
+  Photographier<br>
+  ce qui reste.
+</h2>
 
-  <p>
+<p>
 
-    Je suis Sébastien Turpin, photographe basé en France.
+  Je suis Sébastien Turpin, photographe basé en France.
 
-    Je photographie les voyages, les lieux, les personnes
-    et les moments spontanés.
+  Je photographie les voyages, les lieux, les personnes
+  et les moments spontanés.
 
-    <br><br>
+  <br><br>
 
-    Je cherche avant tout des images naturelles,
-    vivantes et intemporelles.
+  Je cherche avant tout des images naturelles,
+  vivantes et intemporelles.
 
-  </p>
+</p>
 
 </div>
 
@@ -615,36 +671,34 @@
 
 <!-- ===================================================== CONTACT ===================================================== -->
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" >
 
 <div class="contact-top">
 
-  <div class="contact-label">
-    Contact
-  </div>
+<div class="contact-label">
+  Contact
+</div>
 
-  <a
-    class="contact-email"
-    href="mailto:contact@sebastienturpin.fr"
-  >
-    contact@sebastienturpin.fr
-  </a>
+<a
+  class="contact-email"
+  href="mailto:contact@sebastienturpin.fr"
+>
+  contact@sebastienturpin.fr
+</a>
 
 </div>
 
-<h2 class="contact-title">
-  Parlons.
-</h2>
+<h2 class="contact-title"> Parlons. </h2>
 
 <div class="footer">
 
-  <span>
-    © 2026 Sébastien Turpin
-  </span>
+<span>
+  © 2026 Sébastien Turpin
+</span>
 
-  <span>
-    Photography
-  </span>
+<span>
+  Photography
+</span>
 
 </div>
 
@@ -655,7 +709,7 @@
 
 <!-- ===================================================== JAVASCRIPT ===================================================== -->
 
-<script> const categoriesSection = document.getElementById("categories"); const gallerySection = document.getElementById("gallerySection"); const galleryTitle = document.getElementById("galleryTitle"); const travelMenu = document.getElementById("travelMenu"); const photos = document.querySelectorAll(".photo"); /* ===================================================== OUVRIR UNE RUBRIQUE ===================================================== */ function showCategory(category) { categoriesSection.style.display = "none"; gallerySection.classList.add("active"); /* Titre */ const titles = { voyages: "Voyages", moments: "Moments", lifestyle: "Lifestyle", city: "City", nature: "Nature", exploration: "Exploration" }; galleryTitle.textContent = titles[category]; /* Sous-menu voyages */ if (category === "voyages") { travelMenu.classList.add("active"); resetTravelButtons(); showPhotos("voyages"); } else { travelMenu.classList.remove("active"); showPhotos(category); } window.scrollTo({ top: 0, behavior: "smooth" }); } /* ===================================================== AFFICHER LES PHOTOS D'UNE RUBRIQUE ===================================================== */ function showPhotos(category) { photos.forEach(photo => { if ( photo.dataset.category === category ) { photo.classList.remove("hidden"); } else { photo.classList.add("hidden"); } }); } /* ===================================================== FILTRE VOYAGES ===================================================== */ function filterTravel(travel, button) { document .querySelectorAll(".travel-button") .forEach(btn => { btn.classList.remove("active"); }); button.classList.add("active"); photos.forEach(photo => { if ( photo.dataset.category !== "voyages" ) { photo.classList.add("hidden"); return; } if ( travel === "all" || photo.dataset.travel === travel ) { photo.classList.remove("hidden"); } else { photo.classList.add("hidden"); } }); } /* ===================================================== RESET SOUS-MENU ===================================================== */ function resetTravelButtons() { document .querySelectorAll(".travel-button") .forEach(button => { button.classList.remove("active"); }); document .querySelector(".travel-button") .classList.add("active"); } /* ===================================================== RETOUR AUX RUBRIQUES ===================================================== */ function backToCategories() { gallerySection.classList.remove("active"); categoriesSection.style.display = "block"; window.scrollTo({ top: 0, behavior: "smooth" }); } </script>
+<script> /* ===================================================== ELEMENTS ===================================================== */ const categoriesSection = document.getElementById("categories"); const gallerySection = document.getElementById("gallerySection"); const galleryTitle = document.getElementById("galleryTitle"); const travelMenu = document.getElementById("travelMenu"); const photos = document.querySelectorAll(".photo"); /* ===================================================== TITRES ===================================================== */ const titles = { voyages: "Voyages", moments: "Moments", lifestyle: "Lifestyle", city: "City", nature: "Nature", exploration: "Exploration" }; /* ===================================================== OUVRIR UNE RUBRIQUE ===================================================== */ function showCategory(category) { categoriesSection.style.display = "none"; gallerySection.classList.add("active"); galleryTitle.textContent = titles[category]; if (category === "voyages") { travelMenu.classList.add("active"); resetTravelButtons(); showPhotos("voyages"); } else { travelMenu.classList.remove("active"); showPhotos(category); } window.scrollTo({ top: 0, behavior: "smooth" }); } /* ===================================================== AFFICHER LES PHOTOS ===================================================== */ function showPhotos(category) { photos.forEach(photo => { if ( photo.dataset.category === category ) { photo.classList.remove("hidden"); } else { photo.classList.add("hidden"); } }); } /* ===================================================== FILTRE VOYAGES ===================================================== */ function filterTravel(travel, button) { document .querySelectorAll(".travel-button") .forEach(btn => { btn.classList.remove("active"); }); button.classList.add("active"); photos.forEach(photo => { if ( photo.dataset.category !== "voyages" ) { photo.classList.add("hidden"); return; } if ( travel === "all" || photo.dataset.travel === travel ) { photo.classList.remove("hidden"); } else { photo.classList.add("hidden"); } }); window.scrollTo({ top: 0, behavior: "smooth" }); } /* ===================================================== RESET VOYAGES ===================================================== */ function resetTravelButtons() { document .querySelectorAll(".travel-button") .forEach(button => { button.classList.remove("active"); }); document .querySelector(".travel-button") .classList.add("active"); } /* ===================================================== RETOUR RUBRIQUES ===================================================== */ function backToCategories() { gallerySection.classList.remove("active"); categoriesSection.style.display = "block"; window.scrollTo({ top: 0, behavior: "smooth" }); } /* ===================================================== ABOUT ===================================================== */ function goToAbout() { gallerySection.classList.remove("active"); categoriesSection.style.display = "block"; setTimeout(() => { document .getElementById("about") .scrollIntoView({ behavior: "smooth" }); }, 50); } /* ===================================================== CONTACT ===================================================== */ function goToContact() { gallerySection.classList.remove("active"); categoriesSection.style.display = "block"; setTimeout(() => { document .getElementById("contact") .scrollIntoView({ behavior: "smooth" }); }, 50); } </script>
 
 </body>
 
