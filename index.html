@@ -1,10 +1,12 @@
 ```html
 <!DOCTYPE html>
+
 <html lang="fr">
 
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sébastien Turpin — Photography</title>
@@ -84,7 +86,6 @@ nav button {
   padding: 0;
 
   color: #111;
-
   cursor: pointer;
 
   font-size: 10px;
@@ -117,7 +118,6 @@ nav button:hover {
   line-height: .9;
 
   font-weight: 400;
-
   letter-spacing: -4px;
 }
 
@@ -169,7 +169,7 @@ nav button:hover {
 
 
 /* =====================================================
-   GRILLE ACCUEIL
+   GRILLE 3 COLONNES
 ===================================================== */
 
 .theme-grid {
@@ -185,7 +185,7 @@ nav button:hover {
 
 
 /* =====================================================
-   THEMES ACCUEIL
+   THEME
 ===================================================== */
 
 .theme {
@@ -219,8 +219,8 @@ nav button:hover {
 
 
 /* =====================================================
-   FORMATS ACCUEIL
-   Les images restent volontairement cadrées
+   FORMATS PRESENTATION
+   → ON GARDE LES FORMATS PORTRAIT
 ===================================================== */
 
 .theme-1 .theme-image {
@@ -261,7 +261,7 @@ nav button:hover {
 
 
 /* =====================================================
-   TITRES THEMES
+   TITRES
 ===================================================== */
 
 .theme-info {
@@ -436,17 +436,8 @@ nav button:hover {
   display: none;
 }
 
-
-/* =====================================================
-   IMAGES GALERIE
-===================================================== */
-
 .gallery-photo img {
   width: 100%;
-
-  height: auto;
-
-  object-fit: contain;
 
   display: block;
 
@@ -460,53 +451,57 @@ nav button:hover {
 
 
 /* =====================================================
-   FORMATS VOYAGES
-   On garde les formats actuels pour les voyages
+   FORMATS GALERIE
+   → POUR LES GALERIES CLASSIQUES
 ===================================================== */
 
-.gallery-photo[data-theme="voyages"]:nth-child(1) img {
+.gallery-photo:nth-child(1) img {
   aspect-ratio: 3 / 4;
   object-fit: cover;
 }
 
-.gallery-photo[data-theme="voyages"]:nth-child(2) {
+.gallery-photo:nth-child(2) {
   margin-top: 140px;
 }
 
-.gallery-photo[data-theme="voyages"]:nth-child(2) img {
+.gallery-photo:nth-child(2) img {
   aspect-ratio: 2 / 3;
   object-fit: cover;
 }
 
-.gallery-photo[data-theme="voyages"]:nth-child(3) img {
+.gallery-photo:nth-child(3) img {
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 
-.gallery-photo[data-theme="voyages"]:nth-child(4) {
+.gallery-photo:nth-child(4) {
   margin-top: -20px;
 }
 
-.gallery-photo[data-theme="voyages"]:nth-child(4) img {
+.gallery-photo:nth-child(4) img {
   aspect-ratio: 2 / 3;
   object-fit: cover;
 }
 
-.gallery-photo[data-theme="voyages"]:nth-child(5) {
+.gallery-photo:nth-child(5) {
   margin-top: 120px;
 }
 
-.gallery-photo[data-theme="voyages"]:nth-child(5) img {
+.gallery-photo:nth-child(5) img {
   aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.gallery-photo:nth-child(6) img {
+  aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 
 
 /* =====================================================
    VIE SAUVAGE
-   IMPORTANT :
-   Aucun ratio imposé.
-   Les photos gardent leur vrai format.
+   → FORMAT ORIGINAL CONSERVE
+   → PORTRAIT OU PAYSAGE
 ===================================================== */
 
 .gallery-photo[data-theme="vie-sauvage"] {
@@ -937,7 +932,9 @@ nav button:hover {
   <div class="theme-grid">
 
 
-    <!-- 01 — VOYAGES -->
+    <!-- =================================================
+         01 — VOYAGES
+    ================================================== -->
 
     <button
       class="theme theme-1"
@@ -965,7 +962,9 @@ nav button:hover {
     </button>
 
 
-    <!-- 02 — MOMENTS -->
+    <!-- =================================================
+         02 — MOMENTS
+    ================================================== -->
 
     <button
       class="theme theme-2"
@@ -993,7 +992,9 @@ nav button:hover {
     </button>
 
 
-    <!-- 03 — LIFESTYLE -->
+    <!-- =================================================
+         03 — LIFESTYLE
+    ================================================== -->
 
     <button
       class="theme theme-3"
@@ -1021,7 +1022,9 @@ nav button:hover {
     </button>
 
 
-    <!-- 04 — CITY -->
+    <!-- =================================================
+         04 — CITY
+    ================================================== -->
 
     <button
       class="theme theme-4"
@@ -1049,7 +1052,9 @@ nav button:hover {
     </button>
 
 
-    <!-- 05 — NATURE -->
+    <!-- =================================================
+         05 — NATURE
+    ================================================== -->
 
     <button
       class="theme theme-5"
@@ -1077,7 +1082,9 @@ nav button:hover {
     </button>
 
 
-    <!-- 06 — VIE SAUVAGE -->
+    <!-- =================================================
+         06 — VIE SAUVAGE
+    ================================================== -->
 
     <button
       class="theme theme-6"
@@ -1137,7 +1144,7 @@ nav button:hover {
 
 
   <!-- =================================================
-       NAVIGATION VOYAGES
+       SOUS-CATEGORIES VOYAGES
   ================================================== -->
 
   <div
@@ -1447,6 +1454,7 @@ nav button:hover {
 
     <!-- =================================================
          VIE SAUVAGE
+         → PHOTO DE PRESENTATION
     ================================================== -->
 
     <article
@@ -1475,8 +1483,10 @@ nav button:hover {
 
 
     <!-- =================================================
-         AJOUTER TES PHOTOS VIE SAUVAGE ICI
-    ================================================== -->
+         AJOUTER TES FUTURES PHOTOS VIE SAUVAGE ICI
+    ==================================================
+
+    Exemple :
 
     <article
       class="gallery-photo"
@@ -1502,30 +1512,7 @@ nav button:hover {
 
     </article>
 
-
-    <article
-      class="gallery-photo"
-      data-theme="vie-sauvage"
-    >
-
-      <img
-        src="images/vie-sauvage/animal-02.jpg"
-        alt="Animal"
-      >
-
-      <div class="photo-info">
-
-        <span class="photo-title">
-          Animal
-        </span>
-
-        <span class="photo-category">
-          Vie sauvage
-        </span>
-
-      </div>
-
-    </article>
+    ================================================== -->
 
 
   </div>
