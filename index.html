@@ -1,12 +1,10 @@
 ```html
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sébastien Turpin — Photography</title>
@@ -105,7 +103,6 @@ nav button:hover {
 
 .intro {
   min-height: 48vh;
-
   padding: 120px 28px 55px;
 
   display: flex;
@@ -172,7 +169,7 @@ nav button:hover {
 
 
 /* =====================================================
-   GRILLE 3 COLONNES
+   GRILLE ACCUEIL
 ===================================================== */
 
 .theme-grid {
@@ -188,7 +185,7 @@ nav button:hover {
 
 
 /* =====================================================
-   THEME
+   THEMES ACCUEIL
 ===================================================== */
 
 .theme {
@@ -222,7 +219,8 @@ nav button:hover {
 
 
 /* =====================================================
-   FORMATS DIFFERENTS
+   FORMATS ACCUEIL
+   Les images restent volontairement cadrées
 ===================================================== */
 
 .theme-1 .theme-image {
@@ -263,7 +261,7 @@ nav button:hover {
 
 
 /* =====================================================
-   TITRES
+   TITRES THEMES
 ===================================================== */
 
 .theme-info {
@@ -438,10 +436,19 @@ nav button:hover {
   display: none;
 }
 
+
+/* =====================================================
+   IMAGES GALERIE
+===================================================== */
+
 .gallery-photo img {
   width: 100%;
 
-  object-fit: cover;
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
 
   transition:
     transform 1s cubic-bezier(.2,.6,.2,1);
@@ -453,43 +460,63 @@ nav button:hover {
 
 
 /* =====================================================
-   FORMATS GALERIE
+   FORMATS VOYAGES
+   On garde les formats actuels pour les voyages
 ===================================================== */
 
-.gallery-photo:nth-child(1) img {
+.gallery-photo[data-theme="voyages"]:nth-child(1) img {
   aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
-.gallery-photo:nth-child(2) {
+.gallery-photo[data-theme="voyages"]:nth-child(2) {
   margin-top: 140px;
 }
 
-.gallery-photo:nth-child(2) img {
+.gallery-photo[data-theme="voyages"]:nth-child(2) img {
   aspect-ratio: 2 / 3;
+  object-fit: cover;
 }
 
-.gallery-photo:nth-child(3) img {
+.gallery-photo[data-theme="voyages"]:nth-child(3) img {
   aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 
-.gallery-photo:nth-child(4) {
+.gallery-photo[data-theme="voyages"]:nth-child(4) {
   margin-top: -20px;
 }
 
-.gallery-photo:nth-child(4) img {
+.gallery-photo[data-theme="voyages"]:nth-child(4) img {
   aspect-ratio: 2 / 3;
+  object-fit: cover;
 }
 
-.gallery-photo:nth-child(5) {
+.gallery-photo[data-theme="voyages"]:nth-child(5) {
   margin-top: 120px;
 }
 
-.gallery-photo:nth-child(5) img {
+.gallery-photo[data-theme="voyages"]:nth-child(5) img {
   aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
-.gallery-photo:nth-child(6) img {
-  aspect-ratio: 4 / 5;
+
+/* =====================================================
+   VIE SAUVAGE
+   IMPORTANT :
+   Aucun ratio imposé.
+   Les photos gardent leur vrai format.
+===================================================== */
+
+.gallery-photo[data-theme="vie-sauvage"] {
+  margin-top: 0;
+}
+
+.gallery-photo[data-theme="vie-sauvage"] img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 
@@ -910,9 +937,7 @@ nav button:hover {
   <div class="theme-grid">
 
 
-    <!-- =================================================
-         01 — VOYAGES
-    ================================================== -->
+    <!-- 01 — VOYAGES -->
 
     <button
       class="theme theme-1"
@@ -921,7 +946,7 @@ nav button:hover {
 
       <img
         class="theme-image"
-        src="accueil/voyages.jpg"
+        src="images/accueil/voyages.jpg"
         alt="Voyages"
       >
 
@@ -940,9 +965,7 @@ nav button:hover {
     </button>
 
 
-    <!-- =================================================
-         02 — MOMENTS
-    ================================================== -->
+    <!-- 02 — MOMENTS -->
 
     <button
       class="theme theme-2"
@@ -951,7 +974,7 @@ nav button:hover {
 
       <img
         class="theme-image"
-        src="accueil/moments.jpg"
+        src="images/accueil/moments.jpg"
         alt="Moments"
       >
 
@@ -970,9 +993,7 @@ nav button:hover {
     </button>
 
 
-    <!-- =================================================
-         03 — LIFESTYLE
-    ================================================== -->
+    <!-- 03 — LIFESTYLE -->
 
     <button
       class="theme theme-3"
@@ -1000,9 +1021,7 @@ nav button:hover {
     </button>
 
 
-    <!-- =================================================
-         04 — CITY
-    ================================================== -->
+    <!-- 04 — CITY -->
 
     <button
       class="theme theme-4"
@@ -1030,9 +1049,7 @@ nav button:hover {
     </button>
 
 
-    <!-- =================================================
-         05 — NATURE
-    ================================================== -->
+    <!-- 05 — NATURE -->
 
     <button
       class="theme theme-5"
@@ -1060,9 +1077,7 @@ nav button:hover {
     </button>
 
 
-    <!-- =================================================
-         06 — VIE SAUVAGE
-    ================================================== -->
+    <!-- 06 — VIE SAUVAGE -->
 
     <button
       class="theme theme-6"
@@ -1071,7 +1086,7 @@ nav button:hover {
 
       <img
         class="theme-image"
-        src="accueil/vie sauvage.jpg"
+        src="images/accueil/vie sauvage.jpg"
         alt="Vie sauvage"
       >
 
@@ -1122,7 +1137,7 @@ nav button:hover {
 
 
   <!-- =================================================
-       SOUS-CATEGORIES VOYAGES
+       NAVIGATION VOYAGES
   ================================================== -->
 
   <div
@@ -1182,9 +1197,7 @@ nav button:hover {
   <div class="gallery-photos">
 
 
-    <!-- =================================================
-         SLOVENIE
-    ================================================== -->
+    <!-- SLOVENIE -->
 
     <article
       class="gallery-photo"
@@ -1212,9 +1225,7 @@ nav button:hover {
     </article>
 
 
-    <!-- =================================================
-         ITALIE
-    ================================================== -->
+    <!-- ITALIE -->
 
     <article
       class="gallery-photo"
@@ -1242,9 +1253,7 @@ nav button:hover {
     </article>
 
 
-    <!-- =================================================
-         ST JEAN DE MONT
-    ================================================== -->
+    <!-- ST JEAN DE MONT -->
 
     <article
       class="gallery-photo"
@@ -1272,9 +1281,7 @@ nav button:hover {
     </article>
 
 
-    <!-- =================================================
-         FARO
-    ================================================== -->
+    <!-- FARO -->
 
     <article
       class="gallery-photo"
@@ -1302,9 +1309,7 @@ nav button:hover {
     </article>
 
 
-    <!-- =================================================
-         MAJORQUE
-    ================================================== -->
+    <!-- MAJORQUE -->
 
     <article
       class="gallery-photo"
@@ -1332,9 +1337,7 @@ nav button:hover {
     </article>
 
 
-    <!-- =================================================
-         MOMENTS
-    ================================================== -->
+    <!-- MOMENTS -->
 
     <article
       class="gallery-photo"
@@ -1361,9 +1364,7 @@ nav button:hover {
     </article>
 
 
-    <!-- =================================================
-         LIFESTYLE
-    ================================================== -->
+    <!-- LIFESTYLE -->
 
     <article
       class="gallery-photo"
@@ -1390,9 +1391,7 @@ nav button:hover {
     </article>
 
 
-    <!-- =================================================
-         CITY
-    ================================================== -->
+    <!-- CITY -->
 
     <article
       class="gallery-photo"
@@ -1419,9 +1418,7 @@ nav button:hover {
     </article>
 
 
-    <!-- =================================================
-         NATURE
-    ================================================== -->
+    <!-- NATURE -->
 
     <article
       class="gallery-photo"
@@ -1458,7 +1455,7 @@ nav button:hover {
     >
 
       <img
-        src="accueil/vie sauvage.jpg"
+        src="images/accueil/vie sauvage.jpg"
         alt="Vie sauvage"
       >
 
@@ -1466,6 +1463,60 @@ nav button:hover {
 
         <span class="photo-title">
           Vie sauvage
+        </span>
+
+        <span class="photo-category">
+          Vie sauvage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- =================================================
+         AJOUTER TES PHOTOS VIE SAUVAGE ICI
+    ================================================== -->
+
+    <article
+      class="gallery-photo"
+      data-theme="vie-sauvage"
+    >
+
+      <img
+        src="images/vie-sauvage/animal-01.jpg"
+        alt="Animal"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Animal
+        </span>
+
+        <span class="photo-category">
+          Vie sauvage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="vie-sauvage"
+    >
+
+      <img
+        src="images/vie-sauvage/animal-02.jpg"
+        alt="Animal"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Animal
         </span>
 
         <span class="photo-category">
