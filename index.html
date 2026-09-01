@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -222,7 +221,7 @@ nav button:hover {
 
 
 /* =====================================================
-   FORMATS DIFFERENTS
+   FORMATS THEMES
 ===================================================== */
 
 .theme-1 .theme-image {
@@ -490,6 +489,24 @@ nav button:hover {
 
 .gallery-photo:nth-child(6) img {
   aspect-ratio: 4 / 5;
+}
+
+
+/* =====================================================
+   VIE SAUVAGE
+   PORTRAIT + PAYSAGE
+===================================================== */
+
+.gallery-photo.wild-landscape img {
+  aspect-ratio: 3 / 2;
+}
+
+.gallery-photo.wild-portrait img {
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-photo.wild-square img {
+  aspect-ratio: 1 / 1;
 }
 
 
@@ -829,13 +846,26 @@ nav button:hover {
 
 }
 
+
+/* =====================================================
+   MOBILE : VIE SAUVAGE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .gallery-photo.wild-landscape img,
+  .gallery-photo.wild-portrait img,
+  .gallery-photo.wild-square img {
+    width: 100%;
+  }
+
+}
+
 </style>
 
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      HEADER
@@ -849,22 +879,23 @@ nav button:hover {
 
   <nav>
 
-    <button onclick="showHome()">
-      Work
-    </button>
+```
+<button onclick="showHome()">
+  Work
+</button>
 
-    <button onclick="goToAbout()">
-      About
-    </button>
+<button onclick="goToAbout()">
+  About
+</button>
 
-    <button onclick="goToContact()">
-      Contact
-    </button>
+<button onclick="goToContact()">
+  Contact
+</button>
+```
 
   </nav>
 
 </header>
-
 
 <!-- =====================================================
      ACCUEIL
@@ -878,15 +909,16 @@ nav button:hover {
 
   <div class="intro-bottom">
 
-    <div class="intro-text">
-      Travel, lifestyle &amp; weddings.<br>
-      Des images spontanées et intemporelles.
-    </div>
+```
+<div class="intro-text">
+  Travel, lifestyle &amp; weddings.<br>
+  Des images spontanées et intemporelles.
+</div>
+```
 
   </div>
 
 </section>
-
 
 <!-- =====================================================
      6 THEMES
@@ -896,204 +928,204 @@ nav button:hover {
 
   <div class="work-header">
 
-    <span>
-      Selected stories
+```
+<span>
+  Selected stories
+</span>
+
+<span>
+  2026
+</span>
+```
+
+  </div>
+
+  <div class="theme-grid">
+
+```
+<!-- =================================================
+     01 — VOYAGES
+================================================== -->
+
+<button
+  class="theme theme-1"
+  onclick="openGallery('voyages')"
+>
+
+  <img
+    class="theme-image"
+    src="images/accueil/voyages.jpg"
+    alt="Voyages"
+  >
+
+  <div class="theme-info">
+
+    <span class="theme-title">
+      Voyages
     </span>
 
-    <span>
-      2026
+    <span class="theme-number">
+      01
     </span>
 
   </div>
 
-
-  <div class="theme-grid">
-
-
-    <!-- =================================================
-         01 — VOYAGES
-    ================================================== -->
-
-    <button
-      class="theme theme-1"
-      onclick="openGallery('voyages')"
-    >
-
-      <img
-        class="theme-image"
-        src="accueil/voyages.jpg"
-        alt="Voyages"
-      >
-
-      <div class="theme-info">
-
-        <span class="theme-title">
-          Voyages
-        </span>
-
-        <span class="theme-number">
-          01
-        </span>
-
-      </div>
-
-    </button>
+</button>
 
 
-    <!-- =================================================
-         02 — MOMENTS
-    ================================================== -->
+<!-- =================================================
+     02 — MOMENTS
+================================================== -->
 
-    <button
-      class="theme theme-2"
-      onclick="openGallery('moments')"
-    >
+<button
+  class="theme theme-2"
+  onclick="openGallery('moments')"
+>
 
-      <img
-        class="theme-image"
-        src="accueil/moments.jpg"
-        alt="Moments"
-      >
+  <img
+    class="theme-image"
+    src="images/accueil/moments.jpg"
+    alt="Moments"
+  >
 
-      <div class="theme-info">
+  <div class="theme-info">
 
-        <span class="theme-title">
-          Moments
-        </span>
+    <span class="theme-title">
+      Moments
+    </span>
 
-        <span class="theme-number">
-          02
-        </span>
+    <span class="theme-number">
+      02
+    </span>
 
-      </div>
+  </div>
 
-    </button>
-
-
-    <!-- =================================================
-         03 — LIFESTYLE
-    ================================================== -->
-
-    <button
-      class="theme theme-3"
-      onclick="openGallery('lifestyle')"
-    >
-
-      <img
-        class="theme-image"
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
-        alt="Lifestyle"
-      >
-
-      <div class="theme-info">
-
-        <span class="theme-title">
-          Lifestyle
-        </span>
-
-        <span class="theme-number">
-          03
-        </span>
-
-      </div>
-
-    </button>
+</button>
 
 
-    <!-- =================================================
-         04 — CITY
-    ================================================== -->
+<!-- =================================================
+     03 — LIFESTYLE
+================================================== -->
 
-    <button
-      class="theme theme-4"
-      onclick="openGallery('city')"
-    >
+<button
+  class="theme theme-3"
+  onclick="openGallery('lifestyle')"
+>
 
-      <img
-        class="theme-image"
-        src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
-        alt="City"
-      >
+  <img
+    class="theme-image"
+    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
+    alt="Lifestyle"
+  >
 
-      <div class="theme-info">
+  <div class="theme-info">
 
-        <span class="theme-title">
-          City
-        </span>
+    <span class="theme-title">
+      Lifestyle
+    </span>
 
-        <span class="theme-number">
-          04
-        </span>
+    <span class="theme-number">
+      03
+    </span>
 
-      </div>
+  </div>
 
-    </button>
-
-
-    <!-- =================================================
-         05 — NATURE
-    ================================================== -->
-
-    <button
-      class="theme theme-5"
-      onclick="openGallery('nature')"
-    >
-
-      <img
-        class="theme-image"
-        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
-        alt="Nature"
-      >
-
-      <div class="theme-info">
-
-        <span class="theme-title">
-          Nature
-        </span>
-
-        <span class="theme-number">
-          05
-        </span>
-
-      </div>
-
-    </button>
+</button>
 
 
-    <!-- =================================================
-         06 — VIE SAUVAGE
-    ================================================== -->
+<!-- =================================================
+     04 — CITY
+================================================== -->
 
-    <button
-      class="theme theme-6"
-      onclick="openGallery('vie-sauvage')"
-    >
+<button
+  class="theme theme-4"
+  onclick="openGallery('city')"
+>
 
-      <img
-        class="theme-image"
-        src="accueil/vie sauvage.jpg"
-        alt="Vie sauvage"
-      >
+  <img
+    class="theme-image"
+    src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
+    alt="City"
+  >
 
-      <div class="theme-info">
+  <div class="theme-info">
 
-        <span class="theme-title">
-          Vie sauvage
-        </span>
+    <span class="theme-title">
+      City
+    </span>
 
-        <span class="theme-number">
-          06
-        </span>
+    <span class="theme-number">
+      04
+    </span>
 
-      </div>
+  </div>
 
-    </button>
+</button>
 
+
+<!-- =================================================
+     05 — NATURE
+================================================== -->
+
+<button
+  class="theme theme-5"
+  onclick="openGallery('nature')"
+>
+
+  <img
+    class="theme-image"
+    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
+    alt="Nature"
+  >
+
+  <div class="theme-info">
+
+    <span class="theme-title">
+      Nature
+    </span>
+
+    <span class="theme-number">
+      05
+    </span>
+
+  </div>
+
+</button>
+
+
+<!-- =================================================
+     06 — VIE SAUVAGE
+================================================== -->
+
+<button
+  class="theme theme-6"
+  onclick="openGallery('vie-sauvage')"
+>
+
+  <img
+    class="theme-image"
+    src="images/accueil/vie sauvage.jpg"
+    alt="Vie sauvage"
+  >
+
+  <div class="theme-info">
+
+    <span class="theme-title">
+      Vie sauvage
+    </span>
+
+    <span class="theme-number">
+      06
+    </span>
+
+  </div>
+
+</button>
+```
 
   </div>
 
 </section>
-
 
 <!-- =====================================================
      GALERIE
@@ -1104,22 +1136,22 @@ nav button:hover {
   id="galleryPage"
 >
 
-
   <div class="gallery-heading">
 
-    <button
-      class="back"
-      onclick="showHome()"
-    >
-      ← Toutes les photos
-    </button>
+```
+<button
+  class="back"
+  onclick="showHome()"
+>
+  ← Toutes les photos
+</button>
 
-    <h2 id="galleryTitle">
-      Voyages
-    </h2>
+<h2 id="galleryTitle">
+  Voyages
+</h2>
+```
 
   </div>
-
 
   <!-- =================================================
        SOUS-CATEGORIES VOYAGES
@@ -1130,50 +1162,51 @@ nav button:hover {
     id="travelNavigation"
   >
 
-    <button
-      class="travel-button active"
-      onclick="filterTravel('all', this)"
-    >
-      Tous
-    </button>
+```
+<button
+  class="travel-button active"
+  onclick="filterTravel('all', this)"
+>
+  Tous
+</button>
 
-    <button
-      class="travel-button"
-      onclick="filterTravel('slovenie', this)"
-    >
-      Slovénie
-    </button>
+<button
+  class="travel-button"
+  onclick="filterTravel('slovenie', this)"
+>
+  Slovénie
+</button>
 
-    <button
-      class="travel-button"
-      onclick="filterTravel('italie', this)"
-    >
-      Italie
-    </button>
+<button
+  class="travel-button"
+  onclick="filterTravel('italie', this)"
+>
+  Italie
+</button>
 
-    <button
-      class="travel-button"
-      onclick="filterTravel('saint-jean', this)"
-    >
-      St Jean de Mont
-    </button>
+<button
+  class="travel-button"
+  onclick="filterTravel('saint-jean', this)"
+>
+  St Jean de Mont
+</button>
 
-    <button
-      class="travel-button"
-      onclick="filterTravel('faro', this)"
-    >
-      Faro
-    </button>
+<button
+  class="travel-button"
+  onclick="filterTravel('faro', this)"
+>
+  Faro
+</button>
 
-    <button
-      class="travel-button"
-      onclick="filterTravel('majorque', this)"
-    >
-      Majorque
-    </button>
+<button
+  class="travel-button"
+  onclick="filterTravel('majorque', this)"
+>
+  Majorque
+</button>
+```
 
   </div>
-
 
   <!-- =================================================
        PHOTOS
@@ -1181,306 +1214,450 @@ nav button:hover {
 
   <div class="gallery-photos">
 
+```
+<!-- =================================================
+     SLOVENIE
+================================================== -->
 
-    <!-- =================================================
-         SLOVENIE
-    ================================================== -->
+<article
+  class="gallery-photo"
+  data-theme="voyages"
+  data-travel="slovenie"
+>
 
-    <article
-      class="gallery-photo"
-      data-theme="voyages"
-      data-travel="slovenie"
-    >
+  <img
+    src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
+    alt="Slovénie"
+  >
 
-      <img
-        src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
-        alt="Slovénie"
-      >
+  <div class="photo-info">
 
-      <div class="photo-info">
+    <span class="photo-title">
+      Slovénie
+    </span>
 
-        <span class="photo-title">
-          Slovénie
-        </span>
+    <span class="photo-category">
+      Voyage
+    </span>
 
-        <span class="photo-category">
-          Voyage
-        </span>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
+<!-- =================================================
+     ITALIE
+================================================== -->
 
-    <!-- =================================================
-         ITALIE
-    ================================================== -->
+<article
+  class="gallery-photo"
+  data-theme="voyages"
+  data-travel="italie"
+>
 
-    <article
-      class="gallery-photo"
-      data-theme="voyages"
-      data-travel="italie"
-    >
+  <img
+    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=90"
+    alt="Italie"
+  >
 
-      <img
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=90"
-        alt="Italie"
-      >
+  <div class="photo-info">
 
-      <div class="photo-info">
+    <span class="photo-title">
+      Italie
+    </span>
 
-        <span class="photo-title">
-          Italie
-        </span>
+    <span class="photo-category">
+      Voyage
+    </span>
 
-        <span class="photo-category">
-          Voyage
-        </span>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
+<!-- =================================================
+     ST JEAN DE MONT
+================================================== -->
 
-    <!-- =================================================
-         ST JEAN DE MONT
-    ================================================== -->
+<article
+  class="gallery-photo"
+  data-theme="voyages"
+  data-travel="saint-jean"
+>
 
-    <article
-      class="gallery-photo"
-      data-theme="voyages"
-      data-travel="saint-jean"
-    >
+  <img
+    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=90"
+    alt="St Jean de Mont"
+  >
 
-      <img
-        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=90"
-        alt="St Jean de Mont"
-      >
+  <div class="photo-info">
 
-      <div class="photo-info">
+    <span class="photo-title">
+      St Jean de Mont
+    </span>
 
-        <span class="photo-title">
-          St Jean de Mont
-        </span>
+    <span class="photo-category">
+      Voyage
+    </span>
 
-        <span class="photo-category">
-          Voyage
-        </span>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
+<!-- =================================================
+     FARO
+================================================== -->
 
-    <!-- =================================================
-         FARO
-    ================================================== -->
+<article
+  class="gallery-photo"
+  data-theme="voyages"
+  data-travel="faro"
+>
 
-    <article
-      class="gallery-photo"
-      data-theme="voyages"
-      data-travel="faro"
-    >
+  <img
+    src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=90"
+    alt="Faro"
+  >
 
-      <img
-        src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=90"
-        alt="Faro"
-      >
+  <div class="photo-info">
 
-      <div class="photo-info">
+    <span class="photo-title">
+      Faro
+    </span>
 
-        <span class="photo-title">
-          Faro
-        </span>
+    <span class="photo-category">
+      Voyage
+    </span>
 
-        <span class="photo-category">
-          Voyage
-        </span>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
+<!-- =================================================
+     MAJORQUE
+================================================== -->
 
-    <!-- =================================================
-         MAJORQUE
-    ================================================== -->
+<article
+  class="gallery-photo"
+  data-theme="voyages"
+  data-travel="majorque"
+>
 
-    <article
-      class="gallery-photo"
-      data-theme="voyages"
-      data-travel="majorque"
-    >
+  <img
+    src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=90"
+    alt="Majorque"
+  >
 
-      <img
-        src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=90"
-        alt="Majorque"
-      >
+  <div class="photo-info">
 
-      <div class="photo-info">
+    <span class="photo-title">
+      Majorque
+    </span>
 
-        <span class="photo-title">
-          Majorque
-        </span>
+    <span class="photo-category">
+      Voyage
+    </span>
 
-        <span class="photo-category">
-          Voyage
-        </span>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
+<!-- =================================================
+     MOMENTS
+================================================== -->
 
-    <!-- =================================================
-         MOMENTS
-    ================================================== -->
+<article
+  class="gallery-photo"
+  data-theme="moments"
+>
 
-    <article
-      class="gallery-photo"
-      data-theme="moments"
-    >
+  <img
+    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=90"
+    alt="Moments"
+  >
 
-      <img
-        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=90"
-        alt="Moments"
-      >
+  <div class="photo-info">
 
-      <div class="photo-info">
+    <span class="photo-title">
+      Moments
+    </span>
 
-        <span class="photo-title">
-          Moments
-        </span>
+    <span class="photo-category">
+      Moments
+    </span>
 
-        <span class="photo-category">
-          Moments
-        </span>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
+<!-- =================================================
+     LIFESTYLE
+================================================== -->
 
-    <!-- =================================================
-         LIFESTYLE
-    ================================================== -->
+<article
+  class="gallery-photo"
+  data-theme="lifestyle"
+>
 
-    <article
-      class="gallery-photo"
-      data-theme="lifestyle"
-    >
+  <img
+    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
+    alt="Lifestyle"
+  >
 
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
-        alt="Lifestyle"
-      >
+  <div class="photo-info">
 
-      <div class="photo-info">
+    <span class="photo-title">
+      Lifestyle
+    </span>
 
-        <span class="photo-title">
-          Lifestyle
-        </span>
+    <span class="photo-category">
+      Lifestyle
+    </span>
 
-        <span class="photo-category">
-          Lifestyle
-        </span>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
+<!-- =================================================
+     CITY
+================================================== -->
 
-    <!-- =================================================
-         CITY
-    ================================================== -->
+<article
+  class="gallery-photo"
+  data-theme="city"
+>
 
-    <article
-      class="gallery-photo"
-      data-theme="city"
-    >
+  <img
+    src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
+    alt="City"
+  >
 
-      <img
-        src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
-        alt="City"
-      >
+  <div class="photo-info">
 
-      <div class="photo-info">
+    <span class="photo-title">
+      City
+    </span>
 
-        <span class="photo-title">
-          City
-        </span>
+    <span class="photo-category">
+      City
+    </span>
 
-        <span class="photo-category">
-          City
-        </span>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
+<!-- =================================================
+     NATURE
+================================================== -->
 
-    <!-- =================================================
-         NATURE
-    ================================================== -->
+<article
+  class="gallery-photo"
+  data-theme="nature"
+>
 
-    <article
-      class="gallery-photo"
-      data-theme="nature"
-    >
+  <img
+    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
+    alt="Nature"
+  >
 
-      <img
-        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
-        alt="Nature"
-      >
+  <div class="photo-info">
 
-      <div class="photo-info">
+    <span class="photo-title">
+      Nature
+    </span>
 
-        <span class="photo-title">
-          Nature
-        </span>
+    <span class="photo-category">
+      Nature
+    </span>
 
-        <span class="photo-category">
-          Nature
-        </span>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
+<!-- =================================================
+     VIE SAUVAGE — PHOTO 1
+================================================== -->
 
-    <!-- =================================================
-         VIE SAUVAGE
-    ================================================== -->
+<article
+  class="gallery-photo wild-portrait"
+  data-theme="vie-sauvage"
+>
 
-    <article
-      class="gallery-photo"
-      data-theme="vie-sauvage"
-    >
+  <img
+    src="images/vie sauvage/photo1.jpg"
+    alt="Vie sauvage"
+  >
 
-      <img
-        src="accueil/vie sauvage.jpg"
-        alt="Vie sauvage"
-      >
+  <div class="photo-info">
 
-      <div class="photo-info">
+    <span class="photo-title">
+      Vie sauvage
+    </span>
 
-        <span class="photo-title">
-          Vie sauvage
-        </span>
+    <span class="photo-category">
+      Wildlife
+    </span>
 
-        <span class="photo-category">
-          Vie sauvage
-        </span>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
+<!-- =================================================
+     VIE SAUVAGE — PHOTO 2
+================================================== -->
+
+<article
+  class="gallery-photo wild-landscape"
+  data-theme="vie-sauvage"
+>
+
+  <img
+    src="images/vie sauvage/photo2.jpg"
+    alt="Vie sauvage"
+  >
+
+  <div class="photo-info">
+
+    <span class="photo-title">
+      Vie sauvage
+    </span>
+
+    <span class="photo-category">
+      Wildlife
+    </span>
+
+  </div>
+
+</article>
+
+
+<!-- =================================================
+     VIE SAUVAGE — PHOTO 3
+================================================== -->
+
+<article
+  class="gallery-photo wild-portrait"
+  data-theme="vie-sauvage"
+>
+
+  <img
+    src="images/vie sauvage/photo3.jpg"
+    alt="Vie sauvage"
+  >
+
+  <div class="photo-info">
+
+    <span class="photo-title">
+      Vie sauvage
+    </span>
+
+    <span class="photo-category">
+      Wildlife
+    </span>
+
+  </div>
+
+</article>
+
+
+<!-- =================================================
+     VIE SAUVAGE — PHOTO 4
+================================================== -->
+
+<article
+  class="gallery-photo wild-landscape"
+  data-theme="vie-sauvage"
+>
+
+  <img
+    src="images/vie sauvage/photo4.jpg"
+    alt="Vie sauvage"
+  >
+
+  <div class="photo-info">
+
+    <span class="photo-title">
+      Vie sauvage
+    </span>
+
+    <span class="photo-category">
+      Wildlife
+    </span>
+
+  </div>
+
+</article>
+
+
+<!-- =================================================
+     VIE SAUVAGE — PHOTO 5
+================================================== -->
+
+<article
+  class="gallery-photo wild-portrait"
+  data-theme="vie-sauvage"
+>
+
+  <img
+    src="images/vie sauvage/photo5.jpg"
+    alt="Vie sauvage"
+  >
+
+  <div class="photo-info">
+
+    <span class="photo-title">
+      Vie sauvage
+    </span>
+
+    <span class="photo-category">
+      Wildlife
+    </span>
+
+  </div>
+
+</article>
+
+
+<!-- =================================================
+     VIE SAUVAGE — PHOTO 6
+================================================== -->
+
+<article
+  class="gallery-photo wild-landscape"
+  data-theme="vie-sauvage"
+>
+
+  <img
+    src="images/vie sauvage/photo6.jpg"
+    alt="Vie sauvage"
+  >
+
+  <div class="photo-info">
+
+    <span class="photo-title">
+      Vie sauvage
+    </span>
+
+    <span class="photo-category">
+      Wildlife
+    </span>
+
+  </div>
+
+</article>
+```
 
   </div>
 
 </section>
-
 
 <!-- =====================================================
      ABOUT
@@ -1497,29 +1674,30 @@ nav button:hover {
 
   <div class="about-content">
 
-    <h2>
-      Photographier<br>
-      ce qui reste.
-    </h2>
+```
+<h2>
+  Photographier<br>
+  ce qui reste.
+</h2>
 
-    <p>
+<p>
 
-      Je suis Sébastien Turpin, photographe basé en France.
+  Je suis Sébastien Turpin, photographe basé en France.
 
-      Je photographie les voyages, les lieux, les personnes
-      et les moments spontanés.
+  Je photographie les voyages, les lieux, les personnes
+  et les moments spontanés.
 
-      <br><br>
+  <br><br>
 
-      Je cherche avant tout des images naturelles,
-      vivantes et intemporelles.
+  Je cherche avant tout des images naturelles,
+  vivantes et intemporelles.
 
-    </p>
+</p>
+```
 
   </div>
 
 </section>
-
 
 <!-- =====================================================
      CONTACT
@@ -1532,39 +1710,40 @@ nav button:hover {
 
   <div class="contact-top">
 
-    <div class="contact-label">
-      Contact
-    </div>
+```
+<div class="contact-label">
+  Contact
+</div>
 
-    <a
-      class="contact-email"
-      href="mailto:contact@sebastienturpin.fr"
-    >
-      contact@sebastienturpin.fr
-    </a>
+<a
+  class="contact-email"
+  href="mailto:contact@sebastienturpin.fr"
+>
+  contact@sebastienturpin.fr
+</a>
+```
 
   </div>
-
 
   <h2 class="contact-title">
     Parlons.
   </h2>
 
-
   <div class="footer">
 
-    <span>
-      © 2026 Sébastien Turpin
-    </span>
+```
+<span>
+  © 2026 Sébastien Turpin
+</span>
 
-    <span>
-      Photography
-    </span>
+<span>
+  Photography
+</span>
+```
 
   </div>
 
 </section>
-
 
 <!-- =====================================================
      JAVASCRIPT
@@ -1831,7 +2010,6 @@ function goToContact() {
 
 
 </script>
-
 
 </body>
 
