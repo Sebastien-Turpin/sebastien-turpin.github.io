@@ -307,13 +307,15 @@ nav button:hover {
 
 
 /* =====================================================
-   GALERIE
+   PAGE GALERIE
 ===================================================== */
 
 .gallery-page {
   display: none;
 
-  padding: 120px 28px 180px;
+  min-height: 100vh;
+
+  padding: 105px 28px 80px;
 }
 
 .gallery-page.active {
@@ -322,7 +324,7 @@ nav button:hover {
 
 
 /* =====================================================
-   TITRE GALERIE
+   EN-TÊTE GALERIE
 ===================================================== */
 
 .gallery-heading {
@@ -331,8 +333,8 @@ nav button:hover {
   justify-content: space-between;
   align-items: flex-end;
 
-  padding-bottom: 25px;
-  margin-bottom: 35px;
+  padding-bottom: 22px;
+  margin-bottom: 25px;
 
   border-bottom: 1px solid #d8d8d5;
 }
@@ -383,7 +385,7 @@ nav button:hover {
 
   gap: 25px;
 
-  margin-bottom: 55px;
+  margin-bottom: 35px;
 }
 
 .travel-navigation.active {
@@ -415,114 +417,116 @@ nav button:hover {
 
 
 /* =====================================================
-   GALERIE PHOTOS
+   DIAPORAMA
 ===================================================== */
 
-.gallery-photos {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  column-gap: 22px;
-  row-gap: 110px;
-
-  align-items: start;
-}
-
-.gallery-photo {
+.slideshow {
   position: relative;
-}
 
-.gallery-photo.hidden {
-  display: none;
-}
-
-.gallery-photo img {
   width: 100%;
 
-  object-fit: cover;
+  min-height: calc(100vh - 240px);
 
-  transition:
-    transform 1s cubic-bezier(.2,.6,.2,1);
-}
+  display: flex;
 
-.gallery-photo:hover img {
-  transform: scale(1.025);
-}
+  align-items: center;
 
-
-/* =====================================================
-   FORMATS GALERIE
-===================================================== */
-
-.gallery-photo:nth-child(1) img {
-  aspect-ratio: 3 / 4;
-}
-
-.gallery-photo:nth-child(2) {
-  margin-top: 140px;
-}
-
-.gallery-photo:nth-child(2) img {
-  aspect-ratio: 2 / 3;
-}
-
-.gallery-photo:nth-child(3) img {
-  aspect-ratio: 4 / 5;
-}
-
-.gallery-photo:nth-child(4) {
-  margin-top: -20px;
-}
-
-.gallery-photo:nth-child(4) img {
-  aspect-ratio: 2 / 3;
-}
-
-.gallery-photo:nth-child(5) {
-  margin-top: 120px;
-}
-
-.gallery-photo:nth-child(5) img {
-  aspect-ratio: 3 / 4;
-}
-
-.gallery-photo:nth-child(6) img {
-  aspect-ratio: 4 / 5;
+  justify-content: center;
 }
 
 
 /* =====================================================
-   VIE SAUVAGE
+   PHOTO ACTIVE
 ===================================================== */
 
-.gallery-photo.wild-landscape img {
-  aspect-ratio: 3 / 2;
+.slideshow-photo {
+  display: none;
+
+  width: auto;
+  height: auto;
+
+  max-width: calc(100vw - 180px);
+  max-height: calc(100vh - 300px);
+
+  object-fit: contain;
+
+  transition: opacity .35s ease;
 }
 
-.gallery-photo.wild-portrait img {
-  aspect-ratio: 3 / 4;
-}
-
-.gallery-photo.wild-square img {
-  aspect-ratio: 1 / 1;
+.slideshow-photo.active {
+  display: block;
 }
 
 
 /* =====================================================
-   INFOS PHOTOS
+   BOUTONS PRECEDENT / SUIVANT
 ===================================================== */
 
-.photo-info {
+.slide-button {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 70px;
+  height: 120px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 28px;
+
+  font-weight: 300;
+
+  color: #111;
+
+  transition: opacity .3s ease;
+}
+
+.slide-button:hover {
+  opacity: .4;
+}
+
+.slide-prev {
+  left: 0;
+}
+
+.slide-next {
+  right: 0;
+}
+
+
+/* =====================================================
+   INFORMATIONS DIAPORAMA
+===================================================== */
+
+.slideshow-info {
+  width: 100%;
+
   display: flex;
 
   justify-content: space-between;
+
   align-items: baseline;
 
-  padding-top: 12px;
+  padding-top: 20px;
+
+  border-top: 1px solid #d8d8d5;
 }
 
-.photo-title {
+.slideshow-title {
   font-size: 10px;
 
   letter-spacing: 1px;
@@ -530,7 +534,7 @@ nav button:hover {
   text-transform: uppercase;
 }
 
-.photo-category {
+.slideshow-category {
   font-size: 9px;
 
   letter-spacing: 1px;
@@ -538,6 +542,14 @@ nav button:hover {
   color: #999;
 
   text-transform: uppercase;
+}
+
+.slideshow-counter {
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  color: #999;
 }
 
 
@@ -677,8 +689,7 @@ nav button:hover {
 
 @media (max-width: 900px) {
 
-  .theme-grid,
-  .gallery-photos {
+  .theme-grid {
     grid-template-columns: repeat(2, 1fr);
 
     column-gap: 18px;
@@ -697,6 +708,11 @@ nav button:hover {
 
   .about {
     grid-template-columns: 1fr;
+  }
+
+  .slideshow-photo {
+    max-width: calc(100vw - 120px);
+    max-height: calc(100vh - 280px);
   }
 
 }
@@ -726,6 +742,9 @@ nav button:hover {
     font-size: 7px;
   }
 
+
+  /* INTRO */
+
   .intro {
     min-height: 50vh;
 
@@ -737,6 +756,9 @@ nav button:hover {
 
     letter-spacing: -2px;
   }
+
+
+  /* WORK */
 
   .work {
     padding: 0 18px 120px;
@@ -771,39 +793,105 @@ nav button:hover {
     font-size: 8px;
   }
 
+
+  /* GALERIE */
+
   .gallery-page {
-    padding: 100px 18px 120px;
+    padding: 90px 18px 50px;
   }
 
   .gallery-heading {
     display: block;
+
+    padding-bottom: 18px;
+
+    margin-bottom: 20px;
   }
 
   .back {
     display: block;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   .gallery-heading h2 {
     font-size: 15vw;
+
+    letter-spacing: -3px;
   }
+
+
+  /* VOYAGES */
 
   .travel-navigation {
     gap: 14px;
 
-    margin-bottom: 45px;
+    margin-bottom: 25px;
   }
 
   .travel-navigation button {
     font-size: 8px;
   }
 
-  .gallery-photos {
-    grid-template-columns: 1fr;
 
-    row-gap: 75px;
+  /* DIAPORAMA */
+
+  .slideshow {
+    min-height: calc(100vh - 230px);
+
+    display: flex;
+
+    align-items: center;
   }
+
+  .slideshow-photo {
+    max-width: calc(100vw - 55px);
+
+    max-height: calc(100vh - 330px);
+
+    width: auto;
+
+    height: auto;
+  }
+
+
+  /* FLECHES */
+
+  .slide-button {
+    width: 42px;
+    height: 80px;
+
+    font-size: 22px;
+  }
+
+  .slide-prev {
+    left: -8px;
+  }
+
+  .slide-next {
+    right: -8px;
+  }
+
+
+  /* INFOS */
+
+  .slideshow-info {
+    padding-top: 15px;
+
+    gap: 15px;
+  }
+
+  .slideshow-title {
+    font-size: 9px;
+  }
+
+  .slideshow-category,
+  .slideshow-counter {
+    font-size: 8px;
+  }
+
+
+  /* ABOUT */
 
   .about {
     padding: 110px 18px 130px;
@@ -820,6 +908,9 @@ nav button:hover {
 
     letter-spacing: -3px;
   }
+
+
+  /* CONTACT */
 
   .contact {
     min-height: 65vh;
@@ -841,21 +932,6 @@ nav button:hover {
     font-size: 21vw;
 
     letter-spacing: -5px;
-  }
-
-}
-
-
-/* =====================================================
-   MOBILE : VIE SAUVAGE
-===================================================== */
-
-@media (max-width: 600px) {
-
-  .gallery-photo.wild-landscape img,
-  .gallery-photo.wild-portrait img,
-  .gallery-photo.wild-square img {
-    width: 100%;
   }
 
 }
@@ -1205,10 +1281,72 @@ nav button:hover {
 
 
   <!-- =================================================
-       PHOTOS
+       DIAPORAMA
   ================================================== -->
 
-  <div class="gallery-photos">
+  <div class="slideshow">
+
+    <button
+      class="slide-button slide-prev"
+      onclick="previousPhoto()"
+      aria-label="Photo précédente"
+    >
+      ←
+    </button>
+
+
+    <div id="slideshowImageContainer"></div>
+
+
+    <button
+      class="slide-button slide-next"
+      onclick="nextPhoto()"
+      aria-label="Photo suivante"
+    >
+      →
+    </button>
+
+  </div>
+
+
+  <!-- =================================================
+       INFORMATIONS
+  ================================================== -->
+
+  <div class="slideshow-info">
+
+    <span
+      class="slideshow-title"
+      id="slideshowTitle"
+    >
+      —
+    </span>
+
+    <span
+      class="slideshow-category"
+      id="slideshowCategory"
+    >
+      —
+    </span>
+
+    <span
+      class="slideshow-counter"
+      id="slideshowCounter"
+    >
+      01 / 01
+    </span>
+
+  </div>
+
+
+  <!-- =================================================
+       DONNEES PHOTOS
+  ================================================== -->
+
+  <div
+    class="gallery-photos"
+    style="display:none;"
+  >
 
 
     <!-- =================================================
@@ -1482,7 +1620,7 @@ nav button:hover {
     ================================================== -->
 
     <article
-      class="gallery-photo wild-portrait"
+      class="gallery-photo"
       data-theme="vie-sauvage"
     >
 
@@ -1511,7 +1649,7 @@ nav button:hover {
     ================================================== -->
 
     <article
-      class="gallery-photo wild-portrait"
+      class="gallery-photo"
       data-theme="vie-sauvage"
     >
 
@@ -1647,6 +1785,18 @@ const travelNavigation =
 const galleryPhotos =
   document.querySelectorAll(".gallery-photo");
 
+const slideshowContainer =
+  document.getElementById("slideshowImageContainer");
+
+const slideshowTitle =
+  document.getElementById("slideshowTitle");
+
+const slideshowCategory =
+  document.getElementById("slideshowCategory");
+
+const slideshowCounter =
+  document.getElementById("slideshowCounter");
+
 
 /* =====================================================
    TITRES
@@ -1670,6 +1820,17 @@ const themeTitles = {
 
 
 /* =====================================================
+   VARIABLES DIAPORAMA
+===================================================== */
+
+let currentTheme = "";
+
+let currentPhotos = [];
+
+let currentIndex = 0;
+
+
+/* =====================================================
    OUVRIR UNE GALERIE
 ===================================================== */
 
@@ -1683,19 +1844,22 @@ function openGallery(theme) {
     themeTitles[theme];
 
 
+  currentTheme = theme;
+
+
   if (theme === "voyages") {
 
     travelNavigation.classList.add("active");
 
     resetTravel();
 
-    showThemePhotos("voyages");
+    prepareSlideshow("voyages");
 
   } else {
 
     travelNavigation.classList.remove("active");
 
-    showThemePhotos(theme);
+    prepareSlideshow(theme);
 
   }
 
@@ -1709,26 +1873,147 @@ function openGallery(theme) {
 
 
 /* =====================================================
-   AFFICHER LES PHOTOS D'UN THEME
+   PREPARER LE DIAPORAMA
 ===================================================== */
 
-function showThemePhotos(theme) {
+function prepareSlideshow(theme) {
 
-  galleryPhotos.forEach(photo => {
+  currentPhotos = Array.from(galleryPhotos)
+    .filter(photo => {
 
-    if (
-      photo.dataset.theme === theme
-    ) {
+      return photo.dataset.theme === theme;
 
-      photo.classList.remove("hidden");
+    });
 
-    } else {
 
-      photo.classList.add("hidden");
+  currentIndex = 0;
 
-    }
+  renderSlideshow();
 
-  });
+}
+
+
+/* =====================================================
+   RENDRE LA PHOTO
+===================================================== */
+
+function renderSlideshow() {
+
+  slideshowContainer.innerHTML = "";
+
+
+  if (currentPhotos.length === 0) {
+
+    slideshowTitle.textContent = "Aucune photo";
+
+    slideshowCategory.textContent = "";
+
+    slideshowCounter.textContent = "00 / 00";
+
+    return;
+
+  }
+
+
+  const photo =
+    currentPhotos[currentIndex];
+
+
+  const originalImage =
+    photo.querySelector("img");
+
+
+  const image =
+    document.createElement("img");
+
+
+  image.className =
+    "slideshow-photo active";
+
+
+  image.src =
+    originalImage.src;
+
+
+  image.alt =
+    originalImage.alt;
+
+
+  slideshowContainer.appendChild(image);
+
+
+  slideshowTitle.textContent =
+    photo.querySelector(".photo-title")
+      ?.textContent.trim() || "";
+
+
+  slideshowCategory.textContent =
+    photo.querySelector(".photo-category")
+      ?.textContent.trim() || "";
+
+
+  slideshowCounter.textContent =
+
+    String(currentIndex + 1).padStart(2, "0")
+
+    + " / " +
+
+    String(currentPhotos.length).padStart(2, "0");
+
+}
+
+
+/* =====================================================
+   PHOTO SUIVANTE
+===================================================== */
+
+function nextPhoto() {
+
+  if (currentPhotos.length === 0) {
+    return;
+  }
+
+
+  currentIndex++;
+
+
+  if (
+    currentIndex >= currentPhotos.length
+  ) {
+
+    currentIndex = 0;
+
+  }
+
+
+  renderSlideshow();
+
+}
+
+
+/* =====================================================
+   PHOTO PRECEDENTE
+===================================================== */
+
+function previousPhoto() {
+
+  if (currentPhotos.length === 0) {
+    return;
+  }
+
+
+  currentIndex--;
+
+
+  if (currentIndex < 0) {
+
+    currentIndex =
+      currentPhotos.length - 1;
+
+  }
+
+
+  renderSlideshow();
 
 }
 
@@ -1754,33 +2039,29 @@ function filterTravel(
   button.classList.add("active");
 
 
-  galleryPhotos.forEach(photo => {
+  currentPhotos = Array.from(galleryPhotos)
+    .filter(photo => {
 
-    if (
-      photo.dataset.theme !== "voyages"
-    ) {
+      if (
+        photo.dataset.theme !== "voyages"
+      ) {
 
-      photo.classList.add("hidden");
+        return false;
 
-      return;
-
-    }
+      }
 
 
-    if (
-      travel === "all" ||
-      photo.dataset.travel === travel
-    ) {
+      return (
+        travel === "all" ||
+        photo.dataset.travel === travel
+      );
 
-      photo.classList.remove("hidden");
+    });
 
-    } else {
 
-      photo.classList.add("hidden");
+  currentIndex = 0;
 
-    }
-
-  });
+  renderSlideshow();
 
 
   window.scrollTo({
@@ -1816,6 +2097,100 @@ function resetTravel() {
   }
 
 }
+
+
+/* =====================================================
+   CLAVIER
+===================================================== */
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      !galleryPage.classList.contains("active")
+    ) {
+
+      return;
+
+    }
+
+
+    if (event.key === "ArrowRight") {
+
+      nextPhoto();
+
+    }
+
+
+    if (event.key === "ArrowLeft") {
+
+      previousPhoto();
+
+    }
+
+
+    if (event.key === "Escape") {
+
+      showHome();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   SWIPE MOBILE
+===================================================== */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+
+galleryPage.addEventListener(
+  "touchstart",
+  function(event) {
+
+    touchStartX =
+      event.changedTouches[0].screenX;
+
+  },
+  { passive: true }
+);
+
+
+galleryPage.addEventListener(
+  "touchend",
+  function(event) {
+
+    touchEndX =
+      event.changedTouches[0].screenX;
+
+
+    const distance =
+      touchEndX - touchStartX;
+
+
+    if (Math.abs(distance) < 50) {
+      return;
+    }
+
+
+    if (distance < 0) {
+
+      nextPhoto();
+
+    } else {
+
+      previousPhoto();
+
+    }
+
+  },
+  { passive: true }
+);
 
 
 /* =====================================================
