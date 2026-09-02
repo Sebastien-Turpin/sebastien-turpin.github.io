@@ -69,9 +69,21 @@ header {
 }
 
 .name {
+  border: 0;
+  background: transparent;
+  padding: 0;
+
+  color: #111;
+
+  cursor: pointer;
+
   font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+}
+
+.name:hover {
+  opacity: .45;
 }
 
 nav {
@@ -949,9 +961,13 @@ nav button:hover {
 
 <header>
 
-  <div class="name">
-    Sébastien Turpin
-  </div>
+  <button
+  class="name"
+  onclick="showHome()"
+  aria-label="Retour à l'accueil"
+>
+  Sébastien Turpin
+</button>
 
   <nav>
 
