@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -69,6 +70,8 @@ header {
 }
 
 .name {
+  display: inline-block;
+
   border: 0;
   background: transparent;
   padding: 0;
@@ -80,6 +83,11 @@ header {
   font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+
+  position: relative;
+  z-index: 101;
+
+  pointer-events: auto;
 }
 
 .name:hover {
@@ -961,13 +969,14 @@ nav button:hover {
 
 <header>
 
-  <button
-  class="name"
-  onclick="showHome()"
-  aria-label="Retour à l'accueil"
->
-  Sébastien Turpin
-</button>
+  <a
+    href="#"
+    class="name"
+    onclick="showHome(); return false;"
+    aria-label="Retour à l'accueil"
+  >
+    Sébastien Turpin
+  </a>
 
   <nav>
 
@@ -1298,7 +1307,7 @@ nav button:hover {
 
   <!-- =================================================
        DIAPORAMA
-  ================================================== -->
+===================================================== -->
 
   <div class="slideshow">
 
@@ -1327,7 +1336,7 @@ nav button:hover {
 
   <!-- =================================================
        INFORMATIONS
-  ================================================== -->
+===================================================== -->
 
   <div class="slideshow-info">
 
@@ -1357,7 +1366,7 @@ nav button:hover {
 
   <!-- =================================================
        DONNEES PHOTOS
-  ================================================== -->
+===================================================== -->
 
   <div
     class="gallery-photos"
@@ -1631,7 +1640,7 @@ nav button:hover {
     </article>
 
 
-     <!-- =================================================
+    <!-- =================================================
          VIE SAUVAGE — TAMARIN-LION DORE
     ================================================== -->
 
@@ -1680,11 +1689,17 @@ nav button:hover {
           Alpaga
         </span>
 
-        <span class="photo-category">
-          Wildlife
-        </span>
+        <div class="photo-info">
 
-      </div>
+          <span class="photo-title">
+            Alpaga
+          </span>
+
+          <span class="photo-category">
+            Wildlife
+          </span>
+
+        </div>
 
     </article>
 
@@ -1718,7 +1733,7 @@ nav button:hover {
     </article>
 
 
-     <!-- =================================================
+    <!-- =================================================
          VIE SAUVAGE — IGUANE
     ================================================== -->
 
@@ -1747,7 +1762,7 @@ nav button:hover {
     </article>
 
 
-     <!-- =================================================
+    <!-- =================================================
          VIE SAUVAGE — CIGOGNE
     ================================================== -->
 
@@ -1776,7 +1791,7 @@ nav button:hover {
     </article>
 
 
-     </div>
+  </div>
 
 </section>
 
@@ -2367,3 +2382,4 @@ function goToContact() {
 </body>
 
 </html>
+```
