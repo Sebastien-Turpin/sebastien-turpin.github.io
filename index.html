@@ -29,7 +29,20 @@ body {
   background: #f7f7f5;
   color: #111;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
 }
 
 
@@ -42,55 +55,46 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 78px;
+  height: 70px;
+  padding: 0 28px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 42px;
+  z-index: 100;
 
-  background: rgba(247,247,245,.94);
-  backdrop-filter: blur(10px);
-
-  z-index: 1000;
+  background: rgba(247,247,245,.92);
+  backdrop-filter: blur(8px);
 }
 
-.logo {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -.02em;
+.name {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 nav {
   display: flex;
-  gap: 28px;
+  gap: 25px;
 }
 
 nav button {
-  border: none;
-  background: none;
+  border: 0;
+  background: transparent;
   padding: 0;
 
-  font-family: inherit;
-  font-size: 14px;
+  color: #111;
 
   cursor: pointer;
 
-  color: #111;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 nav button:hover {
-  opacity: .5;
-}
-
-
-/* =====================================================
-   MAIN
-===================================================== */
-
-main {
-  padding-top: 78px;
+  opacity: .45;
 }
 
 
@@ -99,329 +103,392 @@ main {
 ===================================================== */
 
 .intro {
-  min-height: 82vh;
+  min-height: 48vh;
+
+  padding: 120px 28px 55px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
-  padding: 80px 7vw;
+  justify-content: flex-end;
 }
 
 .intro h1 {
   margin: 0;
 
-  font-size: clamp(52px, 9vw, 150px);
+  font-size: clamp(48px, 7vw, 95px);
   line-height: .9;
-  letter-spacing: -.07em;
 
-  font-weight: 500;
+  font-weight: 400;
+
+  letter-spacing: -4px;
 }
 
-.intro p {
-  margin-top: 38px;
-  max-width: 560px;
+.intro-bottom {
+  margin-top: 35px;
 
-  font-size: 18px;
-  line-height: 1.5;
-
-  color: #555;
-}
-
-
-/* =====================================================
-   SECTION
-===================================================== */
-
-section {
-  padding: 120px 7vw;
-}
-
-.section-title {
-  margin: 0 0 70px;
-
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-
-  color: #666;
-}
-
-
-/* =====================================================
-   WORK — HOME
-===================================================== */
-
-.work-grid {
-  display: grid;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  column-gap: 5vw;
-  row-gap: 100px;
-}
-
-.work-item {
-  cursor: pointer;
-}
-
-.work-image {
-  overflow: hidden;
-}
-
-.work-image img {
-  width: 100%;
-  display: block;
-
-  transition:
-    transform 1s cubic-bezier(.2,.6,.2,1);
-}
-
-.work-item:hover .work-image img {
-  transform: scale(1.035);
-}
-
-.work-info {
   display: flex;
   justify-content: space-between;
-
-  margin-top: 16px;
+  align-items: flex-end;
 }
 
-.work-title {
-  font-size: 18px;
-}
+.intro-text {
+  max-width: 330px;
 
-.work-number {
-  font-size: 13px;
+  font-size: 11px;
+  line-height: 1.6;
+
   color: #777;
 }
 
 
 /* =====================================================
-   WORK IMAGE FORMATS
+   WORK
 ===================================================== */
 
-.work-item:nth-child(1) .work-image img {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.work {
+  padding: 0 28px 180px;
 }
 
-.work-item:nth-child(2) .work-image img {
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+.work-header {
+  padding-top: 12px;
+  margin-bottom: 60px;
+
+  border-top: 1px solid #d8d8d5;
+
+  display: flex;
+  justify-content: space-between;
 }
 
-.work-item:nth-child(3) .work-image img {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.work-header span {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
 
-.work-item:nth-child(4) .work-image img {
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-}
-
-.work-item:nth-child(5) .work-image img {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.work-item:nth-child(6) .work-image img {
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+.work-header span:last-child {
+  color: #888;
 }
 
 
 /* =====================================================
-   GALLERY PAGE
+   GRILLE 3 COLONNES
+===================================================== */
+
+.theme-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  column-gap: 22px;
+  row-gap: 110px;
+
+  align-items: start;
+}
+
+
+/* =====================================================
+   THEME
+===================================================== */
+
+.theme {
+  display: block;
+
+  border: 0;
+  padding: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  color: #111;
+
+  width: 100%;
+}
+
+.theme-image {
+  width: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 1s cubic-bezier(.2,.6,.2,1),
+    opacity .4s ease;
+}
+
+
+/* =====================================================
+   FORMATS THEMES
+===================================================== */
+
+.theme-1 .theme-image {
+  aspect-ratio: 3 / 4;
+}
+
+.theme-2 {
+  margin-top: 140px;
+}
+
+.theme-2 .theme-image {
+  aspect-ratio: 2 / 3;
+}
+
+.theme-3 .theme-image {
+  aspect-ratio: 4 / 5;
+}
+
+.theme-4 {
+  margin-top: -20px;
+}
+
+.theme-4 .theme-image {
+  aspect-ratio: 2 / 3;
+}
+
+.theme-5 {
+  margin-top: 120px;
+}
+
+.theme-5 .theme-image {
+  aspect-ratio: 3 / 4;
+}
+
+.theme-6 .theme-image {
+  aspect-ratio: 4 / 5;
+}
+
+
+/* =====================================================
+   TITRES
+===================================================== */
+
+.theme-info {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: baseline;
+
+  padding-top: 13px;
+}
+
+.theme-title {
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  transition: opacity .3s ease;
+}
+
+.theme-number {
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  color: #999;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.theme:hover .theme-image {
+  transform: scale(1.025);
+}
+
+.theme:hover .theme-title {
+  opacity: .5;
+}
+
+
+/* =====================================================
+   GALERIE
 ===================================================== */
 
 .gallery-page {
   display: none;
 
-  padding-top: 120px;
+  padding: 120px 28px 180px;
 }
 
 .gallery-page.active {
   display: block;
 }
 
-.gallery-header {
-  padding: 0 7vw 90px;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.gallery-header h2 {
-  margin: 0;
-
-  font-size: clamp(46px, 7vw, 110px);
-  line-height: .9;
-  letter-spacing: -.06em;
-
-  font-weight: 500;
-}
-
-.back-button {
-  border: none;
-  background: none;
-
-  font-family: inherit;
-  font-size: 13px;
-
-  cursor: pointer;
-
-  color: #555;
-}
-
-.back-button:hover {
-  color: #111;
-}
-
 
 /* =====================================================
-   VOYAGES FILTER
+   TITRE GALERIE
 ===================================================== */
 
-.travel-filters {
+.gallery-heading {
   display: flex;
-  gap: 22px;
 
-  padding: 0 7vw 60px;
+  justify-content: space-between;
+  align-items: flex-end;
 
-  flex-wrap: wrap;
+  padding-bottom: 25px;
+  margin-bottom: 35px;
+
+  border-bottom: 1px solid #d8d8d5;
 }
 
-.travel-filter {
-  border: none;
-  background: none;
+.back {
+  border: 0;
+
+  background: transparent;
 
   padding: 0;
 
-  font-family: inherit;
-  font-size: 13px;
-
-  color: #777;
-
   cursor: pointer;
+
+  color: #888;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
 }
 
-.travel-filter.active,
-.travel-filter:hover {
+.back:hover {
+  color: #111;
+}
+
+.gallery-heading h2 {
+  margin: 0;
+
+  font-size: clamp(50px, 7vw, 95px);
+
+  line-height: .85;
+
+  font-weight: 400;
+
+  letter-spacing: -5px;
+}
+
+
+/* =====================================================
+   NAVIGATION VOYAGES
+===================================================== */
+
+.travel-navigation {
+  display: none;
+
+  flex-wrap: wrap;
+
+  gap: 25px;
+
+  margin-bottom: 55px;
+}
+
+.travel-navigation.active {
+  display: flex;
+}
+
+.travel-navigation button {
+  border: 0;
+
+  background: transparent;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  color: #999;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.travel-navigation button:hover,
+.travel-navigation button.active {
   color: #111;
 }
 
 
 /* =====================================================
-   GALLERY GRID
+   GALERIE PHOTOS
 ===================================================== */
 
-.gallery-grid {
+.gallery-photos {
   display: grid;
 
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 
-  column-gap: 28px;
-  row-gap: 100px;
+  column-gap: 22px;
+  row-gap: 110px;
 
-  padding: 0 7vw 140px;
+  align-items: start;
 }
 
 .gallery-photo {
-  min-width: 0;
+  position: relative;
+}
+
+.gallery-photo.hidden {
+  display: none;
 }
 
 .gallery-photo img {
   width: 100%;
-  display: block;
+
+  object-fit: cover;
 
   transition:
     transform 1s cubic-bezier(.2,.6,.2,1);
 }
 
 .gallery-photo:hover img {
-  transform: scale(1.02);
+  transform: scale(1.025);
 }
 
 
 /* =====================================================
-   PHOTO INFORMATION
+   FORMATS GALERIE
 ===================================================== */
 
-.photo-info {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-
-  margin-top: 14px;
-}
-
-.photo-title {
-  font-size: 14px;
-}
-
-.photo-category {
-  font-size: 12px;
-  color: #777;
-}
-
-
-/* =====================================================
-   VOYAGES — FORMATS
-===================================================== */
-
-/*
-   IMPORTANT :
-   Ces règles sont maintenant limitées à la galerie
-   Voyages uniquement.
-
-   Elles ne peuvent donc plus modifier les photos
-   des autres galeries.
-*/
-
-#gallery-voyages .gallery-photo:nth-child(1) img {
+.gallery-photo:nth-child(1) img {
   aspect-ratio: 3 / 4;
-  object-fit: cover;
 }
 
-#gallery-voyages .gallery-photo:nth-child(2) {
+.gallery-photo:nth-child(2) {
   margin-top: 140px;
 }
 
-#gallery-voyages .gallery-photo:nth-child(2) img {
+.gallery-photo:nth-child(2) img {
   aspect-ratio: 2 / 3;
-  object-fit: cover;
 }
 
-#gallery-voyages .gallery-photo:nth-child(3) img {
+.gallery-photo:nth-child(3) img {
   aspect-ratio: 4 / 5;
-  object-fit: cover;
 }
 
-#gallery-voyages .gallery-photo:nth-child(4) {
+.gallery-photo:nth-child(4) {
   margin-top: -20px;
 }
 
-#gallery-voyages .gallery-photo:nth-child(4) img {
+.gallery-photo:nth-child(4) img {
   aspect-ratio: 2 / 3;
-  object-fit: cover;
 }
 
-#gallery-voyages .gallery-photo:nth-child(5) {
+.gallery-photo:nth-child(5) {
   margin-top: 120px;
 }
 
-#gallery-voyages .gallery-photo:nth-child(5) img {
+.gallery-photo:nth-child(5) img {
   aspect-ratio: 3 / 4;
-  object-fit: cover;
 }
 
-#gallery-voyages .gallery-photo:nth-child(6) img {
+.gallery-photo:nth-child(6) img {
   aspect-ratio: 4 / 5;
-  object-fit: cover;
 }
 
 
@@ -429,49 +496,48 @@ section {
    VIE SAUVAGE
 ===================================================== */
 
-/*
-   Formats spécifiques aux photos de Vie sauvage :
-
-   wild-landscape = paysage
-   wild-portrait  = portrait
-   wild-square    = carré
-*/
-
-
-/* PAYSAGE */
-
 .gallery-photo.wild-landscape img {
-  width: 100% !important;
-
-  height: auto !important;
-
-  max-height: none !important;
-
-  aspect-ratio: auto !important;
-
-  object-fit: contain !important;
+  aspect-ratio: 3 / 2;
 }
-
-
-/* PORTRAIT */
 
 .gallery-photo.wild-portrait img {
-  width: 100%;
-
   aspect-ratio: 3 / 4;
+}
 
-  object-fit: cover;
+.gallery-photo.wild-square img {
+  aspect-ratio: 1 / 1;
 }
 
 
-/* CARRE */
+/* =====================================================
+   INFOS PHOTOS
+===================================================== */
 
-.gallery-photo.wild-square img {
-  width: 100%;
+.photo-info {
+  display: flex;
 
-  aspect-ratio: 1 / 1;
+  justify-content: space-between;
+  align-items: baseline;
 
-  object-fit: cover;
+  padding-top: 12px;
+}
+
+.photo-title {
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.photo-category {
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  color: #999;
+
+  text-transform: uppercase;
 }
 
 
@@ -480,13 +546,53 @@ section {
 ===================================================== */
 
 .about {
-  max-width: 850px;
+  padding: 180px 28px 220px;
+
+  border-top: 1px solid #d8d8d5;
+
+  display: grid;
+
+  grid-template-columns: 1fr 2fr;
+
+  gap: 60px;
 }
 
-.about-text {
-  font-size: clamp(28px, 4vw, 52px);
-  line-height: 1.1;
-  letter-spacing: -.04em;
+.about-label {
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  color: #888;
+}
+
+.about-content {
+  max-width: 800px;
+}
+
+.about-content h2 {
+  margin: 0 0 50px;
+
+  font-size: clamp(45px, 6vw, 85px);
+
+  line-height: .9;
+
+  font-weight: 400;
+
+  letter-spacing: -4px;
+}
+
+.about-content p {
+  max-width: 550px;
+
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: #555;
 }
 
 
@@ -495,52 +601,104 @@ section {
 ===================================================== */
 
 .contact {
-  display: grid;
+  min-height: 75vh;
 
-  grid-template-columns: 1fr 1fr;
+  padding: 70px 28px 30px;
 
-  gap: 60px;
+  background: #111;
+
+  color: #f5f5f3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.contact-top {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.contact-label {
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  color: #777;
+}
+
+.contact-email {
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  border-bottom: 1px solid #555;
+
+  padding-bottom: 5px;
 }
 
 .contact-title {
-  font-size: clamp(46px, 7vw, 100px);
-  line-height: .9;
+  margin: 0;
 
-  letter-spacing: -.06em;
+  font-size: clamp(70px, 12vw, 180px);
+
+  line-height: .75;
+
+  font-weight: 400;
+
+  letter-spacing: -8px;
 }
 
-.contact-links {
+.footer {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
 
-  justify-content: flex-end;
-}
+  justify-content: space-between;
 
-.contact-links a {
-  color: #111;
-  text-decoration: none;
+  padding-top: 20px;
 
-  font-size: 17px;
-}
+  border-top: 1px solid #333;
 
-.contact-links a:hover {
-  opacity: .5;
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  color: #777;
 }
 
 
 /* =====================================================
-   FOOTER
+   TABLETTE
 ===================================================== */
 
-footer {
-  padding: 50px 7vw;
+@media (max-width: 900px) {
 
-  display: flex;
-  justify-content: space-between;
+  .theme-grid,
+  .gallery-photos {
+    grid-template-columns: repeat(2, 1fr);
 
-  font-size: 12px;
-  color: #777;
+    column-gap: 18px;
+  }
+
+  .theme-2,
+  .theme-4,
+  .theme-5 {
+    margin-top: 0;
+  }
+
+  .theme-2,
+  .theme-5 {
+    margin-top: 80px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 
@@ -548,155 +706,174 @@ footer {
    MOBILE
 ===================================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 
   header {
-    height: 68px;
+    height: 60px;
 
-    padding: 0 22px;
+    padding: 0 18px;
+  }
+
+  .name {
+    font-size: 9px;
   }
 
   nav {
-    gap: 16px;
+    gap: 12px;
   }
 
   nav button {
-    font-size: 12px;
-  }
-
-  main {
-    padding-top: 68px;
+    font-size: 7px;
   }
 
   .intro {
-    min-height: 78vh;
+    min-height: 50vh;
 
-    padding: 60px 22px;
+    padding: 105px 18px 40px;
   }
 
   .intro h1 {
-    font-size: clamp(52px, 17vw, 100px);
+    font-size: 13vw;
+
+    letter-spacing: -2px;
   }
 
-  .intro p {
-    font-size: 16px;
+  .work {
+    padding: 0 18px 120px;
   }
 
-  section {
-    padding: 90px 22px;
+  .work-header {
+    margin-bottom: 45px;
   }
 
-  .work-grid {
-    grid-template-columns: 1fr;
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 12px;
 
     row-gap: 70px;
   }
 
-  .gallery-page {
-    padding-top: 90px;
+  .theme-2,
+  .theme-5 {
+    margin-top: 60px;
   }
 
-  .gallery-header {
-    padding: 0 22px 60px;
+  .theme-4 {
+    margin-top: -15px;
+  }
+
+  .theme-title {
+    font-size: 9px;
+  }
+
+  .theme-number {
+    font-size: 8px;
+  }
+
+  .gallery-page {
+    padding: 100px 18px 120px;
+  }
+
+  .gallery-heading {
+    display: block;
+  }
+
+  .back {
+    display: block;
+
+    margin-bottom: 30px;
+  }
+
+  .gallery-heading h2 {
+    font-size: 15vw;
+  }
+
+  .travel-navigation {
+    gap: 14px;
+
+    margin-bottom: 45px;
+  }
+
+  .travel-navigation button {
+    font-size: 8px;
+  }
+
+  .gallery-photos {
+    grid-template-columns: 1fr;
+
+    row-gap: 75px;
+  }
+
+  .about {
+    padding: 110px 18px 130px;
 
     display: block;
   }
 
-  .gallery-header h2 {
-    margin-bottom: 35px;
+  .about-label {
+    margin-bottom: 45px;
   }
 
-  .travel-filters {
-    padding: 0 22px 45px;
+  .about-content h2 {
+    font-size: 15vw;
 
-    gap: 16px;
+    letter-spacing: -3px;
   }
-
-  .gallery-grid {
-    grid-template-columns: 1fr;
-
-    row-gap: 70px;
-
-    padding: 0 22px 100px;
-  }
-
-
-  /* ================================================
-     IMPORTANT :
-     Les marges spéciales de Voyages restent
-     uniquement sur Voyages en mobile.
-  ================================================ */
-
-  #gallery-voyages .gallery-photo:nth-child(1),
-  #gallery-voyages .gallery-photo:nth-child(2),
-  #gallery-voyages .gallery-photo:nth-child(3),
-  #gallery-voyages .gallery-photo:nth-child(4),
-  #gallery-voyages .gallery-photo:nth-child(5),
-  #gallery-voyages .gallery-photo:nth-child(6) {
-    margin-top: 0;
-  }
-
 
   .contact {
-    grid-template-columns: 1fr;
+    min-height: 65vh;
 
-    gap: 50px;
+    padding: 55px 18px 25px;
   }
 
-  footer {
-    padding: 40px 22px;
-
-    flex-direction: column;
-    gap: 10px;
+  .contact-top {
+    display: block;
   }
 
+  .contact-email {
+    display: inline-block;
 
-  /* =================================================
-     VIE SAUVAGE — MOBILE
-  ================================================= */
-
-  .gallery-photo.wild-landscape img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    aspect-ratio: auto !important;
-    object-fit: contain !important;
+    margin-top: 30px;
   }
 
-  .gallery-photo.wild-portrait img {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-  }
+  .contact-title {
+    font-size: 21vw;
 
-  .gallery-photo.wild-square img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    letter-spacing: -5px;
   }
 
 }
 
 
 /* =====================================================
-   HIDDEN
+   MOBILE : VIE SAUVAGE
 ===================================================== */
 
-.hidden {
-  display: none !important;
+@media (max-width: 600px) {
+
+  .gallery-photo.wild-landscape img,
+  .gallery-photo.wild-portrait img,
+  .gallery-photo.wild-square img {
+    width: 100%;
+  }
+
 }
 
 </style>
 
 </head>
 
-
 <body>
 
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
 
-  <div class="logo">
+  <div class="name">
     Sébastien Turpin
   </div>
 
@@ -706,11 +883,11 @@ footer {
       Work
     </button>
 
-    <button onclick="showAbout()">
+    <button onclick="goToAbout()">
       About
     </button>
 
-    <button onclick="showContact()">
+    <button onclick="goToContact()">
       Contact
     </button>
 
@@ -719,301 +896,306 @@ footer {
 </header>
 
 
-<main>
+<!-- =====================================================
+     ACCUEIL
+===================================================== -->
+
+<section class="intro">
+
+  <h1>
+    Stories in photographs.
+  </h1>
+
+  <div class="intro-bottom">
+
+    <div class="intro-text">
+      Travel, lifestyle &amp; weddings.<br>
+      Des images spontanées et intemporelles.
+    </div>
+
+  </div>
+
+</section>
 
 
 <!-- =====================================================
-     HOME
+     6 THEMES
 ===================================================== -->
 
-<div id="home-page">
+<section class="work" id="work">
 
+  <div class="work-header">
 
-  <div class="intro">
+    <span>
+      Selected stories
+    </span>
 
-    <h1>
-      Stories in<br>
-      photographs.
-    </h1>
-
-    <p>
-      Photography exploring places, people,
-      everyday moments and the quiet beauty
-      found along the way.
-    </p>
+    <span>
+      2026
+    </span>
 
   </div>
 
 
-  <section>
-
-    <h2 class="section-title">
-      Work
-    </h2>
+  <div class="theme-grid">
 
 
-    <div class="work-grid">
+    <!-- =================================================
+         01 — VOYAGES
+    ================================================== -->
 
+    <button
+      class="theme theme-1"
+      onclick="openGallery('voyages')"
+    >
 
-      <!-- VOYAGES -->
-
-      <article
-        class="work-item"
-        onclick="openGallery('voyages')"
+      <img
+        class="theme-image"
+        src="accueil/voyages.jpg"
+        alt="Voyages"
       >
 
-        <div class="work-image">
+      <div class="theme-info">
 
-          <img
-            src="accueil/voyages.jpg"
-            alt="Voyages"
-          >
+        <span class="theme-title">
+          Voyages
+        </span>
 
-        </div>
+        <span class="theme-number">
+          01
+        </span>
 
-        <div class="work-info">
+      </div>
 
-          <span class="work-title">
-            Voyages
-          </span>
-
-          <span class="work-number">
-            01
-          </span>
-
-        </div>
-
-      </article>
+    </button>
 
 
-      <!-- MOMENTS -->
+    <!-- =================================================
+         02 — MOMENTS
+    ================================================== -->
 
-      <article
-        class="work-item"
-        onclick="openGallery('moments')"
+    <button
+      class="theme theme-2"
+      onclick="openGallery('moments')"
+    >
+
+      <img
+        class="theme-image"
+        src="accueil/moments.jpg"
+        alt="Moments"
       >
 
-        <div class="work-image">
+      <div class="theme-info">
 
-          <img
-            src="accueil/moments.jpg"
-            alt="Moments"
-          >
+        <span class="theme-title">
+          Moments
+        </span>
 
-        </div>
+        <span class="theme-number">
+          02
+        </span>
 
-        <div class="work-info">
+      </div>
 
-          <span class="work-title">
-            Moments
-          </span>
-
-          <span class="work-number">
-            02
-          </span>
-
-        </div>
-
-      </article>
+    </button>
 
 
-      <!-- LIFESTYLE -->
+    <!-- =================================================
+         03 — LIFESTYLE
+    ================================================== -->
 
-      <article
-        class="work-item"
-        onclick="openGallery('lifestyle')"
+    <button
+      class="theme theme-3"
+      onclick="openGallery('lifestyle')"
+    >
+
+      <img
+        class="theme-image"
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
+        alt="Lifestyle"
       >
 
-        <div class="work-image">
+      <div class="theme-info">
 
-          <img
-            src="accueil/lifestyle.jpg"
-            alt="Lifestyle"
-          >
+        <span class="theme-title">
+          Lifestyle
+        </span>
 
-        </div>
+        <span class="theme-number">
+          03
+        </span>
 
-        <div class="work-info">
+      </div>
 
-          <span class="work-title">
-            Lifestyle
-          </span>
-
-          <span class="work-number">
-            03
-          </span>
-
-        </div>
-
-      </article>
+    </button>
 
 
-      <!-- CITY -->
+    <!-- =================================================
+         04 — CITY
+    ================================================== -->
 
-      <article
-        class="work-item"
-        onclick="openGallery('city')"
+    <button
+      class="theme theme-4"
+      onclick="openGallery('city')"
+    >
+
+      <img
+        class="theme-image"
+        src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
+        alt="City"
       >
 
-        <div class="work-image">
+      <div class="theme-info">
 
-          <img
-            src="accueil/city.jpg"
-            alt="City"
-          >
+        <span class="theme-title">
+          City
+        </span>
 
-        </div>
+        <span class="theme-number">
+          04
+        </span>
 
-        <div class="work-info">
+      </div>
 
-          <span class="work-title">
-            City
-          </span>
-
-          <span class="work-number">
-            04
-          </span>
-
-        </div>
-
-      </article>
+    </button>
 
 
-      <!-- NATURE -->
+    <!-- =================================================
+         05 — NATURE
+    ================================================== -->
 
-      <article
-        class="work-item"
-        onclick="openGallery('nature')"
+    <button
+      class="theme theme-5"
+      onclick="openGallery('nature')"
+    >
+
+      <img
+        class="theme-image"
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
+        alt="Nature"
       >
 
-        <div class="work-image">
+      <div class="theme-info">
 
-          <img
-            src="accueil/nature.jpg"
-            alt="Nature"
-          >
+        <span class="theme-title">
+          Nature
+        </span>
 
-        </div>
+        <span class="theme-number">
+          05
+        </span>
 
-        <div class="work-info">
+      </div>
 
-          <span class="work-title">
-            Nature
-          </span>
-
-          <span class="work-number">
-            05
-          </span>
-
-        </div>
-
-      </article>
+    </button>
 
 
-      <!-- VIE SAUVAGE -->
+    <!-- =================================================
+         06 — VIE SAUVAGE
+    ================================================== -->
 
-      <article
-        class="work-item"
-        onclick="openGallery('vie-sauvage')"
+    <button
+      class="theme theme-6"
+      onclick="openGallery('vie-sauvage')"
+    >
+
+      <img
+        class="theme-image"
+        src="accueil/vie sauvage.jpg"
+        alt="Vie sauvage"
       >
 
-        <div class="work-image">
+      <div class="theme-info">
 
-          <img
-            src="accueil/vie sauvage.jpg"
-            alt="Vie sauvage"
-          >
+        <span class="theme-title">
+          Vie sauvage
+        </span>
 
-        </div>
+        <span class="theme-number">
+          06
+        </span>
 
-        <div class="work-info">
+      </div>
 
-          <span class="work-title">
-            Vie sauvage
-          </span>
-
-          <span class="work-number">
-            06
-          </span>
-
-        </div>
-
-      </article>
+    </button>
 
 
-    </div>
+  </div>
 
-  </section>
-
-</div>
-
+</section>
 
 
 <!-- =====================================================
-     VOYAGES
+     GALERIE
 ===================================================== -->
 
-<div
-  id="gallery-voyages"
+<section
   class="gallery-page"
+  id="galleryPage"
 >
 
+  <div class="gallery-heading">
 
-  <div class="gallery-header">
+    <button
+      class="back"
+      onclick="showHome()"
+    >
+      ← Toutes les photos
+    </button>
 
-    <h2>
+    <h2 id="galleryTitle">
       Voyages
     </h2>
 
-    <button
-      class="back-button"
-      onclick="showHome()"
-    >
-      ← Back
-    </button>
-
   </div>
 
 
-  <div class="travel-filters">
+  <!-- =================================================
+       SOUS-CATEGORIES VOYAGES
+  ================================================== -->
+
+  <div
+    class="travel-navigation"
+    id="travelNavigation"
+  >
 
     <button
-      class="travel-filter active"
+      class="travel-button active"
       onclick="filterTravel('all', this)"
     >
       Tous
     </button>
 
     <button
-      class="travel-filter"
+      class="travel-button"
       onclick="filterTravel('slovenie', this)"
     >
       Slovénie
     </button>
 
     <button
-      class="travel-filter"
+      class="travel-button"
       onclick="filterTravel('italie', this)"
     >
       Italie
     </button>
 
     <button
-      class="travel-filter"
-      onclick="filterTravel('st-jean', this)"
+      class="travel-button"
+      onclick="filterTravel('saint-jean', this)"
     >
       St Jean de Mont
     </button>
 
     <button
-      class="travel-filter"
+      class="travel-button"
       onclick="filterTravel('faro', this)"
     >
       Faro
     </button>
 
     <button
-      class="travel-filter"
+      class="travel-button"
       onclick="filterTravel('majorque', this)"
     >
       Majorque
@@ -1022,18 +1204,25 @@ footer {
   </div>
 
 
-  <div class="gallery-grid">
+  <!-- =================================================
+       PHOTOS
+  ================================================== -->
+
+  <div class="gallery-photos">
 
 
-    <!-- EXEMPLES DE PHOTOS VOYAGES -->
+    <!-- =================================================
+         SLOVENIE
+    ================================================== -->
 
     <article
       class="gallery-photo"
+      data-theme="voyages"
       data-travel="slovenie"
     >
 
       <img
-        src="voyages/slovenie-01.jpg"
+        src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
         alt="Slovénie"
       >
 
@@ -1052,13 +1241,18 @@ footer {
     </article>
 
 
+    <!-- =================================================
+         ITALIE
+    ================================================== -->
+
     <article
       class="gallery-photo"
+      data-theme="voyages"
       data-travel="italie"
     >
 
       <img
-        src="voyages/italie-01.jpg"
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=90"
         alt="Italie"
       >
 
@@ -1077,51 +1271,114 @@ footer {
     </article>
 
 
-  </div>
+    <!-- =================================================
+         ST JEAN DE MONT
+    ================================================== -->
 
-</div>
-
-
-
-<!-- =====================================================
-     MOMENTS
-===================================================== -->
-
-<div
-  id="gallery-moments"
-  class="gallery-page"
->
-
-  <div class="gallery-header">
-
-    <h2>
-      Moments
-    </h2>
-
-    <button
-      class="back-button"
-      onclick="showHome()"
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="saint-jean"
     >
-      ← Back
-    </button>
-
-  </div>
-
-
-  <div class="gallery-grid">
-
-
-    <article class="gallery-photo">
 
       <img
-        src="moments/moment-01.jpg"
-        alt="Moment"
+        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=90"
+        alt="St Jean de Mont"
       >
 
       <div class="photo-info">
 
         <span class="photo-title">
-          Moment
+          St Jean de Mont
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- =================================================
+         FARO
+    ================================================== -->
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="faro"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=90"
+        alt="Faro"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Faro
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- =================================================
+         MAJORQUE
+    ================================================== -->
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="majorque"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=90"
+        alt="Majorque"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Majorque
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- =================================================
+         MOMENTS
+    ================================================== -->
+
+    <article
+      class="gallery-photo"
+      data-theme="moments"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=90"
+        alt="Moments"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Moments
         </span>
 
         <span class="photo-category">
@@ -1133,44 +1390,17 @@ footer {
     </article>
 
 
-  </div>
+    <!-- =================================================
+         LIFESTYLE
+    ================================================== -->
 
-</div>
-
-
-
-<!-- =====================================================
-     LIFESTYLE
-===================================================== -->
-
-<div
-  id="gallery-lifestyle"
-  class="gallery-page"
->
-
-  <div class="gallery-header">
-
-    <h2>
-      Lifestyle
-    </h2>
-
-    <button
-      class="back-button"
-      onclick="showHome()"
+    <article
+      class="gallery-photo"
+      data-theme="lifestyle"
     >
-      ← Back
-    </button>
-
-  </div>
-
-
-  <div class="gallery-grid">
-
-
-    <article class="gallery-photo">
 
       <img
-        src="lifestyle/lifestyle-01.jpg"
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
         alt="Lifestyle"
       >
 
@@ -1189,44 +1419,17 @@ footer {
     </article>
 
 
-  </div>
+    <!-- =================================================
+         CITY
+    ================================================== -->
 
-</div>
-
-
-
-<!-- =====================================================
-     CITY
-===================================================== -->
-
-<div
-  id="gallery-city"
-  class="gallery-page"
->
-
-  <div class="gallery-header">
-
-    <h2>
-      City
-    </h2>
-
-    <button
-      class="back-button"
-      onclick="showHome()"
+    <article
+      class="gallery-photo"
+      data-theme="city"
     >
-      ← Back
-    </button>
-
-  </div>
-
-
-  <div class="gallery-grid">
-
-
-    <article class="gallery-photo">
 
       <img
-        src="city/city-01.jpg"
+        src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
         alt="City"
       >
 
@@ -1245,44 +1448,17 @@ footer {
     </article>
 
 
-  </div>
+    <!-- =================================================
+         NATURE
+    ================================================== -->
 
-</div>
-
-
-
-<!-- =====================================================
-     NATURE
-===================================================== -->
-
-<div
-  id="gallery-nature"
-  class="gallery-page"
->
-
-  <div class="gallery-header">
-
-    <h2>
-      Nature
-    </h2>
-
-    <button
-      class="back-button"
-      onclick="showHome()"
+    <article
+      class="gallery-photo"
+      data-theme="nature"
     >
-      ← Back
-    </button>
-
-  </div>
-
-
-  <div class="gallery-grid">
-
-
-    <article class="gallery-photo">
 
       <img
-        src="nature/nature-01.jpg"
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
         alt="Nature"
       >
 
@@ -1301,42 +1477,9 @@ footer {
     </article>
 
 
-  </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     VIE SAUVAGE
-===================================================== -->
-
-<div
-  id="gallery-vie-sauvage"
-  class="gallery-page"
->
-
-
-  <div class="gallery-header">
-
-    <h2>
-      Vie sauvage
-    </h2>
-
-    <button
-      class="back-button"
-      onclick="showHome()"
-    >
-      ← Back
-    </button>
-
-  </div>
-
-
-  <div class="gallery-grid">
-
-
-    <!-- ALPAGA -->
+    <!-- =================================================
+         VIE SAUVAGE — ALPAGA
+    ================================================== -->
 
     <article
       class="gallery-photo wild-portrait"
@@ -1363,10 +1506,12 @@ footer {
     </article>
 
 
-    <!-- PELICAN -->
+    <!-- =================================================
+         VIE SAUVAGE — PELICAN
+    ================================================== -->
 
     <article
-      class="gallery-photo wild-landscape"
+      class="gallery-photo wild-portrait"
       data-theme="vie-sauvage"
     >
 
@@ -1392,197 +1537,301 @@ footer {
 
   </div>
 
-</div>
-
+</section>
 
 
 <!-- =====================================================
      ABOUT
 ===================================================== -->
 
-<div
-  id="about-page"
-  class="gallery-page"
+<section
+  class="about"
+  id="about"
 >
 
+  <div class="about-label">
+    About
+  </div>
 
-  <section>
+  <div class="about-content">
 
-    <h2 class="section-title">
-      About
+    <h2>
+      Photographier<br>
+      ce qui reste.
     </h2>
 
+    <p>
 
-    <div class="about">
+      Je suis Sébastien Turpin, photographe basé en France.
 
-      <p class="about-text">
+      Je photographie les voyages, les lieux, les personnes
+      et les moments spontanés.
 
-        I am Sébastien Turpin,
-        a photographer interested in
-        places, people and the stories
-        that happen between them.
+      <br><br>
 
-      </p>
+      Je cherche avant tout des images naturelles,
+      vivantes et intemporelles.
 
-    </div>
+    </p>
 
-  </section>
+  </div>
 
-
-</div>
-
+</section>
 
 
 <!-- =====================================================
      CONTACT
 ===================================================== -->
 
-<div
-  id="contact-page"
-  class="gallery-page"
+<section
+  class="contact"
+  id="contact"
 >
 
+  <div class="contact-top">
 
-  <section>
-
-
-    <div class="contact">
-
-
-      <div>
-
-        <h2 class="contact-title">
-          Let's<br>
-          talk.
-        </h2>
-
-      </div>
-
-
-      <div class="contact-links">
-
-        <a href="mailto:contact@sebastienturpin.com">
-          Email
-        </a>
-
-        <a href="#">
-          Instagram
-        </a>
-
-      </div>
-
-
+    <div class="contact-label">
+      Contact
     </div>
 
-  </section>
+    <a
+      class="contact-email"
+      href="mailto:contact@sebastienturpin.fr"
+    >
+      contact@sebastienturpin.fr
+    </a>
+
+  </div>
+
+  <h2 class="contact-title">
+    Parlons.
+  </h2>
+
+  <div class="footer">
+
+    <span>
+      © 2026 Sébastien Turpin
+    </span>
+
+    <span>
+      Photography
+    </span>
+
+  </div>
+
+</section>
 
 
-</div>
-
-
-</main>
-
-
-
-<footer>
-
-  <span>
-    © Sébastien Turpin
-  </span>
-
-  <span>
-    Photography
-  </span>
-
-</footer>
-
-
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
 /* =====================================================
-   PAGES
+   ELEMENTS
 ===================================================== */
 
-function hideAllPages() {
+const work =
+  document.getElementById("work");
 
-  document
-    .querySelectorAll('.gallery-page')
-    .forEach(page => {
+const galleryPage =
+  document.getElementById("galleryPage");
 
-      page.classList.remove('active');
+const galleryTitle =
+  document.getElementById("galleryTitle");
 
-    });
+const travelNavigation =
+  document.getElementById("travelNavigation");
 
-  document
-    .getElementById('home-page')
-    .style.display = 'none';
-
-}
+const galleryPhotos =
+  document.querySelectorAll(".gallery-photo");
 
 
 /* =====================================================
-   HOME
+   TITRES
 ===================================================== */
 
-function showHome() {
+const themeTitles = {
 
-  document
-    .querySelectorAll('.gallery-page')
-    .forEach(page => {
+  voyages: "Voyages",
 
-      page.classList.remove('active');
+  moments: "Moments",
 
-    });
+  lifestyle: "Lifestyle",
 
-  document
-    .getElementById('home-page')
-    .style.display = 'block';
+  city: "City",
 
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+  nature: "Nature",
 
-}
+  "vie-sauvage": "Vie sauvage"
+
+};
 
 
 /* =====================================================
-   GALLERY
+   OUVRIR UNE GALERIE
 ===================================================== */
 
 function openGallery(theme) {
 
-  document
-    .getElementById('home-page')
-    .style.display = 'none';
+  work.style.display = "none";
+
+  galleryPage.classList.add("active");
+
+  galleryTitle.textContent =
+    themeTitles[theme];
 
 
-  document
-    .querySelectorAll('.gallery-page')
-    .forEach(page => {
+  if (theme === "voyages") {
 
-      page.classList.remove('active');
+    travelNavigation.classList.add("active");
 
-    });
+    resetTravel();
 
+    showThemePhotos("voyages");
 
-  const gallery =
-    document.getElementById(
-      'gallery-' + theme
-    );
+  } else {
 
+    travelNavigation.classList.remove("active");
 
-  if (gallery) {
-
-    gallery.classList.add('active');
+    showThemePhotos(theme);
 
   }
 
 
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth"
+  });
+
+}
+
+
+/* =====================================================
+   AFFICHER LES PHOTOS D'UN THEME
+===================================================== */
+
+function showThemePhotos(theme) {
+
+  galleryPhotos.forEach(photo => {
+
+    if (
+      photo.dataset.theme === theme
+    ) {
+
+      photo.classList.remove("hidden");
+
+    } else {
+
+      photo.classList.add("hidden");
+
+    }
+
+  });
+
+}
+
+
+/* =====================================================
+   FILTRE VOYAGES
+===================================================== */
+
+function filterTravel(
+  travel,
+  button
+) {
+
+  document
+    .querySelectorAll(".travel-button")
+    .forEach(btn => {
+
+      btn.classList.remove("active");
+
+    });
+
+
+  button.classList.add("active");
+
+
+  galleryPhotos.forEach(photo => {
+
+    if (
+      photo.dataset.theme !== "voyages"
+    ) {
+
+      photo.classList.add("hidden");
+
+      return;
+
+    }
+
+
+    if (
+      travel === "all" ||
+      photo.dataset.travel === travel
+    ) {
+
+      photo.classList.remove("hidden");
+
+    } else {
+
+      photo.classList.add("hidden");
+
+    }
+
+  });
+
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+/* =====================================================
+   RESET VOYAGES
+===================================================== */
+
+function resetTravel() {
+
+  document
+    .querySelectorAll(".travel-button")
+    .forEach(button => {
+
+      button.classList.remove("active");
+
+    });
+
+
+  const firstButton =
+    document.querySelector(".travel-button");
+
+  if (firstButton) {
+
+    firstButton.classList.add("active");
+
+  }
+
+}
+
+
+/* =====================================================
+   RETOUR ACCUEIL
+===================================================== */
+
+function showHome() {
+
+  galleryPage.classList.remove("active");
+
+  work.style.display = "block";
+
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
 
 }
@@ -1592,31 +1841,22 @@ function openGallery(theme) {
    ABOUT
 ===================================================== */
 
-function showAbout() {
+function goToAbout() {
 
-  document
-    .getElementById('home-page')
-    .style.display = 'none';
+  galleryPage.classList.remove("active");
 
-
-  document
-    .querySelectorAll('.gallery-page')
-    .forEach(page => {
-
-      page.classList.remove('active');
-
-    });
+  work.style.display = "block";
 
 
-  document
-    .getElementById('about-page')
-    .classList.add('active');
+  setTimeout(() => {
 
+    document
+      .getElementById("about")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
 
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+  }, 50);
 
 }
 
@@ -1625,78 +1865,26 @@ function showAbout() {
    CONTACT
 ===================================================== */
 
-function showContact() {
+function goToContact() {
 
-  document
-    .getElementById('home-page')
-    .style.display = 'none';
+  galleryPage.classList.remove("active");
 
-
-  document
-    .querySelectorAll('.gallery-page')
-    .forEach(page => {
-
-      page.classList.remove('active');
-
-    });
+  work.style.display = "block";
 
 
-  document
-    .getElementById('contact-page')
-    .classList.add('active');
+  setTimeout(() => {
 
+    document
+      .getElementById("contact")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
 
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-
-}
-
-
-/* =====================================================
-   TRAVEL FILTER
-===================================================== */
-
-function filterTravel(category, button) {
-
-  document
-    .querySelectorAll('.travel-filter')
-    .forEach(filter => {
-
-      filter.classList.remove('active');
-
-    });
-
-
-  button.classList.add('active');
-
-
-  document
-    .querySelectorAll(
-      '#gallery-voyages .gallery-photo'
-    )
-    .forEach(photo => {
-
-      if (
-        category === 'all' ||
-        photo.dataset.travel === category
-      ) {
-
-        photo.classList.remove('hidden');
-
-      } else {
-
-        photo.classList.add('hidden');
-
-      }
-
-    });
+  }, 50);
 
 }
 
 </script>
-
 
 </body>
 
