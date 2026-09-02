@@ -373,44 +373,53 @@ section {
    VOYAGES — FORMATS
 ===================================================== */
 
-.gallery-photo:nth-child(1) img {
+/*
+   IMPORTANT :
+   Ces règles sont maintenant limitées à la galerie
+   Voyages uniquement.
+
+   Elles ne peuvent donc plus modifier les photos
+   des autres galeries.
+*/
+
+#gallery-voyages .gallery-photo:nth-child(1) img {
   aspect-ratio: 3 / 4;
   object-fit: cover;
 }
 
-.gallery-photo:nth-child(2) {
+#gallery-voyages .gallery-photo:nth-child(2) {
   margin-top: 140px;
 }
 
-.gallery-photo:nth-child(2) img {
+#gallery-voyages .gallery-photo:nth-child(2) img {
   aspect-ratio: 2 / 3;
   object-fit: cover;
 }
 
-.gallery-photo:nth-child(3) img {
+#gallery-voyages .gallery-photo:nth-child(3) img {
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 
-.gallery-photo:nth-child(4) {
+#gallery-voyages .gallery-photo:nth-child(4) {
   margin-top: -20px;
 }
 
-.gallery-photo:nth-child(4) img {
+#gallery-voyages .gallery-photo:nth-child(4) img {
   aspect-ratio: 2 / 3;
   object-fit: cover;
 }
 
-.gallery-photo:nth-child(5) {
+#gallery-voyages .gallery-photo:nth-child(5) {
   margin-top: 120px;
 }
 
-.gallery-photo:nth-child(5) img {
+#gallery-voyages .gallery-photo:nth-child(5) img {
   aspect-ratio: 3 / 4;
   object-fit: cover;
 }
 
-.gallery-photo:nth-child(6) img {
+#gallery-voyages .gallery-photo:nth-child(6) img {
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
@@ -421,25 +430,30 @@ section {
 ===================================================== */
 
 /*
-   IMPORTANT :
-   Les photos de Vie sauvage utilisent maintenant
-   des classes explicites pour leur format.
+   Formats spécifiques aux photos de Vie sauvage :
 
-   wild-landscape = paysage naturel
-   wild-portrait  = portrait 3/4
+   wild-landscape = paysage
+   wild-portrait  = portrait
    wild-square    = carré
 */
+
+
+/* PAYSAGE */
 
 .gallery-photo.wild-landscape img {
   width: 100% !important;
 
   height: auto !important;
+
   max-height: none !important;
 
   aspect-ratio: auto !important;
 
-  object-fit: unset !important;
+  object-fit: contain !important;
 }
+
+
+/* PORTRAIT */
 
 .gallery-photo.wild-portrait img {
   width: 100%;
@@ -448,6 +462,9 @@ section {
 
   object-fit: cover;
 }
+
+
+/* CARRE */
 
 .gallery-photo.wild-square img {
   width: 100%;
@@ -603,14 +620,22 @@ footer {
     padding: 0 22px 100px;
   }
 
-  .gallery-photo:nth-child(1),
-  .gallery-photo:nth-child(2),
-  .gallery-photo:nth-child(3),
-  .gallery-photo:nth-child(4),
-  .gallery-photo:nth-child(5),
-  .gallery-photo:nth-child(6) {
+
+  /* ================================================
+     IMPORTANT :
+     Les marges spéciales de Voyages restent
+     uniquement sur Voyages en mobile.
+  ================================================ */
+
+  #gallery-voyages .gallery-photo:nth-child(1),
+  #gallery-voyages .gallery-photo:nth-child(2),
+  #gallery-voyages .gallery-photo:nth-child(3),
+  #gallery-voyages .gallery-photo:nth-child(4),
+  #gallery-voyages .gallery-photo:nth-child(5),
+  #gallery-voyages .gallery-photo:nth-child(6) {
     margin-top: 0;
   }
+
 
   .contact {
     grid-template-columns: 1fr;
@@ -626,16 +651,16 @@ footer {
   }
 
 
-  /* ===================================================
+  /* =================================================
      VIE SAUVAGE — MOBILE
-  =================================================== */
+  ================================================= */
 
   .gallery-photo.wild-landscape img {
     width: 100% !important;
     height: auto !important;
     max-height: none !important;
     aspect-ratio: auto !important;
-    object-fit: unset !important;
+    object-fit: contain !important;
   }
 
   .gallery-photo.wild-portrait img {
