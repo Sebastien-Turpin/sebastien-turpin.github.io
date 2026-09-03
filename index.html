@@ -879,6 +879,7 @@ nav button:hover {
 
   .slide-button {
     width: 42px;
+
     height: 80px;
 
     font-size: 22px;
@@ -1307,9 +1308,9 @@ nav button:hover {
 
   <!-- =================================================
        DIAPORAMA
-===================================================== -->
+  ================================================== -->
 
-  <div class="slideshow">
+  <div class="slideshow" id="slideshow">
 
     <button
       class="slide-button slide-prev"
@@ -1336,7 +1337,7 @@ nav button:hover {
 
   <!-- =================================================
        INFORMATIONS
-===================================================== -->
+  ================================================== -->
 
   <div class="slideshow-info">
 
@@ -1366,7 +1367,7 @@ nav button:hover {
 
   <!-- =================================================
        DONNEES PHOTOS
-===================================================== -->
+  ================================================== -->
 
   <div
     class="gallery-photos"
@@ -1689,17 +1690,11 @@ nav button:hover {
           Alpaga
         </span>
 
-        <div class="photo-info">
+        <span class="photo-category">
+          Wildlife
+        </span>
 
-          <span class="photo-title">
-            Alpaga
-          </span>
-
-          <span class="photo-category">
-            Wildlife
-          </span>
-
-        </div>
+      </div>
 
     </article>
 
@@ -1900,6 +1895,9 @@ const galleryTitle =
 const travelNavigation =
   document.getElementById("travelNavigation");
 
+const slideshow =
+  document.getElementById("slideshow");
+
 const galleryPhotos =
   document.querySelectorAll(".gallery-photo");
 
@@ -1949,6 +1947,24 @@ let currentIndex = 0;
 
 
 /* =====================================================
+   CENTRER LE DIAPORAMA DANS L'ECRAN
+===================================================== */
+
+function centerSlideshow() {
+
+  setTimeout(() => {
+
+    slideshow.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+  }, 50);
+
+}
+
+
+/* =====================================================
    OUVRIR UNE GALERIE
 ===================================================== */
 
@@ -1982,10 +1998,13 @@ function openGallery(theme) {
   }
 
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  /* 
+     On centre la zone du diaporama.
+     La première photo est donc directement
+     au milieu de l'écran.
+  */
+
+  centerSlideshow();
 
 }
 
@@ -2022,11 +2041,14 @@ function renderSlideshow() {
 
   if (currentPhotos.length === 0) {
 
-    slideshowTitle.textContent = "Aucune photo";
+    slideshowTitle.textContent =
+      "Aucune photo";
 
-    slideshowCategory.textContent = "";
+    slideshowCategory.textContent =
+      "";
 
-    slideshowCounter.textContent = "00 / 00";
+    slideshowCounter.textContent =
+      "00 / 00";
 
     return;
 
@@ -2182,10 +2204,12 @@ function filterTravel(
   renderSlideshow();
 
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  /* 
+     On centre la première photo du
+     sous-thème sélectionné.
+  */
+
+  centerSlideshow();
 
 }
 
@@ -2292,7 +2316,9 @@ galleryPage.addEventListener(
 
 
     if (Math.abs(distance) < 50) {
+
       return;
+
     }
 
 
