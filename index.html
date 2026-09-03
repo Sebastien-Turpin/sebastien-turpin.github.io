@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -66,7 +67,6 @@ header {
 
   background: rgba(247,247,245,.92);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 .name {
@@ -395,100 +395,6 @@ nav button:hover {
 
 
 /* =====================================================
-   DESTINATIONS VOYAGES
-===================================================== */
-
-.travel-categories {
-  display: none;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  column-gap: 22px;
-
-  row-gap: 90px;
-
-  align-items: start;
-}
-
-.travel-categories.active {
-  display: grid;
-}
-
-.travel-card {
-  display: block;
-
-  border: 0;
-  padding: 0;
-
-  background: transparent;
-
-  cursor: pointer;
-
-  text-align: left;
-
-  color: #111;
-
-  width: 100%;
-}
-
-.travel-card-image {
-  width: 100%;
-
-  aspect-ratio: 3 / 4;
-
-  overflow: hidden;
-
-  background: #ddd;
-}
-
-.travel-card-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-
-  transition:
-    transform 1s cubic-bezier(.2,.6,.2,1),
-    opacity .4s ease;
-}
-
-.travel-card:hover .travel-card-image img {
-  transform: scale(1.025);
-}
-
-.travel-card-info {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: baseline;
-
-  padding-top: 13px;
-}
-
-.travel-card-title {
-  font-size: 11px;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-}
-
-.travel-card-number {
-  font-size: 9px;
-
-  letter-spacing: 1px;
-
-  color: #999;
-}
-
-.travel-card:hover .travel-card-title {
-  opacity: .5;
-}
-
-
-/* =====================================================
    NAVIGATION VOYAGES
 ===================================================== */
 
@@ -540,27 +446,6 @@ nav button:hover {
   width: 100%;
 
   min-height: calc(100vh - 240px);
-
-  display: none;
-
-  align-items: center;
-
-  justify-content: center;
-}
-
-.slideshow.active {
-  display: flex;
-}
-
-
-/* =====================================================
-   CONTENEUR PHOTO
-===================================================== */
-
-#slideshowImageContainer {
-  width: 100%;
-
-  min-height: calc(100vh - 300px);
 
   display: flex;
 
@@ -650,7 +535,7 @@ nav button:hover {
 .slideshow-info {
   width: 100%;
 
-  display: none;
+  display: flex;
 
   justify-content: space-between;
 
@@ -659,10 +544,6 @@ nav button:hover {
   padding-top: 20px;
 
   border-top: 1px solid #d8d8d5;
-}
-
-.slideshow-info.active {
-  display: flex;
 }
 
 .slideshow-title {
@@ -845,21 +726,12 @@ nav button:hover {
     margin-top: 80px;
   }
 
-  .travel-categories {
-    grid-template-columns: repeat(2, 1fr);
-
-    column-gap: 18px;
-
-    row-gap: 70px;
-  }
-
   .about {
     grid-template-columns: 1fr;
   }
 
   .slideshow-photo {
     max-width: calc(100vw - 120px);
-
     max-height: calc(100vh - 280px);
   }
 
@@ -969,26 +841,7 @@ nav button:hover {
   }
 
 
-  /* DESTINATIONS */
-
-  .travel-categories {
-    grid-template-columns: repeat(2, 1fr);
-
-    column-gap: 12px;
-
-    row-gap: 60px;
-  }
-
-  .travel-card-title {
-    font-size: 9px;
-  }
-
-  .travel-card-number {
-    font-size: 8px;
-  }
-
-
-  /* NAVIGATION VOYAGES */
+  /* VOYAGES */
 
   .travel-navigation {
     gap: 14px;
@@ -1006,11 +859,9 @@ nav button:hover {
   .slideshow {
     min-height: calc(100vh - 230px);
 
-    align-items: center;
-  }
+    display: flex;
 
-  #slideshowImageContainer {
-    min-height: calc(100vh - 330px);
+    align-items: center;
   }
 
   .slideshow-photo {
@@ -1028,7 +879,6 @@ nav button:hover {
 
   .slide-button {
     width: 42px;
-
     height: 80px;
 
     font-size: 22px;
@@ -1106,24 +956,12 @@ nav button:hover {
 
 }
 
-
-/* =====================================================
-   PETITS ECRANS
-===================================================== */
-
-@media (max-width: 420px) {
-
-  .travel-categories {
-    grid-template-columns: 1fr;
-  }
-
-}
-
 </style>
 
 </head>
 
 <body>
+
 
 <!-- =====================================================
      HEADER
@@ -1131,39 +969,33 @@ nav button:hover {
 
 <header>
 
-<a
-href="#"
-class="name"
-onclick="showHome(); return false;"
-aria-label="Retour à l'accueil"
-
->
-
-```
-Sébastien Turpin
-```
-
+  <a
+    href="#"
+    class="name"
+    onclick="showHome(); return false;"
+    aria-label="Retour à l'accueil"
+  >
+    Sébastien Turpin
   </a>
 
   <nav>
 
-```
-<button onclick="showHome()">
-  Work
-</button>
+    <button onclick="showHome()">
+      Work
+    </button>
 
-<button onclick="goToAbout()">
-  About
-</button>
+    <button onclick="goToAbout()">
+      About
+    </button>
 
-<button onclick="goToContact()">
-  Contact
-</button>
-```
+    <button onclick="goToContact()">
+      Contact
+    </button>
 
   </nav>
 
 </header>
+
 
 <!-- =====================================================
      ACCUEIL
@@ -1177,16 +1009,15 @@ Sébastien Turpin
 
   <div class="intro-bottom">
 
-```
-<div class="intro-text">
-  Travel, lifestyle &amp; weddings.<br>
-  Des images spontanées et intemporelles.
-</div>
-```
+    <div class="intro-text">
+      Travel, lifestyle &amp; weddings.<br>
+      Des images spontanées et intemporelles.
+    </div>
 
   </div>
 
 </section>
+
 
 <!-- =====================================================
      6 THEMES
@@ -1196,192 +1027,204 @@ Sébastien Turpin
 
   <div class="work-header">
 
-```
-<span>
-  Selected stories
-</span>
+    <span>
+      Selected stories
+    </span>
 
-<span>
-  2026
-</span>
-```
+    <span>
+      2026
+    </span>
 
   </div>
+
 
   <div class="theme-grid">
 
-```
-<!-- 01 — VOYAGES -->
 
-<button
-  class="theme theme-1"
-  onclick="openGallery('voyages')"
->
+    <!-- =================================================
+         01 — VOYAGES
+    ================================================== -->
 
-  <img
-    class="theme-image"
-    src="accueil/voyages.jpg"
-    alt="Voyages"
-  >
+    <button
+      class="theme theme-1"
+      onclick="openGallery('voyages')"
+    >
 
-  <div class="theme-info">
+      <img
+        class="theme-image"
+        src="accueil/voyages.jpg"
+        alt="Voyages"
+      >
 
-    <span class="theme-title">
-      Voyages
-    </span>
+      <div class="theme-info">
 
-    <span class="theme-number">
-      01
-    </span>
+        <span class="theme-title">
+          Voyages
+        </span>
 
-  </div>
+        <span class="theme-number">
+          01
+        </span>
 
-</button>
+      </div>
 
-
-<!-- 02 — MOMENTS -->
-
-<button
-  class="theme theme-2"
-  onclick="openGallery('moments')"
->
-
-  <img
-    class="theme-image"
-    src="accueil/moments.jpg"
-    alt="Moments"
-  >
-
-  <div class="theme-info">
-
-    <span class="theme-title">
-      Moments
-    </span>
-
-    <span class="theme-number">
-      02
-    </span>
-
-  </div>
-
-</button>
+    </button>
 
 
-<!-- 03 — LIFESTYLE -->
+    <!-- =================================================
+         02 — MOMENTS
+    ================================================== -->
 
-<button
-  class="theme theme-3"
-  onclick="openGallery('lifestyle')"
->
+    <button
+      class="theme theme-2"
+      onclick="openGallery('moments')"
+    >
 
-  <img
-    class="theme-image"
-    src="accueil/lifestyle.jpg"
-    alt="Lifestyle"
-  >
+      <img
+        class="theme-image"
+        src="accueil/moments.jpg"
+        alt="Moments"
+      >
 
-  <div class="theme-info">
+      <div class="theme-info">
 
-    <span class="theme-title">
-      Lifestyle
-    </span>
+        <span class="theme-title">
+          Moments
+        </span>
 
-    <span class="theme-number">
-      03
-    </span>
+        <span class="theme-number">
+          02
+        </span>
 
-  </div>
+      </div>
 
-</button>
-
-
-<!-- 04 — CITY -->
-
-<button
-  class="theme theme-4"
-  onclick="openGallery('city')"
->
-
-  <img
-    class="theme-image"
-    src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
-    alt="City"
-  >
-
-  <div class="theme-info">
-
-    <span class="theme-title">
-      City
-    </span>
-
-    <span class="theme-number">
-      04
-    </span>
-
-  </div>
-
-</button>
+    </button>
 
 
-<!-- 05 — NATURE -->
+    <!-- =================================================
+         03 — LIFESTYLE
+    ================================================== -->
 
-<button
-  class="theme theme-5"
-  onclick="openGallery('nature')"
->
+    <button
+      class="theme theme-3"
+      onclick="openGallery('lifestyle')"
+    >
 
-  <img
-    class="theme-image"
-    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
-    alt="Nature"
-  >
+      <img
+        class="theme-image"
+        src="accueil/lifestyle.jpg"
+        alt="Lifestyle"
+      >
 
-  <div class="theme-info">
+      <div class="theme-info">
 
-    <span class="theme-title">
-      Nature
-    </span>
+        <span class="theme-title">
+          Lifestyle
+        </span>
 
-    <span class="theme-number">
-      05
-    </span>
+        <span class="theme-number">
+          03
+        </span>
 
-  </div>
+      </div>
 
-</button>
+    </button>
 
 
-<!-- 06 — VIE SAUVAGE -->
+    <!-- =================================================
+         04 — CITY
+    ================================================== -->
 
-<button
-  class="theme theme-6"
-  onclick="openGallery('vie-sauvage')"
->
+    <button
+      class="theme theme-4"
+      onclick="openGallery('city')"
+    >
 
-  <img
-    class="theme-image"
-    src="accueil/vie sauvage.jpg"
-    alt="Vie sauvage"
-  >
+      <img
+        class="theme-image"
+        src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
+        alt="City"
+      >
 
-  <div class="theme-info">
+      <div class="theme-info">
 
-    <span class="theme-title">
-      Vie sauvage
-    </span>
+        <span class="theme-title">
+          City
+        </span>
 
-    <span class="theme-number">
-      06
-    </span>
+        <span class="theme-number">
+          04
+        </span>
 
-  </div>
+      </div>
 
-</button>
-```
+    </button>
+
+
+    <!-- =================================================
+         05 — NATURE
+    ================================================== -->
+
+    <button
+      class="theme theme-5"
+      onclick="openGallery('nature')"
+    >
+
+      <img
+        class="theme-image"
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
+        alt="Nature"
+      >
+
+      <div class="theme-info">
+
+        <span class="theme-title">
+          Nature
+        </span>
+
+        <span class="theme-number">
+          05
+        </span>
+
+      </div>
+
+    </button>
+
+
+    <!-- =================================================
+         06 — VIE SAUVAGE
+    ================================================== -->
+
+    <button
+      class="theme theme-6"
+      onclick="openGallery('vie-sauvage')"
+    >
+
+      <img
+        class="theme-image"
+        src="accueil/vie sauvage.jpg"
+        alt="Vie sauvage"
+      >
+
+      <div class="theme-info">
+
+        <span class="theme-title">
+          Vie sauvage
+        </span>
+
+        <span class="theme-number">
+          06
+        </span>
+
+      </div>
+
+    </button>
+
 
   </div>
 
 </section>
+
 
 <!-- =====================================================
      GALERIE
@@ -1394,191 +1237,22 @@ Sébastien Turpin
 
   <div class="gallery-heading">
 
-```
-<button
-  class="back"
-  id="galleryBackButton"
-  onclick="showHome()"
->
-  ← Toutes les photos
-</button>
+    <button
+      class="back"
+      onclick="showHome()"
+    >
+      ← Toutes les photos
+    </button>
 
-<h2 id="galleryTitle">
-  Voyages
-</h2>
-```
+    <h2 id="galleryTitle">
+      Voyages
+    </h2>
 
   </div>
+
 
   <!-- =================================================
-       DESTINATIONS VOYAGES
-  ================================================== -->
-
-  <div
-    class="travel-categories"
-    id="travelCategories"
-  >
-
-```
-<!-- 01 — SLOVENIE -->
-
-<button
-  class="travel-card"
-  onclick="openTravel('slovenie')"
->
-
-  <div class="travel-card-image">
-
-    <img
-      src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
-      alt="Slovénie"
-    >
-
-  </div>
-
-  <div class="travel-card-info">
-
-    <span class="travel-card-title">
-      Slovénie
-    </span>
-
-    <span class="travel-card-number">
-      01
-    </span>
-
-  </div>
-
-</button>
-
-
-<!-- 02 — ITALIE -->
-
-<button
-  class="travel-card"
-  onclick="openTravel('italie')"
->
-
-  <div class="travel-card-image">
-
-    <img
-      src="voyages/italie/01.jpg"
-      alt="Italie"
-    >
-
-  </div>
-
-  <div class="travel-card-info">
-
-    <span class="travel-card-title">
-      Italie
-    </span>
-
-    <span class="travel-card-number">
-      02
-    </span>
-
-  </div>
-
-</button>
-
-
-<!-- 03 — ST JEAN DE MONT -->
-
-<button
-  class="travel-card"
-  onclick="openTravel('saint-jean')"
->
-
-  <div class="travel-card-image">
-
-    <img
-      src="voyages/saint-jean-de-mont/01.jpg"
-      alt="St Jean de Mont"
-    >
-
-  </div>
-
-  <div class="travel-card-info">
-
-    <span class="travel-card-title">
-      St Jean de Mont
-    </span>
-
-    <span class="travel-card-number">
-      03
-    </span>
-
-  </div>
-
-</button>
-
-
-<!-- 04 — FARO -->
-
-<button
-  class="travel-card"
-  onclick="openTravel('faro')"
->
-
-  <div class="travel-card-image">
-
-    <img
-      src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=90"
-      alt="Faro"
-    >
-
-  </div>
-
-  <div class="travel-card-info">
-
-    <span class="travel-card-title">
-      Faro
-    </span>
-
-    <span class="travel-card-number">
-      04
-    </span>
-
-  </div>
-
-</button>
-
-
-<!-- 05 — MAJORQUE -->
-
-<button
-  class="travel-card"
-  onclick="openTravel('majorque')"
->
-
-  <div class="travel-card-image">
-
-    <img
-      src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=90"
-      alt="Majorque"
-    >
-
-  </div>
-
-  <div class="travel-card-info">
-
-    <span class="travel-card-title">
-      Majorque
-    </span>
-
-    <span class="travel-card-number">
-      05
-    </span>
-
-  </div>
-
-</button>
-```
-
-  </div>
-
-  <!-- =================================================
-       NAVIGATION ENTRE DESTINATIONS
+       SOUS-CATEGORIES VOYAGES
   ================================================== -->
 
   <div
@@ -1586,587 +1260,550 @@ Sébastien Turpin
     id="travelNavigation"
   >
 
-```
-<button
-  class="travel-button"
-  data-travel="slovenie"
-  onclick="openTravel('slovenie')"
->
-  Slovénie
-</button>
+    <button
+      class="travel-button active"
+      onclick="filterTravel('all', this)"
+    >
+      Tous
+    </button>
 
-<button
-  class="travel-button"
-  data-travel="italie"
-  onclick="openTravel('italie')"
->
-  Italie
-</button>
+    <button
+      class="travel-button"
+      onclick="filterTravel('slovenie', this)"
+    >
+      Slovénie
+    </button>
 
-<button
-  class="travel-button"
-  data-travel="saint-jean"
-  onclick="openTravel('saint-jean')"
->
-  St Jean de Mont
-</button>
+    <button
+      class="travel-button"
+      onclick="filterTravel('italie', this)"
+    >
+      Italie
+    </button>
 
-<button
-  class="travel-button"
-  data-travel="faro"
-  onclick="openTravel('faro')"
->
-  Faro
-</button>
+    <button
+      class="travel-button"
+      onclick="filterTravel('saint-jean', this)"
+    >
+      St Jean de Mont
+    </button>
 
-<button
-  class="travel-button"
-  data-travel="majorque"
-  onclick="openTravel('majorque')"
->
-  Majorque
-</button>
-```
+    <button
+      class="travel-button"
+      onclick="filterTravel('faro', this)"
+    >
+      Faro
+    </button>
+
+    <button
+      class="travel-button"
+      onclick="filterTravel('majorque', this)"
+    >
+      Majorque
+    </button>
 
   </div>
+
 
   <!-- =================================================
        DIAPORAMA
-  ================================================== -->
+===================================================== -->
 
-  <div
-    class="slideshow"
-    id="slideshow"
-  >
+  <div class="slideshow">
 
-```
-<button
-  class="slide-button slide-prev"
-  onclick="previousPhoto()"
-  aria-label="Photo précédente"
->
-  ←
-</button>
+    <button
+      class="slide-button slide-prev"
+      onclick="previousPhoto()"
+      aria-label="Photo précédente"
+    >
+      ←
+    </button>
 
 
-<div id="slideshowImageContainer"></div>
+    <div id="slideshowImageContainer"></div>
 
 
-<button
-  class="slide-button slide-next"
-  onclick="nextPhoto()"
-  aria-label="Photo suivante"
->
-  →
-</button>
-```
+    <button
+      class="slide-button slide-next"
+      onclick="nextPhoto()"
+      aria-label="Photo suivante"
+    >
+      →
+    </button>
 
   </div>
+
 
   <!-- =================================================
        INFORMATIONS
-  ================================================== -->
+===================================================== -->
 
-  <div
-    class="slideshow-info"
-    id="slideshowInfo"
-  >
+  <div class="slideshow-info">
 
-```
-<span
-  class="slideshow-title"
-  id="slideshowTitle"
->
-  —
-</span>
+    <span
+      class="slideshow-title"
+      id="slideshowTitle"
+    >
+      —
+    </span>
 
-<span
-  class="slideshow-category"
-  id="slideshowCategory"
->
-  —
-</span>
+    <span
+      class="slideshow-category"
+      id="slideshowCategory"
+    >
+      —
+    </span>
 
-<span
-  class="slideshow-counter"
-  id="slideshowCounter"
->
-  01 / 01
-</span>
-```
+    <span
+      class="slideshow-counter"
+      id="slideshowCounter"
+    >
+      01 / 01
+    </span>
 
   </div>
 
+
   <!-- =================================================
-       DONNEES DES PHOTOS
-  ================================================== -->
+       DONNEES PHOTOS
+===================================================== -->
 
   <div
     class="gallery-photos"
     style="display:none;"
   >
 
-```
-<!-- =================================================
-     ITALIE — 7 PHOTOS
-================================================== -->
 
-<article class="gallery-photo" data-theme="voyages" data-travel="italie">
+    <!-- =================================================
+         SLOVENIE
+    ================================================== -->
 
-  <img src="voyages/italie/01.jpg" alt="Italie">
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="slovenie"
+    >
 
-  <div class="photo-info">
+      <img
+        src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
+        alt="Slovénie"
+      >
 
-    <span class="photo-title">Italie</span>
+      <div class="photo-info">
 
-    <span class="photo-category">Voyage</span>
+        <span class="photo-title">
+          Slovénie
+        </span>
 
-  </div>
+        <span class="photo-category">
+          Voyage
+        </span>
 
-</article>
+      </div>
 
+    </article>
 
-<article class="gallery-photo" data-theme="voyages" data-travel="italie">
 
-  <img src="voyages/italie/02.jpg" alt="Italie">
+    <!-- =================================================
+         ITALIE
+    ================================================== -->
 
-  <div class="photo-info">
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="italie"
+    >
 
-    <span class="photo-title">Italie</span>
+      <img
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=90"
+        alt="Italie"
+      >
 
-    <span class="photo-category">Voyage</span>
+      <div class="photo-info">
 
-  </div>
+        <span class="photo-title">
+          Italie
+        </span>
 
-</article>
+        <span class="photo-category">
+          Voyage
+        </span>
 
+      </div>
 
-<article class="gallery-photo" data-theme="voyages" data-travel="italie">
+    </article>
 
-  <img src="voyages/italie/03.jpg" alt="Italie">
 
-  <div class="photo-info">
+    <!-- =================================================
+         ST JEAN DE MONT
+    ================================================== -->
 
-    <span class="photo-title">Italie</span>
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="saint-jean"
+    >
 
-    <span class="photo-category">Voyage</span>
+      <img
+        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=90"
+        alt="St Jean de Mont"
+      >
 
-  </div>
+      <div class="photo-info">
 
-</article>
+        <span class="photo-title">
+          St Jean de Mont
+        </span>
 
+        <span class="photo-category">
+          Voyage
+        </span>
 
-<article class="gallery-photo" data-theme="voyages" data-travel="italie">
+      </div>
 
-  <img src="voyages/italie/04.jpg" alt="Italie">
+    </article>
 
-  <div class="photo-info">
 
-    <span class="photo-title">Italie</span>
+    <!-- =================================================
+         FARO
+    ================================================== -->
 
-    <span class="photo-category">Voyage</span>
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="faro"
+    >
 
-  </div>
+      <img
+        src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=90"
+        alt="Faro"
+      >
 
-</article>
+      <div class="photo-info">
 
+        <span class="photo-title">
+          Faro
+        </span>
 
-<article class="gallery-photo" data-theme="voyages" data-travel="italie">
+        <span class="photo-category">
+          Voyage
+        </span>
 
-  <img src="voyages/italie/05.jpg" alt="Italie">
+      </div>
 
-  <div class="photo-info">
+    </article>
 
-    <span class="photo-title">Italie</span>
 
-    <span class="photo-category">Voyage</span>
+    <!-- =================================================
+         MAJORQUE
+    ================================================== -->
 
-  </div>
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="majorque"
+    >
 
-</article>
+      <img
+        src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=90"
+        alt="Majorque"
+      >
 
+      <div class="photo-info">
 
-<article class="gallery-photo" data-theme="voyages" data-travel="italie">
+        <span class="photo-title">
+          Majorque
+        </span>
 
-  <img src="voyages/italie/06.jpg" alt="Italie">
+        <span class="photo-category">
+          Voyage
+        </span>
 
-  <div class="photo-info">
+      </div>
 
-    <span class="photo-title">Italie</span>
+    </article>
 
-    <span class="photo-category">Voyage</span>
 
-  </div>
+    <!-- =================================================
+         MOMENTS
+    ================================================== -->
 
-</article>
+    <article
+      class="gallery-photo"
+      data-theme="moments"
+    >
 
+      <img
+        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=90"
+        alt="Moments"
+      >
 
-<article class="gallery-photo" data-theme="voyages" data-travel="italie">
+      <div class="photo-info">
 
-  <img src="voyages/italie/07.jpg" alt="Italie">
+        <span class="photo-title">
+          Moments
+        </span>
 
-  <div class="photo-info">
+        <span class="photo-category">
+          Moments
+        </span>
 
-    <span class="photo-title">Italie</span>
+      </div>
 
-    <span class="photo-category">Voyage</span>
+    </article>
 
-  </div>
 
-</article>
+    <!-- =================================================
+         LIFESTYLE
+    ================================================== -->
 
+    <article
+      class="gallery-photo"
+      data-theme="lifestyle"
+    >
 
-<!-- =================================================
-     ST JEAN DE MONT — 6 PHOTOS
-================================================== -->
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
+        alt="Lifestyle"
+      >
 
-<article class="gallery-photo" data-theme="voyages" data-travel="saint-jean">
+      <div class="photo-info">
 
-  <img src="voyages/saint-jean-de-mont/01.jpg" alt="St Jean de Mont">
+        <span class="photo-title">
+          Lifestyle
+        </span>
 
-  <div class="photo-info">
+        <span class="photo-category">
+          Lifestyle
+        </span>
 
-    <span class="photo-title">St Jean de Mont</span>
+      </div>
 
-    <span class="photo-category">Voyage</span>
+    </article>
 
-  </div>
 
-</article>
+    <!-- =================================================
+         CITY
+    ================================================== -->
 
+    <article
+      class="gallery-photo"
+      data-theme="city"
+    >
 
-<article class="gallery-photo" data-theme="voyages" data-travel="saint-jean">
+      <img
+        src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
+        alt="City"
+      >
 
-  <img src="voyages/saint-jean-de-mont/02.jpg" alt="St Jean de Mont">
+      <div class="photo-info">
 
-  <div class="photo-info">
+        <span class="photo-title">
+          City
+        </span>
 
-    <span class="photo-title">St Jean de Mont</span>
+        <span class="photo-category">
+          City
+        </span>
 
-    <span class="photo-category">Voyage</span>
+      </div>
 
-  </div>
+    </article>
 
-</article>
 
+    <!-- =================================================
+         NATURE
+    ================================================== -->
 
-<article class="gallery-photo" data-theme="voyages" data-travel="saint-jean">
+    <article
+      class="gallery-photo"
+      data-theme="nature"
+    >
 
-  <img src="voyages/saint-jean-de-mont/03.jpg" alt="St Jean de Mont">
+      <img
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
+        alt="Nature"
+      >
 
-  <div class="photo-info">
+      <div class="photo-info">
 
-    <span class="photo-title">St Jean de Mont</span>
+        <span class="photo-title">
+          Nature
+        </span>
 
-    <span class="photo-category">Voyage</span>
+        <span class="photo-category">
+          Nature
+        </span>
 
-  </div>
+      </div>
 
-</article>
+    </article>
 
 
-<article class="gallery-photo" data-theme="voyages" data-travel="saint-jean">
+    <!-- =================================================
+         VIE SAUVAGE — TAMARIN-LION DORE
+    ================================================== -->
 
-  <img src="voyages/saint-jean-de-mont/04.jpg" alt="St Jean de Mont">
+    <article
+      class="gallery-photo"
+      data-theme="vie-sauvage"
+    >
 
-  <div class="photo-info">
+      <img
+        src="vie sauvage/Tamarin-lion doré.jpg"
+        alt="Tamarin-lion doré"
+      >
 
-    <span class="photo-title">St Jean de Mont</span>
+      <div class="photo-info">
 
-    <span class="photo-category">Voyage</span>
+        <span class="photo-title">
+          Tamarin-lion doré
+        </span>
 
-  </div>
+        <span class="photo-category">
+          Wildlife
+        </span>
 
-</article>
+      </div>
 
+    </article>
 
-<article class="gallery-photo" data-theme="voyages" data-travel="saint-jean">
 
-  <img src="voyages/saint-jean-de-mont/05.jpg" alt="St Jean de Mont">
+    <!-- =================================================
+         VIE SAUVAGE — ALPAGA
+    ================================================== -->
 
-  <div class="photo-info">
+    <article
+      class="gallery-photo"
+      data-theme="vie-sauvage"
+    >
 
-    <span class="photo-title">St Jean de Mont</span>
+      <img
+        src="vie sauvage/Alpaga.jpg"
+        alt="Alpaga"
+      >
 
-    <span class="photo-category">Voyage</span>
+      <div class="photo-info">
 
-  </div>
+        <span class="photo-title">
+          Alpaga
+        </span>
 
-</article>
+        <div class="photo-info">
 
+          <span class="photo-title">
+            Alpaga
+          </span>
 
-<article class="gallery-photo" data-theme="voyages" data-travel="saint-jean">
+          <span class="photo-category">
+            Wildlife
+          </span>
 
-  <img src="voyages/saint-jean-de-mont/06.jpg" alt="St Jean de Mont">
+        </div>
 
-  <div class="photo-info">
+    </article>
 
-    <span class="photo-title">St Jean de Mont</span>
 
-    <span class="photo-category">Voyage</span>
+    <!-- =================================================
+         VIE SAUVAGE — PELICAN
+    ================================================== -->
 
-  </div>
+    <article
+      class="gallery-photo"
+      data-theme="vie-sauvage"
+    >
 
-</article>
+      <img
+        src="vie sauvage/Pelican.jpg"
+        alt="Pelican"
+      >
 
+      <div class="photo-info">
 
-<!-- =================================================
-     SLOVENIE
-================================================== -->
+        <span class="photo-title">
+          Pelican
+        </span>
 
-<article class="gallery-photo" data-theme="voyages" data-travel="slovenie">
+        <span class="photo-category">
+          Wildlife
+        </span>
 
-  <img
-    src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
-    alt="Slovénie"
-  >
+      </div>
 
-  <div class="photo-info">
+    </article>
 
-    <span class="photo-title">Slovénie</span>
 
-    <span class="photo-category">Voyage</span>
+    <!-- =================================================
+         VIE SAUVAGE — IGUANE
+    ================================================== -->
 
-  </div>
+    <article
+      class="gallery-photo"
+      data-theme="vie-sauvage"
+    >
 
-</article>
+      <img
+        src="vie sauvage/Iguane.jpg"
+        alt="Iguane"
+      >
 
+      <div class="photo-info">
 
-<!-- =================================================
-     FARO
-================================================== -->
+        <span class="photo-title">
+          Iguane
+        </span>
 
-<article class="gallery-photo" data-theme="voyages" data-travel="faro">
+        <span class="photo-category">
+          Wildlife
+        </span>
 
-  <img
-    src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=90"
-    alt="Faro"
-  >
+      </div>
 
-  <div class="photo-info">
+    </article>
 
-    <span class="photo-title">Faro</span>
 
-    <span class="photo-category">Voyage</span>
+    <!-- =================================================
+         VIE SAUVAGE — CIGOGNE
+    ================================================== -->
 
-  </div>
+    <article
+      class="gallery-photo"
+      data-theme="vie-sauvage"
+    >
 
-</article>
+      <img
+        src="vie sauvage/Cigogne.jpg"
+        alt="Cigogne"
+      >
 
+      <div class="photo-info">
 
-<!-- =================================================
-     MAJORQUE
-================================================== -->
+        <span class="photo-title">
+          Cigogne
+        </span>
 
-<article class="gallery-photo" data-theme="voyages" data-travel="majorque">
+        <span class="photo-category">
+          Wildlife
+        </span>
 
-  <img
-    src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=90"
-    alt="Majorque"
-  >
+      </div>
 
-  <div class="photo-info">
+    </article>
 
-    <span class="photo-title">Majorque</span>
-
-    <span class="photo-category">Voyage</span>
-
-  </div>
-
-</article>
-
-
-<!-- =================================================
-     MOMENTS
-================================================== -->
-
-<article class="gallery-photo" data-theme="moments">
-
-  <img
-    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=90"
-    alt="Moments"
-  >
-
-  <div class="photo-info">
-
-    <span class="photo-title">Moments</span>
-
-    <span class="photo-category">Moments</span>
-
-  </div>
-
-</article>
-
-
-<!-- =================================================
-     LIFESTYLE
-================================================== -->
-
-<article class="gallery-photo" data-theme="lifestyle">
-
-  <img
-    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=90"
-    alt="Lifestyle"
-  >
-
-  <div class="photo-info">
-
-    <span class="photo-title">Lifestyle</span>
-
-    <span class="photo-category">Lifestyle</span>
-
-  </div>
-
-</article>
-
-
-<!-- =================================================
-     CITY
-================================================== -->
-
-<article class="gallery-photo" data-theme="city">
-
-  <img
-    src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=90"
-    alt="City"
-  >
-
-  <div class="photo-info">
-
-    <span class="photo-title">City</span>
-
-    <span class="photo-category">City</span>
-
-  </div>
-
-</article>
-
-
-<!-- =================================================
-     NATURE
-================================================== -->
-
-<article class="gallery-photo" data-theme="nature">
-
-  <img
-    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=90"
-    alt="Nature"
-  >
-
-  <div class="photo-info">
-
-    <span class="photo-title">Nature</span>
-
-    <span class="photo-category">Nature</span>
-
-  </div>
-
-</article>
-
-
-<!-- =================================================
-     VIE SAUVAGE
-================================================== -->
-
-<article class="gallery-photo" data-theme="vie-sauvage">
-
-  <img
-    src="vie sauvage/Tamarin-lion doré.jpg"
-    alt="Tamarin-lion doré"
-  >
-
-  <div class="photo-info">
-
-    <span class="photo-title">Tamarin-lion doré</span>
-
-    <span class="photo-category">Wildlife</span>
-
-  </div>
-
-</article>
-
-
-<article class="gallery-photo" data-theme="vie-sauvage">
-
-  <img
-    src="vie sauvage/Alpaga.jpg"
-    alt="Alpaga"
-  >
-
-  <div class="photo-info">
-
-    <span class="photo-title">Alpaga</span>
-
-    <span class="photo-category">Wildlife</span>
-
-  </div>
-
-</article>
-
-
-<article class="gallery-photo" data-theme="vie-sauvage">
-
-  <img
-    src="vie sauvage/Pelican.jpg"
-    alt="Pelican"
-  >
-
-  <div class="photo-info">
-
-    <span class="photo-title">Pelican</span>
-
-    <span class="photo-category">Wildlife</span>
-
-  </div>
-
-</article>
-
-
-<article class="gallery-photo" data-theme="vie-sauvage">
-
-  <img
-    src="vie sauvage/Iguane.jpg"
-    alt="Iguane"
-  >
-
-  <div class="photo-info">
-
-    <span class="photo-title">Iguane</span>
-
-    <span class="photo-category">Wildlife</span>
-
-  </div>
-
-</article>
-
-
-<article class="gallery-photo" data-theme="vie-sauvage">
-
-  <img
-    src="vie sauvage/Cigogne.jpg"
-    alt="Cigogne"
-  >
-
-  <div class="photo-info">
-
-    <span class="photo-title">Cigogne</span>
-
-    <span class="photo-category">Wildlife</span>
-
-  </div>
-
-</article>
-```
 
   </div>
 
 </section>
 
+
 <!-- =====================================================
      ABOUT
 ===================================================== -->
 
-<section class="about" id="about">
+<section
+  class="about"
+  id="about"
+>
 
   <div class="about-label">
     About
@@ -2174,51 +1811,51 @@ Sébastien Turpin
 
   <div class="about-content">
 
-```
-<h2>
-  Photographier<br>
-  ce qui reste.
-</h2>
+    <h2>
+      Photographier<br>
+      ce qui reste.
+    </h2>
 
-<p>
+    <p>
 
-  Je suis Sébastien Turpin, photographe basé en France.
+      Je suis Sébastien Turpin, photographe basé en France.
 
-  Je photographie les voyages, les lieux, les personnes
-  et les moments spontanés.
+      Je photographie les voyages, les lieux, les personnes
+      et les moments spontanés.
 
-  <br><br>
+      <br><br>
 
-  Je cherche avant tout des images naturelles,
-  vivantes et intemporelles.
+      Je cherche avant tout des images naturelles,
+      vivantes et intemporelles.
 
-</p>
-```
+    </p>
 
   </div>
 
 </section>
 
+
 <!-- =====================================================
      CONTACT
 ===================================================== -->
 
-<section class="contact" id="contact">
+<section
+  class="contact"
+  id="contact"
+>
 
   <div class="contact-top">
 
-```
-<div class="contact-label">
-  Contact
-</div>
+    <div class="contact-label">
+      Contact
+    </div>
 
-<a
-  class="contact-email"
-  href="mailto:contact@sebastienturpin.fr"
->
-  contact@sebastienturpin.fr
-</a>
-```
+    <a
+      class="contact-email"
+      href="mailto:contact@sebastienturpin.fr"
+    >
+      contact@sebastienturpin.fr
+    </a>
 
   </div>
 
@@ -2228,19 +1865,18 @@ Sébastien Turpin
 
   <div class="footer">
 
-```
-<span>
-  © 2026 Sébastien Turpin
-</span>
+    <span>
+      © 2026 Sébastien Turpin
+    </span>
 
-<span>
-  Photography
-</span>
-```
+    <span>
+      Photography
+    </span>
 
   </div>
 
 </section>
+
 
 <!-- =====================================================
      JAVASCRIPT
@@ -2261,20 +1897,8 @@ const galleryPage =
 const galleryTitle =
   document.getElementById("galleryTitle");
 
-const galleryBackButton =
-  document.getElementById("galleryBackButton");
-
-const travelCategories =
-  document.getElementById("travelCategories");
-
 const travelNavigation =
   document.getElementById("travelNavigation");
-
-const slideshow =
-  document.getElementById("slideshow");
-
-const slideshowInfo =
-  document.getElementById("slideshowInfo");
 
 const galleryPhotos =
   document.querySelectorAll(".gallery-photo");
@@ -2313,46 +1937,15 @@ const themeTitles = {
 };
 
 
-const travelTitles = {
-
-  slovenie: "Slovénie",
-
-  italie: "Italie",
-
-  "saint-jean": "St Jean de Mont",
-
-  faro: "Faro",
-
-  majorque: "Majorque"
-
-};
-
-
 /* =====================================================
-   VARIABLES
+   VARIABLES DIAPORAMA
 ===================================================== */
 
 let currentTheme = "";
 
-let currentTravel = "";
-
 let currentPhotos = [];
 
 let currentIndex = 0;
-
-
-/* =====================================================
-   POSITIONNER LA GALERIE EN HAUT
-===================================================== */
-
-function scrollToGallery() {
-
-  galleryPage.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-
-}
 
 
 /* =====================================================
@@ -2365,160 +1958,34 @@ function openGallery(theme) {
 
   galleryPage.classList.add("active");
 
-  currentTheme = theme;
-
-  currentTravel = "";
-
-
   galleryTitle.textContent =
     themeTitles[theme];
 
 
-  /* -----------------------------------------------
-     VOYAGES
-  ------------------------------------------------ */
+  currentTheme = theme;
+
 
   if (theme === "voyages") {
 
-    travelCategories.classList.add("active");
+    travelNavigation.classList.add("active");
+
+    resetTravel();
+
+    prepareSlideshow("voyages");
+
+  } else {
 
     travelNavigation.classList.remove("active");
-
-    slideshow.classList.remove("active");
-
-    slideshowInfo.classList.remove("active");
-
-    galleryBackButton.textContent =
-      "← Toutes les photos";
-
-    galleryBackButton.onclick =
-      showHome;
-
-  }
-
-
-  /* -----------------------------------------------
-     AUTRES CATEGORIES
-  ------------------------------------------------ */
-
-  else {
-
-    travelCategories.classList.remove("active");
-
-    travelNavigation.classList.remove("active");
-
-    slideshow.classList.add("active");
-
-    slideshowInfo.classList.add("active");
-
-    galleryBackButton.textContent =
-      "← Toutes les photos";
-
-    galleryBackButton.onclick =
-      showHome;
 
     prepareSlideshow(theme);
 
   }
 
 
-  /* Toujours remonter au début de la galerie */
-
-  scrollToGallery();
-
-}
-
-
-/* =====================================================
-   OUVRIR UNE DESTINATION
-===================================================== */
-
-function openTravel(travel) {
-
-  currentTheme = "voyages";
-
-  currentTravel = travel;
-
-
-  /* Titre */
-
-  galleryTitle.textContent =
-    travelTitles[travel];
-
-
-  /* Cacher les cartes */
-
-  travelCategories.classList.remove("active");
-
-
-  /* Afficher navigation */
-
-  travelNavigation.classList.add("active");
-
-
-  /* Afficher diaporama */
-
-  slideshow.classList.add("active");
-
-  slideshowInfo.classList.add("active");
-
-
-  /* Bouton retour */
-
-  galleryBackButton.textContent =
-    "← Voyages";
-
-  galleryBackButton.onclick =
-    backToTravelCategories;
-
-
-  /* Activer le bon bouton */
-
-  document
-    .querySelectorAll(".travel-navigation button")
-    .forEach(button => {
-
-      button.classList.remove("active");
-
-    });
-
-
-  const activeButton =
-    document.querySelector(
-      `.travel-button[data-travel="${travel}"]`
-    );
-
-
-  if (activeButton) {
-
-    activeButton.classList.add("active");
-
-  }
-
-
-  /* Charger les photos */
-
-  currentPhotos =
-    Array.from(galleryPhotos)
-      .filter(photo => {
-
-        return (
-          photo.dataset.theme === "voyages" &&
-          photo.dataset.travel === travel
-        );
-
-      });
-
-
-  currentIndex = 0;
-
-
-  renderSlideshow();
-
-
-  /* Toujours remonter au début du diaporama */
-
-  scrollToGallery();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 
 }
 
@@ -2529,13 +1996,12 @@ function openTravel(travel) {
 
 function prepareSlideshow(theme) {
 
-  currentPhotos =
-    Array.from(galleryPhotos)
-      .filter(photo => {
+  currentPhotos = Array.from(galleryPhotos)
+    .filter(photo => {
 
-        return photo.dataset.theme === theme;
+      return photo.dataset.theme === theme;
 
-      });
+    });
 
 
   currentIndex = 0;
@@ -2546,7 +2012,7 @@ function prepareSlideshow(theme) {
 
 
 /* =====================================================
-   AFFICHER PHOTO
+   RENDRE LA PHOTO
 ===================================================== */
 
 function renderSlideshow() {
@@ -2554,25 +2020,18 @@ function renderSlideshow() {
   slideshowContainer.innerHTML = "";
 
 
-  /* Aucune photo */
-
   if (currentPhotos.length === 0) {
 
-    slideshowTitle.textContent =
-      "Aucune photo";
+    slideshowTitle.textContent = "Aucune photo";
 
-    slideshowCategory.textContent =
-      "";
+    slideshowCategory.textContent = "";
 
-    slideshowCounter.textContent =
-      "00 / 00";
+    slideshowCounter.textContent = "00 / 00";
 
     return;
 
   }
 
-
-  /* Photo actuelle */
 
   const photo =
     currentPhotos[currentIndex];
@@ -2601,21 +2060,15 @@ function renderSlideshow() {
   slideshowContainer.appendChild(image);
 
 
-  /* Titre */
-
   slideshowTitle.textContent =
     photo.querySelector(".photo-title")
       ?.textContent.trim() || "";
 
 
-  /* Catégorie */
-
   slideshowCategory.textContent =
     photo.querySelector(".photo-category")
       ?.textContent.trim() || "";
 
-
-  /* Compteur */
 
   slideshowCounter.textContent =
 
@@ -2684,37 +2137,82 @@ function previousPhoto() {
 
 
 /* =====================================================
-   RETOUR AUX DESTINATIONS
+   FILTRE VOYAGES
 ===================================================== */
 
-function backToTravelCategories() {
+function filterTravel(
+  travel,
+  button
+) {
 
-  currentTravel = "";
+  document
+    .querySelectorAll(".travel-button")
+    .forEach(btn => {
 
+      btn.classList.remove("active");
 
-  galleryTitle.textContent =
-    "Voyages";
-
-
-  travelCategories.classList.add("active");
-
-  travelNavigation.classList.remove("active");
-
-  slideshow.classList.remove("active");
-
-  slideshowInfo.classList.remove("active");
+    });
 
 
-  galleryBackButton.textContent =
-    "← Toutes les photos";
-
-  galleryBackButton.onclick =
-    showHome;
+  button.classList.add("active");
 
 
-  /* Revenir en haut des destinations */
+  currentPhotos = Array.from(galleryPhotos)
+    .filter(photo => {
 
-  scrollToGallery();
+      if (
+        photo.dataset.theme !== "voyages"
+      ) {
+
+        return false;
+
+      }
+
+
+      return (
+        travel === "all" ||
+        photo.dataset.travel === travel
+      );
+
+    });
+
+
+  currentIndex = 0;
+
+  renderSlideshow();
+
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+/* =====================================================
+   RESET VOYAGES
+===================================================== */
+
+function resetTravel() {
+
+  document
+    .querySelectorAll(".travel-button")
+    .forEach(button => {
+
+      button.classList.remove("active");
+
+    });
+
+
+  const firstButton =
+    document.querySelector(".travel-button");
+
+  if (firstButton) {
+
+    firstButton.classList.add("active");
+
+  }
 
 }
 
@@ -2752,20 +2250,7 @@ document.addEventListener(
 
     if (event.key === "Escape") {
 
-      if (
-        currentTheme === "voyages" &&
-        currentTravel
-      ) {
-
-        backToTravelCategories();
-
-      }
-
-      else {
-
-        showHome();
-
-      }
+      showHome();
 
     }
 
@@ -2790,9 +2275,7 @@ galleryPage.addEventListener(
       event.changedTouches[0].screenX;
 
   },
-  {
-    passive: true
-  }
+  { passive: true }
 );
 
 
@@ -2809,9 +2292,7 @@ galleryPage.addEventListener(
 
 
     if (Math.abs(distance) < 50) {
-
       return;
-
     }
 
 
@@ -2819,18 +2300,14 @@ galleryPage.addEventListener(
 
       nextPhoto();
 
-    }
-
-    else {
+    } else {
 
       previousPhoto();
 
     }
 
   },
-  {
-    passive: true
-  }
+  { passive: true }
 );
 
 
@@ -2843,27 +2320,6 @@ function showHome() {
   galleryPage.classList.remove("active");
 
   work.style.display = "block";
-
-
-  travelCategories.classList.remove("active");
-
-  travelNavigation.classList.remove("active");
-
-  slideshow.classList.remove("active");
-
-  slideshowInfo.classList.remove("active");
-
-
-  currentTheme = "";
-
-  currentTravel = "";
-
-
-  galleryBackButton.textContent =
-    "← Toutes les photos";
-
-  galleryBackButton.onclick =
-    showHome;
 
 
   window.scrollTo({
@@ -2883,15 +2339,6 @@ function goToAbout() {
   galleryPage.classList.remove("active");
 
   work.style.display = "block";
-
-
-  travelCategories.classList.remove("active");
-
-  travelNavigation.classList.remove("active");
-
-  slideshow.classList.remove("active");
-
-  slideshowInfo.classList.remove("active");
 
 
   setTimeout(() => {
@@ -2918,15 +2365,6 @@ function goToContact() {
   work.style.display = "block";
 
 
-  travelCategories.classList.remove("active");
-
-  travelNavigation.classList.remove("active");
-
-  slideshow.classList.remove("active");
-
-  slideshowInfo.classList.remove("active");
-
-
   setTimeout(() => {
 
     document
@@ -2944,3 +2382,4 @@ function goToContact() {
 </body>
 
 </html>
+```
