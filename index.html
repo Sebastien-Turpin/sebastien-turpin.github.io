@@ -67,6 +67,7 @@ header {
 
   background: rgba(247,247,245,.92);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .name {
@@ -395,6 +396,99 @@ nav button:hover {
 
 
 /* =====================================================
+   DESTINATIONS VOYAGES
+===================================================== */
+
+.travel-categories {
+  display: none;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  column-gap: 22px;
+  row-gap: 90px;
+
+  align-items: start;
+}
+
+.travel-categories.active {
+  display: grid;
+}
+
+.travel-card {
+  display: block;
+
+  border: 0;
+  padding: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  color: #111;
+
+  width: 100%;
+}
+
+.travel-card-image {
+  width: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+.travel-card-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 1s cubic-bezier(.2,.6,.2,1),
+    opacity .4s ease;
+}
+
+.travel-card:hover .travel-card-image img {
+  transform: scale(1.025);
+}
+
+.travel-card-info {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: baseline;
+
+  padding-top: 13px;
+}
+
+.travel-card-title {
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.travel-card-number {
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  color: #999;
+}
+
+.travel-card:hover .travel-card-title {
+  opacity: .5;
+}
+
+
+/* =====================================================
    NAVIGATION VOYAGES
 ===================================================== */
 
@@ -446,6 +540,27 @@ nav button:hover {
   width: 100%;
 
   min-height: calc(100vh - 240px);
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.slideshow.active {
+  display: flex;
+}
+
+
+/* =====================================================
+   CONTENEUR PHOTO
+===================================================== */
+
+#slideshowImageContainer {
+  width: 100%;
+
+  min-height: calc(100vh - 300px);
 
   display: flex;
 
@@ -535,7 +650,7 @@ nav button:hover {
 .slideshow-info {
   width: 100%;
 
-  display: flex;
+  display: none;
 
   justify-content: space-between;
 
@@ -544,6 +659,10 @@ nav button:hover {
   padding-top: 20px;
 
   border-top: 1px solid #d8d8d5;
+}
+
+.slideshow-info.active {
+  display: flex;
 }
 
 .slideshow-title {
@@ -726,12 +845,21 @@ nav button:hover {
     margin-top: 80px;
   }
 
+  .travel-categories {
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 18px;
+
+    row-gap: 70px;
+  }
+
   .about {
     grid-template-columns: 1fr;
   }
 
   .slideshow-photo {
     max-width: calc(100vw - 120px);
+
     max-height: calc(100vh - 280px);
   }
 
@@ -841,7 +969,26 @@ nav button:hover {
   }
 
 
-  /* VOYAGES */
+  /* DESTINATIONS */
+
+  .travel-categories {
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 12px;
+
+    row-gap: 60px;
+  }
+
+  .travel-card-title {
+    font-size: 9px;
+  }
+
+  .travel-card-number {
+    font-size: 8px;
+  }
+
+
+  /* NAVIGATION VOYAGES */
 
   .travel-navigation {
     gap: 14px;
@@ -859,9 +1006,11 @@ nav button:hover {
   .slideshow {
     min-height: calc(100vh - 230px);
 
-    display: flex;
-
     align-items: center;
+  }
+
+  #slideshowImageContainer {
+    min-height: calc(100vh - 330px);
   }
 
   .slideshow-photo {
@@ -879,6 +1028,7 @@ nav button:hover {
 
   .slide-button {
     width: 42px;
+
     height: 80px;
 
     font-size: 22px;
@@ -952,6 +1102,19 @@ nav button:hover {
     font-size: 21vw;
 
     letter-spacing: -5px;
+  }
+
+}
+
+
+/* =====================================================
+   PETITS ECRANS
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .travel-categories {
+    grid-template-columns: 1fr;
   }
 
 }
@@ -1041,9 +1204,7 @@ nav button:hover {
   <div class="theme-grid">
 
 
-    <!-- =================================================
-         01 — VOYAGES
-    ================================================== -->
+    <!-- 01 — VOYAGES -->
 
     <button
       class="theme theme-1"
@@ -1071,9 +1232,7 @@ nav button:hover {
     </button>
 
 
-    <!-- =================================================
-         02 — MOMENTS
-    ================================================== -->
+    <!-- 02 — MOMENTS -->
 
     <button
       class="theme theme-2"
@@ -1101,9 +1260,7 @@ nav button:hover {
     </button>
 
 
-    <!-- =================================================
-         03 — LIFESTYLE
-    ================================================== -->
+    <!-- 03 — LIFESTYLE -->
 
     <button
       class="theme theme-3"
@@ -1131,9 +1288,7 @@ nav button:hover {
     </button>
 
 
-    <!-- =================================================
-         04 — CITY
-    ================================================== -->
+    <!-- 04 — CITY -->
 
     <button
       class="theme theme-4"
@@ -1161,9 +1316,7 @@ nav button:hover {
     </button>
 
 
-    <!-- =================================================
-         05 — NATURE
-    ================================================== -->
+    <!-- 05 — NATURE -->
 
     <button
       class="theme theme-5"
@@ -1191,9 +1344,7 @@ nav button:hover {
     </button>
 
 
-    <!-- =================================================
-         06 — VIE SAUVAGE
-    ================================================== -->
+    <!-- 06 — VIE SAUVAGE -->
 
     <button
       class="theme theme-6"
@@ -1239,6 +1390,7 @@ nav button:hover {
 
     <button
       class="back"
+      id="galleryBackButton"
       onclick="showHome()"
     >
       ← Toutes les photos
@@ -1252,7 +1404,175 @@ nav button:hover {
 
 
   <!-- =================================================
-       SOUS-CATEGORIES VOYAGES
+       DESTINATIONS VOYAGES
+  ================================================== -->
+
+  <div
+    class="travel-categories"
+    id="travelCategories"
+  >
+
+
+    <!-- 01 — SLOVENIE -->
+
+    <button
+      class="travel-card"
+      onclick="openTravel('slovenie')"
+    >
+
+      <div class="travel-card-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=90"
+          alt="Slovénie"
+        >
+
+      </div>
+
+      <div class="travel-card-info">
+
+        <span class="travel-card-title">
+          Slovénie
+        </span>
+
+        <span class="travel-card-number">
+          01
+        </span>
+
+      </div>
+
+    </button>
+
+
+    <!-- 02 — ITALIE -->
+
+    <button
+      class="travel-card"
+      onclick="openTravel('italie')"
+    >
+
+      <div class="travel-card-image">
+
+        <img
+          src="voyages/italie/01.jpg"
+          alt="Italie"
+        >
+
+      </div>
+
+      <div class="travel-card-info">
+
+        <span class="travel-card-title">
+          Italie
+        </span>
+
+        <span class="travel-card-number">
+          02
+        </span>
+
+      </div>
+
+    </button>
+
+
+    <!-- 03 — ST JEAN DE MONT -->
+
+    <button
+      class="travel-card"
+      onclick="openTravel('saint-jean')"
+    >
+
+      <div class="travel-card-image">
+
+        <img
+          src="voyages/saint-jean-de-mont/01.jpg"
+          alt="St Jean de Mont"
+        >
+
+      </div>
+
+      <div class="travel-card-info">
+
+        <span class="travel-card-title">
+          St Jean de Mont
+        </span>
+
+        <span class="travel-card-number">
+          03
+        </span>
+
+      </div>
+
+    </button>
+
+
+    <!-- 04 — FARO -->
+
+    <button
+      class="travel-card"
+      onclick="openTravel('faro')"
+    >
+
+      <div class="travel-card-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=90"
+          alt="Faro"
+        >
+
+      </div>
+
+      <div class="travel-card-info">
+
+        <span class="travel-card-title">
+          Faro
+        </span>
+
+        <span class="travel-card-number">
+          04
+        </span>
+
+      </div>
+
+    </button>
+
+
+    <!-- 05 — MAJORQUE -->
+
+    <button
+      class="travel-card"
+      onclick="openTravel('majorque')"
+    >
+
+      <div class="travel-card-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&q=90"
+          alt="Majorque"
+        >
+
+      </div>
+
+      <div class="travel-card-info">
+
+        <span class="travel-card-title">
+          Majorque
+        </span>
+
+        <span class="travel-card-number">
+          05
+        </span>
+
+      </div>
+
+    </button>
+
+
+  </div>
+
+
+  <!-- =================================================
+       NAVIGATION ENTRE DESTINATIONS
   ================================================== -->
 
   <div
@@ -1261,43 +1581,41 @@ nav button:hover {
   >
 
     <button
-      class="travel-button active"
-      onclick="filterTravel('all', this)"
-    >
-      Tous
-    </button>
-
-    <button
       class="travel-button"
-      onclick="filterTravel('slovenie', this)"
+      data-travel="slovenie"
+      onclick="openTravel('slovenie')"
     >
       Slovénie
     </button>
 
     <button
       class="travel-button"
-      onclick="filterTravel('italie', this)"
+      data-travel="italie"
+      onclick="openTravel('italie')"
     >
       Italie
     </button>
 
     <button
       class="travel-button"
-      onclick="filterTravel('saint-jean', this)"
+      data-travel="saint-jean"
+      onclick="openTravel('saint-jean')"
     >
       St Jean de Mont
     </button>
 
     <button
       class="travel-button"
-      onclick="filterTravel('faro', this)"
+      data-travel="faro"
+      onclick="openTravel('faro')"
     >
       Faro
     </button>
 
     <button
       class="travel-button"
-      onclick="filterTravel('majorque', this)"
+      data-travel="majorque"
+      onclick="openTravel('majorque')"
     >
       Majorque
     </button>
@@ -1307,9 +1625,12 @@ nav button:hover {
 
   <!-- =================================================
        DIAPORAMA
-===================================================== -->
+  ================================================== -->
 
-  <div class="slideshow">
+  <div
+    class="slideshow"
+    id="slideshow"
+  >
 
     <button
       class="slide-button slide-prev"
@@ -1336,9 +1657,12 @@ nav button:hover {
 
   <!-- =================================================
        INFORMATIONS
-===================================================== -->
+  ================================================== -->
 
-  <div class="slideshow-info">
+  <div
+    class="slideshow-info"
+    id="slideshowInfo"
+  >
 
     <span
       class="slideshow-title"
@@ -1365,8 +1689,8 @@ nav button:hover {
 
 
   <!-- =================================================
-       DONNEES PHOTOS
-===================================================== -->
+       DONNEES DES PHOTOS
+  ================================================== -->
 
   <div
     class="gallery-photos"
@@ -1375,7 +1699,353 @@ nav button:hover {
 
 
     <!-- =================================================
-         SLOVENIE
+         ITALIE — 7 PHOTOS
+    ================================================== -->
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="italie"
+    >
+
+      <img
+        src="voyages/italie/01.jpg"
+        alt="Italie"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Italie
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="italie"
+    >
+
+      <img
+        src="voyages/italie/02.jpg"
+        alt="Italie"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Italie
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="italie"
+    >
+
+      <img
+        src="voyages/italie/03.jpg"
+        alt="Italie"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Italie
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="italie"
+    >
+
+      <img
+        src="voyages/italie/04.jpg"
+        alt="Italie"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Italie
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="italie"
+    >
+
+      <img
+        src="voyages/italie/05.jpg"
+        alt="Italie"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Italie
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="italie"
+    >
+
+      <img
+        src="voyages/italie/06.jpg"
+        alt="Italie"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Italie
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="italie"
+    >
+
+      <img
+        src="voyages/italie/07.jpg"
+        alt="Italie"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          Italie
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- =================================================
+         ST JEAN DE MONT — 6 PHOTOS
+    ================================================== -->
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="saint-jean"
+    >
+
+      <img
+        src="voyages/saint-jean-de-mont/01.jpg"
+        alt="St Jean de Mont"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          St Jean de Mont
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="saint-jean"
+    >
+
+      <img
+        src="voyages/saint-jean-de-mont/02.jpg"
+        alt="St Jean de Mont"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          St Jean de Mont
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="saint-jean"
+    >
+
+      <img
+        src="voyages/saint-jean-de-mont/03.jpg"
+        alt="St Jean de Mont"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          St Jean de Mont
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="saint-jean"
+    >
+
+      <img
+        src="voyages/saint-jean-de-mont/04.jpg"
+        alt="St Jean de Mont"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          St Jean de Mont
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="saint-jean"
+    >
+
+      <img
+        src="voyages/saint-jean-de-mont/05.jpg"
+        alt="St Jean de Mont"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          St Jean de Mont
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="gallery-photo"
+      data-theme="voyages"
+      data-travel="saint-jean"
+    >
+
+      <img
+        src="voyages/saint-jean-de-mont/06.jpg"
+        alt="St Jean de Mont"
+      >
+
+      <div class="photo-info">
+
+        <span class="photo-title">
+          St Jean de Mont
+        </span>
+
+        <span class="photo-category">
+          Voyage
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <!-- =================================================
+         SLOVENIE — TEMPORAIRE
     ================================================== -->
 
     <article
@@ -1405,67 +2075,7 @@ nav button:hover {
 
 
     <!-- =================================================
-         ITALIE
-    ================================================== -->
-
-    <article
-      class="gallery-photo"
-      data-theme="voyages"
-      data-travel="italie"
-    >
-
-      <img
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=90"
-        alt="Italie"
-      >
-
-      <div class="photo-info">
-
-        <span class="photo-title">
-          Italie
-        </span>
-
-        <span class="photo-category">
-          Voyage
-        </span>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================================
-         ST JEAN DE MONT
-    ================================================== -->
-
-    <article
-      class="gallery-photo"
-      data-theme="voyages"
-      data-travel="saint-jean"
-    >
-
-      <img
-        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=90"
-        alt="St Jean de Mont"
-      >
-
-      <div class="photo-info">
-
-        <span class="photo-title">
-          St Jean de Mont
-        </span>
-
-        <span class="photo-category">
-          Voyage
-        </span>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================================
-         FARO
+         FARO — TEMPORAIRE
     ================================================== -->
 
     <article
@@ -1495,7 +2105,7 @@ nav button:hover {
 
 
     <!-- =================================================
-         MAJORQUE
+         MAJORQUE — TEMPORAIRE
     ================================================== -->
 
     <article
@@ -1641,7 +2251,7 @@ nav button:hover {
 
 
     <!-- =================================================
-         VIE SAUVAGE — TAMARIN-LION DORE
+         VIE SAUVAGE — TAMARIN
     ================================================== -->
 
     <article
@@ -1689,17 +2299,11 @@ nav button:hover {
           Alpaga
         </span>
 
-        <div class="photo-info">
+        <span class="photo-category">
+          Wildlife
+        </span>
 
-          <span class="photo-title">
-            Alpaga
-          </span>
-
-          <span class="photo-category">
-            Wildlife
-          </span>
-
-        </div>
+      </div>
 
     </article>
 
@@ -1897,8 +2501,20 @@ const galleryPage =
 const galleryTitle =
   document.getElementById("galleryTitle");
 
+const galleryBackButton =
+  document.getElementById("galleryBackButton");
+
+const travelCategories =
+  document.getElementById("travelCategories");
+
 const travelNavigation =
   document.getElementById("travelNavigation");
+
+const slideshow =
+  document.getElementById("slideshow");
+
+const slideshowInfo =
+  document.getElementById("slideshowInfo");
 
 const galleryPhotos =
   document.querySelectorAll(".gallery-photo");
@@ -1937,11 +2553,28 @@ const themeTitles = {
 };
 
 
+const travelTitles = {
+
+  slovenie: "Slovénie",
+
+  italie: "Italie",
+
+  "saint-jean": "St Jean de Mont",
+
+  faro: "Faro",
+
+  majorque: "Majorque"
+
+};
+
+
 /* =====================================================
-   VARIABLES DIAPORAMA
+   VARIABLES
 ===================================================== */
 
 let currentTheme = "";
+
+let currentTravel = "";
 
 let currentPhotos = [];
 
@@ -1958,28 +2591,164 @@ function openGallery(theme) {
 
   galleryPage.classList.add("active");
 
+  currentTheme = theme;
+
+  currentTravel = "";
+
+
   galleryTitle.textContent =
     themeTitles[theme];
 
 
-  currentTheme = theme;
-
+  /* -----------------------------------------------
+     VOYAGES
+  ------------------------------------------------ */
 
   if (theme === "voyages") {
 
-    travelNavigation.classList.add("active");
+    /* Afficher les destinations */
 
-    resetTravel();
+    travelCategories.classList.add("active");
 
-    prepareSlideshow("voyages");
-
-  } else {
+    /* Cacher la navigation */
 
     travelNavigation.classList.remove("active");
+
+    /* Cacher le diaporama */
+
+    slideshow.classList.remove("active");
+
+    slideshowInfo.classList.remove("active");
+
+    /* Bouton retour */
+
+    galleryBackButton.textContent =
+      "← Toutes les photos";
+
+    galleryBackButton.onclick =
+      showHome;
+
+  }
+
+
+  /* -----------------------------------------------
+     AUTRES CATEGORIES
+  ------------------------------------------------ */
+
+  else {
+
+    travelCategories.classList.remove("active");
+
+    travelNavigation.classList.remove("active");
+
+    slideshow.classList.add("active");
+
+    slideshowInfo.classList.add("active");
+
+    galleryBackButton.textContent =
+      "← Toutes les photos";
+
+    galleryBackButton.onclick =
+      showHome;
 
     prepareSlideshow(theme);
 
   }
+
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+/* =====================================================
+   OUVRIR UNE DESTINATION
+===================================================== */
+
+function openTravel(travel) {
+
+  currentTheme = "voyages";
+
+  currentTravel = travel;
+
+
+  /* Titre */
+
+  galleryTitle.textContent =
+    travelTitles[travel];
+
+
+  /* Cacher les cartes */
+
+  travelCategories.classList.remove("active");
+
+
+  /* Afficher navigation */
+
+  travelNavigation.classList.add("active");
+
+
+  /* Afficher diaporama */
+
+  slideshow.classList.add("active");
+
+  slideshowInfo.classList.add("active");
+
+
+  /* Bouton retour */
+
+  galleryBackButton.textContent =
+    "← Voyages";
+
+  galleryBackButton.onclick =
+    backToTravelCategories;
+
+
+  /* Activer le bon bouton */
+
+  document
+    .querySelectorAll(".travel-navigation button")
+    .forEach(button => {
+
+      button.classList.remove("active");
+
+    });
+
+
+  const activeButton =
+    document.querySelector(
+      `.travel-button[data-travel="${travel}"]`
+    );
+
+
+  if (activeButton) {
+
+    activeButton.classList.add("active");
+
+  }
+
+
+  /* Charger les photos */
+
+  currentPhotos =
+    Array.from(galleryPhotos)
+      .filter(photo => {
+
+        return (
+          photo.dataset.theme === "voyages" &&
+          photo.dataset.travel === travel
+        );
+
+      });
+
+
+  currentIndex = 0;
+
+
+  renderSlideshow();
 
 
   window.scrollTo({
@@ -1996,12 +2765,13 @@ function openGallery(theme) {
 
 function prepareSlideshow(theme) {
 
-  currentPhotos = Array.from(galleryPhotos)
-    .filter(photo => {
+  currentPhotos =
+    Array.from(galleryPhotos)
+      .filter(photo => {
 
-      return photo.dataset.theme === theme;
+        return photo.dataset.theme === theme;
 
-    });
+      });
 
 
   currentIndex = 0;
@@ -2012,7 +2782,7 @@ function prepareSlideshow(theme) {
 
 
 /* =====================================================
-   RENDRE LA PHOTO
+   AFFICHER PHOTO
 ===================================================== */
 
 function renderSlideshow() {
@@ -2020,18 +2790,25 @@ function renderSlideshow() {
   slideshowContainer.innerHTML = "";
 
 
+  /* Aucune photo */
+
   if (currentPhotos.length === 0) {
 
-    slideshowTitle.textContent = "Aucune photo";
+    slideshowTitle.textContent =
+      "Aucune photo";
 
-    slideshowCategory.textContent = "";
+    slideshowCategory.textContent =
+      "";
 
-    slideshowCounter.textContent = "00 / 00";
+    slideshowCounter.textContent =
+      "00 / 00";
 
     return;
 
   }
 
+
+  /* Photo actuelle */
 
   const photo =
     currentPhotos[currentIndex];
@@ -2060,15 +2837,21 @@ function renderSlideshow() {
   slideshowContainer.appendChild(image);
 
 
+  /* Titre */
+
   slideshowTitle.textContent =
     photo.querySelector(".photo-title")
       ?.textContent.trim() || "";
 
 
+  /* Catégorie */
+
   slideshowCategory.textContent =
     photo.querySelector(".photo-category")
       ?.textContent.trim() || "";
 
+
+  /* Compteur */
 
   slideshowCounter.textContent =
 
@@ -2137,82 +2920,38 @@ function previousPhoto() {
 
 
 /* =====================================================
-   FILTRE VOYAGES
+   RETOUR AUX DESTINATIONS
 ===================================================== */
 
-function filterTravel(
-  travel,
-  button
-) {
+function backToTravelCategories() {
 
-  document
-    .querySelectorAll(".travel-button")
-    .forEach(btn => {
-
-      btn.classList.remove("active");
-
-    });
+  currentTravel = "";
 
 
-  button.classList.add("active");
+  galleryTitle.textContent =
+    "Voyages";
 
 
-  currentPhotos = Array.from(galleryPhotos)
-    .filter(photo => {
+  travelCategories.classList.add("active");
 
-      if (
-        photo.dataset.theme !== "voyages"
-      ) {
+  travelNavigation.classList.remove("active");
 
-        return false;
+  slideshow.classList.remove("active");
 
-      }
+  slideshowInfo.classList.remove("active");
 
 
-      return (
-        travel === "all" ||
-        photo.dataset.travel === travel
-      );
+  galleryBackButton.textContent =
+    "← Toutes les photos";
 
-    });
-
-
-  currentIndex = 0;
-
-  renderSlideshow();
+  galleryBackButton.onclick =
+    showHome;
 
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-
-}
-
-
-/* =====================================================
-   RESET VOYAGES
-===================================================== */
-
-function resetTravel() {
-
-  document
-    .querySelectorAll(".travel-button")
-    .forEach(button => {
-
-      button.classList.remove("active");
-
-    });
-
-
-  const firstButton =
-    document.querySelector(".travel-button");
-
-  if (firstButton) {
-
-    firstButton.classList.add("active");
-
-  }
 
 }
 
@@ -2250,7 +2989,20 @@ document.addEventListener(
 
     if (event.key === "Escape") {
 
-      showHome();
+      if (
+        currentTheme === "voyages" &&
+        currentTravel
+      ) {
+
+        backToTravelCategories();
+
+      }
+
+      else {
+
+        showHome();
+
+      }
 
     }
 
@@ -2275,7 +3027,9 @@ galleryPage.addEventListener(
       event.changedTouches[0].screenX;
 
   },
-  { passive: true }
+  {
+    passive: true
+  }
 );
 
 
@@ -2292,7 +3046,9 @@ galleryPage.addEventListener(
 
 
     if (Math.abs(distance) < 50) {
+
       return;
+
     }
 
 
@@ -2300,14 +3056,18 @@ galleryPage.addEventListener(
 
       nextPhoto();
 
-    } else {
+    }
+
+    else {
 
       previousPhoto();
 
     }
 
   },
-  { passive: true }
+  {
+    passive: true
+  }
 );
 
 
@@ -2320,6 +3080,27 @@ function showHome() {
   galleryPage.classList.remove("active");
 
   work.style.display = "block";
+
+
+  travelCategories.classList.remove("active");
+
+  travelNavigation.classList.remove("active");
+
+  slideshow.classList.remove("active");
+
+  slideshowInfo.classList.remove("active");
+
+
+  currentTheme = "";
+
+  currentTravel = "";
+
+
+  galleryBackButton.textContent =
+    "← Toutes les photos";
+
+  galleryBackButton.onclick =
+    showHome;
 
 
   window.scrollTo({
@@ -2339,6 +3120,15 @@ function goToAbout() {
   galleryPage.classList.remove("active");
 
   work.style.display = "block";
+
+
+  travelCategories.classList.remove("active");
+
+  travelNavigation.classList.remove("active");
+
+  slideshow.classList.remove("active");
+
+  slideshowInfo.classList.remove("active");
 
 
   setTimeout(() => {
@@ -2363,6 +3153,15 @@ function goToContact() {
   galleryPage.classList.remove("active");
 
   work.style.display = "block";
+
+
+  travelCategories.classList.remove("active");
+
+  travelNavigation.classList.remove("active");
+
+  slideshow.classList.remove("active");
+
+  slideshowInfo.classList.remove("active");
 
 
   setTimeout(() => {
